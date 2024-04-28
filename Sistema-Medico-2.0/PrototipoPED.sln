@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrototipoPED", "PrototipoPED\PrototipoPED.csproj", "{01476459-DB27-4060-BE51-A26134BD3E9C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{BB9F1999-F4D5-4ED9-AA6B-9F02803E7994}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01476459-DB27-4060-BE51-A26134BD3E9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01476459-DB27-4060-BE51-A26134BD3E9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01476459-DB27-4060-BE51-A26134BD3E9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01476459-DB27-4060-BE51-A26134BD3E9C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0678D6D6-6B86-42A7-9FD6-E74D20A19212}
+	EndGlobalSection
+EndGlobal
