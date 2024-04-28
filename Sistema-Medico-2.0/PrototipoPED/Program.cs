@@ -17,7 +17,7 @@ namespace PrototipoPED
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmVerDatosPaciente());
+            Application.Run(new FrmLogin());
         }
     }
 }
