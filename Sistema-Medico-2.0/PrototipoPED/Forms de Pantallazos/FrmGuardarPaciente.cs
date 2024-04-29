@@ -165,59 +165,63 @@ namespace PrototipoPED
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            int edad;
-            //Las validaciones
-            if(txtNombre1.Text == "" || txtApellido1.Text == "")
-            {
-                MessageBox.Show("Debe ingresar al menos un nombre y un apellido");
-            }
-            if(txtDui.Text == "")
-            {
-                MessageBox.Show("Es obligatorio ingresar un dui");
-                txtDui.Focus();
-            } 
-
-            Paciente miPaciente = new Paciente();
-
-            miPaciente.Primer_Nombre = txtNombre1.Text;
-            miPaciente.Segundo_Nombre = txtNombre2.Text;
-            miPaciente.Primer_Apellido = txtApellido1.Text;
-            miPaciente.Segundo_Apellido = txtNombre2.Text;
-            miPaciente.Direccion = cmbZona.Text +", "+ cmbDepartamento.Text +", "+ cmbMunicipio.Text +", "+ txtDireccion.Text;
-            miPaciente.Telefono = txtTelefono.Text;
-
-            string sexo;
-
-            if (rbtnMasculino.Checked)
-            {
-                sexo = "M";
-                miPaciente.Sexo = sexo;
-            }
-            else if (rbtnFemenino.Checked)
-            {
-                sexo = "F";
-                miPaciente.Sexo = sexo;
-            }
-            else
-            {
-                MessageBox.Show("Debe elegir un sexo");
-            }
-
-            miPaciente.DUI = txtDui.Text;
-            miPaciente.NIT = txtNit.Text;
-            miPaciente.Fecha_Nacimiento = dtpFechaNacimiento.Value;
-
-            Conexion miConexion = new Conexion();
             try
             {
-                miConexion.AgregarPaciente(miPaciente);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+                int edad;
+                //Las validaciones
+                if (txtNombre1.Text == "" || txtApellido1.Text == "")
+                {
+                    MessageBox.Show("Debe ingresar al menos un nombre y un apellido");
+                }
+                if (txtDui.Text == "")
+                {
+                    MessageBox.Show("Es obligatorio ingresar un dui");
+                    txtDui.Focus();
+                }
 
-            Limpiar();
+                Paciente miPaciente = new Paciente();
+
+                miPaciente.Primer_Nombre = txtNombre1.Text;
+                miPaciente.Segundo_Nombre = txtNombre2.Text;
+                miPaciente.Primer_Apellido = txtApellido1.Text;
+                miPaciente.Segundo_Apellido = txtNombre2.Text;
+                miPaciente.Direccion = cmbZona.Text + ", " + cmbDepartamento.Text + ", " + cmbMunicipio.Text + ", " + txtDireccion.Text;
+                miPaciente.Telefono = txtTelefono.Text;
+
+                string sexo;
+
+                if (rbtnMasculino.Checked)
+                {
+                    sexo = "M";
+                    miPaciente.Sexo = sexo;
+                }
+                else if (rbtnFemenino.Checked)
+                {
+                    sexo = "F";
+                    miPaciente.Sexo = sexo;
+                }
+                else
+                {
+                    MessageBox.Show("Debe elegir un sexo");
+                }
+
+                miPaciente.DUI = txtDui.Text;
+                miPaciente.NIT = txtNit.Text;
+                miPaciente.Fecha_Nacimiento = dtpFechaNacimiento.Value.ToString();
+
+                Conexion miConexion = new Conexion();
+                try
+                {
+                    miConexion.AgregarPaciente(miPaciente);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                Limpiar();
+            }
+            catch { }
         }
 
         private void cmbZona_SelectedIndexChanged(object sender, EventArgs e)

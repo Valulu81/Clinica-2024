@@ -17,8 +17,14 @@ namespace PrototipoPED.Clases
         private string sexo;
         private string dui;
         private string nit;
-        private DateTime fecha_nacimiento;
+        private string edad;
+        private string fecha_nacimiento;
 
+        public string Edad
+        {
+            get { return primer_nombre; }
+            set { primer_nombre = value; }
+        }
         public string Primer_Nombre
         {
             get { return primer_nombre; }
@@ -54,7 +60,7 @@ namespace PrototipoPED.Clases
             get { return sexo; }
             set { sexo = value; }
         }
-        public DateTime Fecha_Nacimiento
+        public string Fecha_Nacimiento
         {
             get { return fecha_nacimiento; }
             set { fecha_nacimiento = value; }

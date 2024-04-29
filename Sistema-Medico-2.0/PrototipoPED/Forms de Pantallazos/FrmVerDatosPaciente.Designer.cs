@@ -45,7 +45,7 @@
             this.txtDui = new System.Windows.Forms.TextBox();
             this.txtSexo = new System.Windows.Forms.TextBox();
             this.cmbPaciente = new System.Windows.Forms.ComboBox();
-            this.dgvFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.txtfecha = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnBuscar
@@ -61,6 +61,7 @@
             this.btnBuscar.TabIndex = 82;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnBorrar
             // 
@@ -75,6 +76,7 @@
             this.btnBorrar.TabIndex = 81;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // txtEdad
             // 
@@ -88,7 +90,6 @@
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(63, 28);
             this.txtEdad.TabIndex = 80;
-            this.txtEdad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
@@ -163,7 +164,6 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(107, 28);
             this.txtTelefono.TabIndex = 69;
-            this.txtTelefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -214,7 +214,6 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(373, 65);
             this.txtDireccion.TabIndex = 83;
-            this.txtDireccion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtNit
             // 
@@ -226,9 +225,8 @@
             this.txtNit.Location = new System.Drawing.Point(499, 181);
             this.txtNit.Multiline = true;
             this.txtNit.Name = "txtNit";
-            this.txtNit.Size = new System.Drawing.Size(154, 28);
+            this.txtNit.Size = new System.Drawing.Size(205, 28);
             this.txtNit.TabIndex = 86;
-            this.txtNit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtDui
             // 
@@ -240,9 +238,8 @@
             this.txtDui.Location = new System.Drawing.Point(499, 123);
             this.txtDui.Multiline = true;
             this.txtDui.Name = "txtDui";
-            this.txtDui.Size = new System.Drawing.Size(154, 28);
+            this.txtDui.Size = new System.Drawing.Size(205, 28);
             this.txtDui.TabIndex = 87;
-            this.txtDui.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtSexo
             // 
@@ -256,28 +253,33 @@
             this.txtSexo.Name = "txtSexo";
             this.txtSexo.Size = new System.Drawing.Size(107, 28);
             this.txtSexo.TabIndex = 89;
-            this.txtSexo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSexo.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
             // 
             // cmbPaciente
             // 
+            this.cmbPaciente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbPaciente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cmbPaciente.FormattingEnabled = true;
             this.cmbPaciente.Location = new System.Drawing.Point(32, 64);
             this.cmbPaciente.Name = "cmbPaciente";
             this.cmbPaciente.Size = new System.Drawing.Size(373, 28);
             this.cmbPaciente.TabIndex = 90;
+            this.cmbPaciente.SelectedIndexChanged += new System.EventHandler(this.cmbPaciente_SelectedIndexChanged);
             this.cmbPaciente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbPaciente_KeyPress);
             // 
-            // dgvFechaNacimiento
+            // txtfecha
             // 
-            this.dgvFechaNacimiento.AccessibleDescription = "cmbFechaAgendada";
-            this.dgvFechaNacimiento.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvFechaNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvFechaNacimiento.Location = new System.Drawing.Point(499, 64);
-            this.dgvFechaNacimiento.Name = "dgvFechaNacimiento";
-            this.dgvFechaNacimiento.Size = new System.Drawing.Size(311, 26);
-            this.dgvFechaNacimiento.TabIndex = 91;
+            this.txtfecha.BackColor = System.Drawing.Color.White;
+            this.txtfecha.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtfecha.Enabled = false;
+            this.txtfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtfecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
+            this.txtfecha.Location = new System.Drawing.Point(499, 67);
+            this.txtfecha.Multiline = true;
+            this.txtfecha.Name = "txtfecha";
+            this.txtfecha.Size = new System.Drawing.Size(277, 28);
+            this.txtfecha.TabIndex = 91;
             // 
             // FrmVerDatosPaciente
             // 
@@ -285,6 +287,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(230)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(838, 371);
+            this.Controls.Add(this.txtfecha);
             this.Controls.Add(this.cmbPaciente);
             this.Controls.Add(this.txtSexo);
             this.Controls.Add(this.txtNit);
@@ -301,7 +304,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDui);
-            this.Controls.Add(this.dgvFechaNacimiento);
             this.Controls.Add(this.txtDireccion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmVerDatosPaciente";
@@ -331,6 +333,6 @@
         private System.Windows.Forms.TextBox txtDui;
         private System.Windows.Forms.TextBox txtSexo;
         private System.Windows.Forms.ComboBox cmbPaciente;
-        private System.Windows.Forms.DateTimePicker dgvFechaNacimiento;
+        private System.Windows.Forms.TextBox txtfecha;
     }
 }

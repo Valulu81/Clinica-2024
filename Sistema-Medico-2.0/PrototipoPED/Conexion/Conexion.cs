@@ -1,10 +1,14 @@
 ﻿using PrototipoPED.Clases;
+using PrototipoPED.Forms_de_Pantallazos;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Shapes;
 
 namespace PrototipoPED.ConexionBD
@@ -43,46 +47,80 @@ namespace PrototipoPED.ConexionBD
                 catch (Exception ex) { throw new Exception("Error en la bd: " + ex.Message); }
             }
         }
-
-        public Paciente DatosPaciente(string codPaciente)
+        public void VerDatosCombo(System.Windows.Forms.ComboBox caja)
         {
+
+            string query = "select primerNombre, segundoNombre, primerApellido, segundoApellido from administracion.pacientes";
+            using (SqlConnection conn = new SqlConnection(ConecStr))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                try
+                {
+                    conn.Open();
+                    SqlDataReader lector;
+                    lector = cmd.ExecuteReader();
+                    Paciente datos = new Paciente();
+                    while (lector.Read())
+                    {
+                        caja.Items.Add(lector.GetString(0)+" "+ lector.GetString(1)+" "+lector.GetString(2)+" "+lector.GetString(3));
+                    }
+
+                }
+                catch { }
+                
+            } 
+        }
+        public Paciente DatosPaciente(string nombre_comp)
+        {
+            string[] partes = nombre_comp.Split(' ');//desgloso el nombre
             string query = "select primerNombre, segundoNombre, " +
                 "primerApellido, segundoApellido, direccion, telefono, sexo, " +
-                "fechaNacimiento, edad from administracion.pacientes" +
-                " where codPaciente=@id";
+                "fechaNacimiento, edad, dui, nit from administracion.pacientes" +
+                " where  primernombre= '" + partes[0] +
+                "' and segundonombre='" + partes[1] +
+                "' and primerapellido='" + partes[2] +
+                "' and segundoapellido='" + partes[3]+"'";
+
+
 
             using (SqlConnection conn = new SqlConnection(ConecStr))
             {
                 SqlCommand cmd = new SqlCommand(query, conn);
-
-                cmd.Parameters.AddWithValue("@id", codPaciente);
-
                 try
                 {
                     conn.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
+                    SqlDataReader lector;
+                    lector = cmd.ExecuteReader();
+                    Paciente datos = new Paciente();
 
-                    Paciente per = new Paciente();
-                    reader.Read();
+                    if (lector.Read())//si hay datos
+                    {
+                        datos.Primer_Nombre = lector["primernombre"].ToString();
+                        datos.Segundo_Nombre = lector["segundonombre"].ToString();
+                        datos.Primer_Apellido = lector["primerapellido"].ToString();
+                        datos.Segundo_Apellido = lector["segundoapellido"].ToString();
+                        datos.Direccion = lector["direccion"].ToString();
+                        datos.Telefono = lector["telefono"].ToString();
+                        datos.Sexo = lector["sexo"].ToString();
+                        datos.Fecha_Nacimiento = lector["fechanacimiento"].ToString();
+                        datos.DUI = lector["dui"].ToString();
+                        datos.NIT = lector["nit"].ToString();
+                        datos.Edad = lector["edad"].ToString();
 
-                    per.Primer_Nombre = reader.GetString(0);
-                    per.Segundo_Nombre = reader.GetString(1);
-                    per.Primer_Apellido = reader.GetString(2);
-                    per.Segundo_Apellido = reader.GetString(3);
-                    per.Direccion = reader.GetString(4);
-                    per.Telefono = reader.GetString(5);
-                    per.Sexo = reader.GetString(6);
-                    per.Fecha_Nacimiento = reader.GetDateTime(7);
+                        conn.Close();
+                        return datos;
 
-                    reader.Close();
-                    conn.Close();
-
-                    return per;
+                    }
+                    else
+                    {
+                        return null;
+                    }
                 }
-                catch (Exception ex)
+                catch(Exception ex)
                 {
                     throw new Exception("Hay un error en la bd: " + ex.Message);
                 }
+               
 
             }
         }
@@ -149,5 +187,6 @@ namespace PrototipoPED.ConexionBD
             }
         }
 
+        
     }
 }
