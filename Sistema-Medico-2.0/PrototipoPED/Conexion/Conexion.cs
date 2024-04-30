@@ -47,6 +47,75 @@ namespace PrototipoPED.ConexionBD
                 catch (Exception ex) { throw new Exception("Error en la bd: " + ex.Message); }
             }
         }
+        public void AgregarMedico(Medico medico)
+        {
+            string query = "exec personal.InscribirMedico " +
+                "@pnom, @pape, @tel, @esp";
+
+            using (SqlConnection cnn = new SqlConnection(ConecStr))
+            {
+                try
+                {
+                    cnn.Open();
+                    SqlCommand cmd = new SqlCommand(query, cnn);
+
+                    cmd.Parameters.AddWithValue("@pnom", medico.Primer_Nombre);
+                    cmd.Parameters.AddWithValue("@pape", medico.Primer_Apellido);
+                    cmd.Parameters.AddWithValue("@tel", medico.Telefono);
+                    cmd.Parameters.AddWithValue("@esp", medico.Especialidad);
+
+                    cmd.ExecuteNonQuery();
+                    cnn.Close();
+                }
+                catch (Exception ex) { throw new Exception("Error en la bd: " + ex.Message); }
+            }
+
+        }
+        public string ObtenerCodigoM(string primerNombre, string primerApellido)
+        {
+            string codigoMedico = "";
+            using (SqlConnection connection = new SqlConnection(ConecStr))
+            {
+                string query = "SELECT codMedico FROM personal.medicos WHERE primerNombre = @primerNombre AND primerApellido = @primerApellido";
+
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@primerNombre", primerNombre);
+                command.Parameters.AddWithValue("@primerApellido", primerApellido);
+
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    codigoMedico = reader["codMedico"].ToString();
+                }
+                reader.Close();
+            }
+
+            return codigoMedico;
+        }
+
+        public string ObtenerClaveM(string codigoMedico)
+        {
+            string claveMedico = "";
+            using (SqlConnection connection = new SqlConnection(ConecStr))
+            {
+                string query = "SELECT clave FROM personal.medicos WHERE codMedico = @codigoMedico";
+
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@codigoMedico", codigoMedico);
+
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    claveMedico = reader["clave"].ToString();
+                }
+                reader.Close();
+            }
+            return claveMedico;
+        }
         public void VerDatosCombo(System.Windows.Forms.ComboBox caja)
         {
 

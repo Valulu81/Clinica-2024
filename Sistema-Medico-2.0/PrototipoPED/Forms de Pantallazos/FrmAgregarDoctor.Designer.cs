@@ -53,6 +53,7 @@
             this.btnGuardar.TabIndex = 82;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnBorrar
             // 
@@ -67,6 +68,7 @@
             this.btnBorrar.TabIndex = 81;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // label8
             // 
@@ -117,6 +119,7 @@
             this.txNombre.Size = new System.Drawing.Size(147, 28);
             this.txNombre.TabIndex = 59;
             this.txNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txNombre_KeyPress);
             // 
             // label1
             // 
@@ -151,6 +154,7 @@
             this.txtApellido.Size = new System.Drawing.Size(147, 28);
             this.txtApellido.TabIndex = 85;
             this.txtApellido.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // label2
             // 
