@@ -22,7 +22,7 @@ namespace PrototipoPED.Forms_de_Pantallazos
             try
             {
                 Conexion miconexion = new Conexion();
-                miconexion.VerDatosCombo(cmbPaciente);
+                miconexion.VerDatosPCombo(cmbPaciente);
             }
             catch { }
 

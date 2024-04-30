@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrototipoPED.ConexionBD;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,14 @@ namespace PrototipoPED
         public FrmGuardarCitas()
         {
             InitializeComponent();
+            try
+            {
+                Conexion miconexion = new Conexion();
+                miconexion.VerDatosPCombo(cmbPaciente);
+                miconexion.VerDatosDCombo(cmbDoctor);
+            }
+            catch { }
+
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -23,6 +32,21 @@ namespace PrototipoPED
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmGuardarCitas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnborrar_Click(object sender, EventArgs e)
         {
 
         }

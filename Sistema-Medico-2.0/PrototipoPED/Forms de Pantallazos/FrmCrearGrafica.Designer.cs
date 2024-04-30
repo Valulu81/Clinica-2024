@@ -40,6 +40,7 @@
             this.cmbMes2 = new System.Windows.Forms.ComboBox();
             this.cmbMes1 = new System.Windows.Forms.ComboBox();
             this.pnlGrafica = new System.Windows.Forms.Panel();
+            this.btnreporte = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmbZona
@@ -179,12 +180,28 @@
             this.pnlGrafica.Size = new System.Drawing.Size(452, 275);
             this.pnlGrafica.TabIndex = 69;
             // 
+            // btnreporte
+            // 
+            this.btnreporte.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnreporte.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnreporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnreporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnreporte.ForeColor = System.Drawing.Color.White;
+            this.btnreporte.Location = new System.Drawing.Point(473, 312);
+            this.btnreporte.Name = "btnreporte";
+            this.btnreporte.Size = new System.Drawing.Size(118, 37);
+            this.btnreporte.TabIndex = 70;
+            this.btnreporte.Text = "Ver Reporte";
+            this.btnreporte.UseVisualStyleBackColor = false;
+            this.btnreporte.Click += new System.EventHandler(this.btnreporte_Click);
+            // 
             // FrmCrearGrafica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(230)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(838, 371);
+            this.Controls.Add(this.btnreporte);
             this.Controls.Add(this.pnlGrafica);
             this.Controls.Add(this.cmbMes1);
             this.Controls.Add(this.cmbMes2);
@@ -218,5 +235,6 @@
         private System.Windows.Forms.ComboBox cmbMes2;
         private System.Windows.Forms.ComboBox cmbMes1;
         private System.Windows.Forms.Panel pnlGrafica;
+        private System.Windows.Forms.Button btnreporte;
     }
 }

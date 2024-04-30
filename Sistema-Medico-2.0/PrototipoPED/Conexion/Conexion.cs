@@ -116,7 +116,7 @@ namespace PrototipoPED.ConexionBD
             }
             return claveMedico;
         }
-        public void VerDatosCombo(System.Windows.Forms.ComboBox caja)
+        public void VerDatosPCombo(System.Windows.Forms.ComboBox caja)
         {
 
             string query = "select primerNombre, segundoNombre, primerApellido, segundoApellido from administracion.pacientes";
@@ -128,7 +128,6 @@ namespace PrototipoPED.ConexionBD
                     conn.Open();
                     SqlDataReader lector;
                     lector = cmd.ExecuteReader();
-                    Paciente datos = new Paciente();
                     while (lector.Read())
                     {
                         caja.Items.Add(lector.GetString(0)+" "+ lector.GetString(1)+" "+lector.GetString(2)+" "+lector.GetString(3));
@@ -139,6 +138,29 @@ namespace PrototipoPED.ConexionBD
                 
             } 
         }
+        public void VerDatosDCombo(System.Windows.Forms.ComboBox caja)
+        {
+
+            string query = "select primerNombre, primerApellido from personal.medicos";
+            using (SqlConnection conn = new SqlConnection(ConecStr))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                try
+                {
+                    conn.Open();
+                    SqlDataReader lector;
+                    lector = cmd.ExecuteReader();
+                    while (lector.Read())
+                    {
+                        caja.Items.Add(lector.GetString(0) + " " + lector.GetString(1));
+                    }
+
+                }
+                catch { }
+
+            }
+        }
+
         public Paciente DatosPaciente(string nombre_comp)
         {
             string[] partes = nombre_comp.Split(' ');//desgloso el nombre

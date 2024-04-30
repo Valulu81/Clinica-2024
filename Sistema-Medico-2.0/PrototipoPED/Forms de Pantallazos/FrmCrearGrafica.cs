@@ -21,5 +21,11 @@ namespace PrototipoPED.Forms_de_Pantallazos
         {
 
         }
+
+        private void btnreporte_Click(object sender, EventArgs e)
+        {
+            FrmVerReporte form = new FrmVerReporte();
+            form.ShowDialog();
+        }
     }
 }

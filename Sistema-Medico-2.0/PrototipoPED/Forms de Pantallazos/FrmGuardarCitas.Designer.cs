@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.gdvCitas = new System.Windows.Forms.DataGridView();
-            this.txtdoctor = new System.Windows.Forms.ComboBox();
+            this.cmbDoctor = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txthorario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpFechaAgendada = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.cmbpaciente = new System.Windows.Forms.ComboBox();
+            this.cmbPaciente = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnguardar = new System.Windows.Forms.Button();
             this.btnborrar = new System.Windows.Forms.Button();
@@ -52,15 +52,17 @@
             this.gdvCitas.Size = new System.Drawing.Size(452, 275);
             this.gdvCitas.TabIndex = 55;
             // 
-            // txtdoctor
+            // cmbDoctor
             // 
-            this.txtdoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdoctor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
-            this.txtdoctor.FormattingEnabled = true;
-            this.txtdoctor.Location = new System.Drawing.Point(35, 135);
-            this.txtdoctor.Name = "txtdoctor";
-            this.txtdoctor.Size = new System.Drawing.Size(120, 28);
-            this.txtdoctor.TabIndex = 54;
+            this.cmbDoctor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbDoctor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbDoctor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDoctor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
+            this.cmbDoctor.FormattingEnabled = true;
+            this.cmbDoctor.Location = new System.Drawing.Point(35, 135);
+            this.cmbDoctor.Name = "cmbDoctor";
+            this.cmbDoctor.Size = new System.Drawing.Size(296, 28);
+            this.cmbDoctor.TabIndex = 54;
             // 
             // label1
             // 
@@ -120,15 +122,17 @@
             this.label5.Text = "Fecha Agendada\r\n";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // cmbpaciente
+            // cmbPaciente
             // 
-            this.cmbpaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbpaciente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
-            this.cmbpaciente.FormattingEnabled = true;
-            this.cmbpaciente.Location = new System.Drawing.Point(35, 65);
-            this.cmbpaciente.Name = "cmbpaciente";
-            this.cmbpaciente.Size = new System.Drawing.Size(120, 28);
-            this.cmbpaciente.TabIndex = 48;
+            this.cmbPaciente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbPaciente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbPaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbPaciente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
+            this.cmbPaciente.FormattingEnabled = true;
+            this.cmbPaciente.Location = new System.Drawing.Point(35, 65);
+            this.cmbPaciente.Name = "cmbPaciente";
+            this.cmbPaciente.Size = new System.Drawing.Size(296, 28);
+            this.cmbPaciente.TabIndex = 48;
             // 
             // label2
             // 
@@ -155,6 +159,7 @@
             this.btnguardar.TabIndex = 46;
             this.btnguardar.Text = "Guardar";
             this.btnguardar.UseVisualStyleBackColor = false;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // btnborrar
             // 
@@ -169,6 +174,7 @@
             this.btnborrar.TabIndex = 45;
             this.btnborrar.Text = "Borrar";
             this.btnborrar.UseVisualStyleBackColor = false;
+            this.btnborrar.Click += new System.EventHandler(this.btnborrar_Click);
             // 
             // FrmGuardarCitas
             // 
@@ -177,13 +183,13 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(230)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(838, 371);
             this.Controls.Add(this.gdvCitas);
-            this.Controls.Add(this.txtdoctor);
+            this.Controls.Add(this.cmbDoctor);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txthorario);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dtpFechaAgendada);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.cmbpaciente);
+            this.Controls.Add(this.cmbPaciente);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnguardar);
             this.Controls.Add(this.btnborrar);
@@ -191,6 +197,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmGuardarCitas";
             this.Text = "FrmGuardarCitas";
+            this.Load += new System.EventHandler(this.FrmGuardarCitas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gdvCitas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -200,13 +207,13 @@
         #endregion
 
         private System.Windows.Forms.DataGridView gdvCitas;
-        private System.Windows.Forms.ComboBox txtdoctor;
+        private System.Windows.Forms.ComboBox cmbDoctor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txthorario;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpFechaAgendada;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cmbpaciente;
+        private System.Windows.Forms.ComboBox cmbPaciente;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.Button btnborrar;
