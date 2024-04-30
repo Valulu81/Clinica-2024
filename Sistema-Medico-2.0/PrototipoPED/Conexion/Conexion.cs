@@ -3,6 +3,7 @@ using PrototipoPED.Forms_de_Pantallazos;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -278,6 +279,42 @@ namespace PrototipoPED.ConexionBD
             }
         }
 
+        public void AgregarCita(string Ndoctor, string Npaciente, string FechaHora)
+        {
+            string[] doc = Ndoctor.Split(' ');//desgloso el nombre
+            string[] pac = Npaciente.Split(' ');//desgloso el nombre
+            string query = "declare @codPaciente varchar(8) " +
+                "declare @codMedico varchar(8) " +
+                "select @codpaciente = codpaciente from administracion.pacientes" +
+                " where  primernombre= '" + doc[0] +
+                "' and segundonombre='" + doc[1] +
+                "' and primerapellido='" + doc[2] +
+                "' and segundoapellido=' " + doc[3]+"' "+
+
+                "select codmedico from personal.medicos" +
+                " where  primernombre= '" + pac[0] +
+                "' and primerapellido= ' " + pac[1] +"'"+
+
+                "exec administracion.citasMedicas " +
+                " @codPaciente,@codMedico,@fechaHora";
+
+
+
+            using (SqlConnection cnn = new SqlConnection(ConecStr))
+            {
+                try
+                {
+                    cnn.Open();
+                    SqlCommand cmd = new SqlCommand(query, cnn);
+                    cmd.Parameters.AddWithValue("@fechaHora", FechaHora);
+
+                    cmd.ExecuteNonQuery();
+
+                    cnn.Close();
+                }
+                catch (Exception ex) { throw new Exception("Error en la bd: " + ex.Message); }
+            }
+        }
         
     }
 }

@@ -184,7 +184,7 @@ namespace PrototipoPED
                 miPaciente.Primer_Nombre = txtNombre1.Text;
                 miPaciente.Segundo_Nombre = txtNombre2.Text;
                 miPaciente.Primer_Apellido = txtApellido1.Text;
-                miPaciente.Segundo_Apellido = txtNombre2.Text;
+                miPaciente.Segundo_Apellido = txtApellido2.Text;
                 miPaciente.Direccion = cmbZona.Text + ", " + cmbDepartamento.Text + ", " + cmbMunicipio.Text + ", " + txtDireccion.Text;
                 miPaciente.Telefono = txtTelefono.Text;
 

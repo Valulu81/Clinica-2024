@@ -31,14 +31,16 @@
             this.gdvCitas = new System.Windows.Forms.DataGridView();
             this.cmbDoctor = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txthorario = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dtpFechaAgendada = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbPaciente = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnguardar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.btnborrar = new System.Windows.Forms.Button();
+            this.cmbHorario = new System.Windows.Forms.ComboBox();
+            this.cmbAño = new System.Windows.Forms.ComboBox();
+            this.cmbMes = new System.Windows.Forms.ComboBox();
+            this.cmbDia = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gdvCitas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,19 +79,6 @@
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // txthorario
-            // 
-            this.txthorario.BackColor = System.Drawing.Color.White;
-            this.txthorario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txthorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txthorario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
-            this.txthorario.Location = new System.Drawing.Point(35, 269);
-            this.txthorario.Multiline = true;
-            this.txthorario.Name = "txthorario";
-            this.txthorario.Size = new System.Drawing.Size(107, 28);
-            this.txthorario.TabIndex = 52;
-            this.txthorario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -101,14 +90,6 @@
             this.label3.TabIndex = 51;
             this.label3.Text = "Horario";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // dtpFechaAgendada
-            // 
-            this.dtpFechaAgendada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaAgendada.Location = new System.Drawing.Point(35, 205);
-            this.dtpFechaAgendada.Name = "dtpFechaAgendada";
-            this.dtpFechaAgendada.Size = new System.Drawing.Size(296, 22);
-            this.dtpFechaAgendada.TabIndex = 50;
             // 
             // label5
             // 
@@ -146,20 +127,20 @@
             this.label2.Text = "Nombre del Paciente";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // btnguardar
+            // btnGuardar
             // 
-            this.btnguardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(182)))), ((int)(((byte)(150)))));
-            this.btnguardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnguardar.ForeColor = System.Drawing.Color.White;
-            this.btnguardar.Location = new System.Drawing.Point(717, 312);
-            this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Size = new System.Drawing.Size(87, 37);
-            this.btnguardar.TabIndex = 46;
-            this.btnguardar.Text = "Guardar";
-            this.btnguardar.UseVisualStyleBackColor = false;
-            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(182)))), ((int)(((byte)(150)))));
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(717, 312);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(87, 37);
+            this.btnGuardar.TabIndex = 46;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnborrar
             // 
@@ -176,23 +157,70 @@
             this.btnborrar.UseVisualStyleBackColor = false;
             this.btnborrar.Click += new System.EventHandler(this.btnborrar_Click);
             // 
+            // cmbHorario
+            // 
+            this.cmbHorario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbHorario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
+            this.cmbHorario.FormattingEnabled = true;
+            this.cmbHorario.Location = new System.Drawing.Point(35, 269);
+            this.cmbHorario.Name = "cmbHorario";
+            this.cmbHorario.Size = new System.Drawing.Size(120, 28);
+            this.cmbHorario.TabIndex = 57;
+            this.cmbHorario.UseWaitCursor = true;
+            // 
+            // cmbAño
+            // 
+            this.cmbAño.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAño.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
+            this.cmbAño.FormattingEnabled = true;
+            this.cmbAño.Location = new System.Drawing.Point(35, 204);
+            this.cmbAño.Name = "cmbAño";
+            this.cmbAño.Size = new System.Drawing.Size(83, 28);
+            this.cmbAño.TabIndex = 58;
+            this.cmbAño.UseWaitCursor = true;
+            // 
+            // cmbMes
+            // 
+            this.cmbMes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
+            this.cmbMes.FormattingEnabled = true;
+            this.cmbMes.Location = new System.Drawing.Point(126, 204);
+            this.cmbMes.Name = "cmbMes";
+            this.cmbMes.Size = new System.Drawing.Size(121, 28);
+            this.cmbMes.TabIndex = 59;
+            this.cmbMes.UseWaitCursor = true;
+            this.cmbMes.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // cmbDia
+            // 
+            this.cmbDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
+            this.cmbDia.FormattingEnabled = true;
+            this.cmbDia.Location = new System.Drawing.Point(253, 204);
+            this.cmbDia.Name = "cmbDia";
+            this.cmbDia.Size = new System.Drawing.Size(78, 28);
+            this.cmbDia.TabIndex = 60;
+            this.cmbDia.UseWaitCursor = true;
+            // 
             // FrmGuardarCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(230)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(838, 371);
+            this.Controls.Add(this.cmbDia);
+            this.Controls.Add(this.cmbMes);
+            this.Controls.Add(this.cmbAño);
             this.Controls.Add(this.gdvCitas);
             this.Controls.Add(this.cmbDoctor);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txthorario);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dtpFechaAgendada);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbPaciente);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnguardar);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnborrar);
+            this.Controls.Add(this.cmbHorario);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmGuardarCitas";
@@ -209,13 +237,15 @@
         private System.Windows.Forms.DataGridView gdvCitas;
         private System.Windows.Forms.ComboBox cmbDoctor;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txthorario;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dtpFechaAgendada;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbPaciente;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnguardar;
+        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnborrar;
+        private System.Windows.Forms.ComboBox cmbHorario;
+        private System.Windows.Forms.ComboBox cmbAño;
+        private System.Windows.Forms.ComboBox cmbMes;
+        private System.Windows.Forms.ComboBox cmbDia;
     }
 }
