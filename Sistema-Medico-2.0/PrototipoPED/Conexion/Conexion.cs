@@ -279,6 +279,7 @@ namespace PrototipoPED.ConexionBD
             }
         }
 
+        //Mi obra de arte
         public void AgregarCita(string Ndoctor, string Npaciente, string FechaHora)
         {
             string[] doc = Ndoctor.Split(' ');//desgloso el nombre
