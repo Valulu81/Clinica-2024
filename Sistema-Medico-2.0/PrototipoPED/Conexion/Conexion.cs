@@ -285,18 +285,23 @@ namespace PrototipoPED.ConexionBD
             string[] pac = Npaciente.Split(' ');//desgloso el nombre
             string query = "declare @codPaciente varchar(8) " +
                 "declare @codMedico varchar(8) " +
-                "select @codpaciente = codpaciente from administracion.pacientes" +
+                "declare @especialidad varchar(8) " +
+                "select @codPaciente = codpaciente from administracion.pacientes" +
                 " where  primernombre= '" + doc[0] +
                 "' and segundonombre='" + doc[1] +
                 "' and primerapellido='" + doc[2] +
-                "' and segundoapellido=' " + doc[3]+"' "+
+                "' and segundoapellido='" + doc[3]+"' "+
 
-                "select codmedico from personal.medicos" +
+                "select @codMedico= codMedico from personal.medicos" +
                 " where  primernombre= '" + pac[0] +
-                "' and primerapellido= ' " + pac[1] +"'"+
+                "' and primerapellido= '" + pac[1] +"'" +
 
-                "exec administracion.citasMedicas " +
-                " @codPaciente,@codMedico,@fechaHora";
+                "select @especialidad= especialidad from personal.medicos" +
+                " where  primernombre= '" + pac[0] +
+                "' and primerapellido= '" + pac[1] + "'" +
+
+                "exec administracion.IngresarCita " +
+                " @codPaciente,@codMedico,@fechaHora,@especialidad";
 
 
 
@@ -307,7 +312,6 @@ namespace PrototipoPED.ConexionBD
                     cnn.Open();
                     SqlCommand cmd = new SqlCommand(query, cnn);
                     cmd.Parameters.AddWithValue("@fechaHora", FechaHora);
-
                     cmd.ExecuteNonQuery();
 
                     cnn.Close();
