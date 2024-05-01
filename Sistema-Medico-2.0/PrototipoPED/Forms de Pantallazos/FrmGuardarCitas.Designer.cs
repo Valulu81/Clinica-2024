@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gdvCitas = new System.Windows.Forms.DataGridView();
+            this.dgvCitas = new System.Windows.Forms.DataGridView();
             this.cmbDoctor = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,18 +44,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.gdvCitas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
             this.SuspendLayout();
             // 
-            // gdvCitas
+            // dgvCitas
             // 
-            this.gdvCitas.BackgroundColor = System.Drawing.Color.White;
-            this.gdvCitas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gdvCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gdvCitas.Location = new System.Drawing.Point(352, 22);
-            this.gdvCitas.Name = "gdvCitas";
-            this.gdvCitas.Size = new System.Drawing.Size(452, 275);
-            this.gdvCitas.TabIndex = 55;
+            this.dgvCitas.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCitas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCitas.Location = new System.Drawing.Point(352, 22);
+            this.dgvCitas.Name = "dgvCitas";
+            this.dgvCitas.Size = new System.Drawing.Size(452, 275);
+            this.dgvCitas.TabIndex = 55;
             // 
             // cmbDoctor
             // 
@@ -253,7 +253,7 @@
             this.Controls.Add(this.txtAño);
             this.Controls.Add(this.cmbDia);
             this.Controls.Add(this.cmbMes);
-            this.Controls.Add(this.gdvCitas);
+            this.Controls.Add(this.dgvCitas);
             this.Controls.Add(this.cmbDoctor);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
@@ -268,7 +268,7 @@
             this.Name = "FrmGuardarCitas";
             this.Text = "FrmGuardarCitas";
             this.Load += new System.EventHandler(this.FrmGuardarCitas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gdvCitas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,7 +276,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView gdvCitas;
+        private System.Windows.Forms.DataGridView dgvCitas;
         private System.Windows.Forms.ComboBox cmbDoctor;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;

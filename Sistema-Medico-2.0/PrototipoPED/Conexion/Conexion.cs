@@ -321,5 +321,51 @@ namespace PrototipoPED.ConexionBD
             }
         }
         
+        public List<CitaMedica> TraerCitas()
+        {
+            List<CitaMedica> citas = new List<CitaMedica>();
+
+            string query = "select concat(m.primerNombre, ' ', m.primerApellido)as [Médico]," +
+                " concat(p.primerNombre,' ', p.primerApellido) as Paciente," +
+                " fechaHora as Fecha, hora\r\n" +
+                "from administracion.pacientes as p \r\n" +
+                "inner join administracion.citasMedicas as cm " +
+                "on p.codPaciente = cm.codPaciente\r\n" +
+                "inner join personal.medicos as m " +
+                "on m.codMedico = cm.codMedico\r\n" +
+                "where fechaHora > GETDATE()";
+
+            using (SqlConnection conn = new SqlConnection(ConecStr))
+            {
+                SqlCommand cmd = new SqlCommand(query,conn);
+
+                try
+                {
+                    conn.Open();
+
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        CitaMedica cita = new CitaMedica();
+
+                        cita.Medico = reader.GetString(0);
+                        cita.Paciente = reader.GetString(1);
+                        cita.Fecha = reader.GetDateTime(2).ToShortDateString().ToString();
+                        cita.Hora = reader.GetString(3);
+
+                        citas.Add(cita);
+                    }
+                    reader.Close();
+                    conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    //Trae el error y lo muestra en pantalla
+                    throw new Exception("Hay un error en la bd" + ex.Message);
+                }
+            }
+            return citas;
+        }
     }
 }

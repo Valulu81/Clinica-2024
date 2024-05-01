@@ -31,9 +31,29 @@ namespace PrototipoPED
                 cmbHorario.Items.AddRange(horarios);
                 cmbMes.Items.AddRange(meses);
                 cmbDia.Items.AddRange(dias);
+                LlenarCmbCitas();
             }
-            catch { }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
+        }
+
+        private void Limpiar()
+        {
+            cmbPaciente.Text = "";
+            cmbDoctor.Text = "";
+            cmbHorario.SelectedIndex = -1;
+            cmbMes.SelectedIndex = -1;
+            cmbDia.SelectedIndex = -1;
+            txtAño.Clear();
+        }
+
+        private void LlenarCmbCitas()
+        {
+            Conexion conn = new Conexion();
+            dgvCitas.DataSource = conn.TraerCitas();
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -59,12 +79,13 @@ namespace PrototipoPED
             try
             {
                 miConexion.AgregarCita(cmbPaciente.Text, cmbDoctor.Text, fechaHora);
+                Limpiar();
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message); ;
             }
-            
+            LlenarCmbCitas();
         }
 
         private void btnborrar_Click(object sender, EventArgs e)

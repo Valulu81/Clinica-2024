@@ -6,16 +6,35 @@ using System.Threading.Tasks;
 
 namespace PrototipoPED.Clases
 {
-    internal class CitaMedica
+    public class CitaMedica
     {
-        private string nombreP;
-        private string nombreD;
-        private DateTime fechaCita;
-        //private DateTime hora;
+        private string paciente;
+        private string medico;
+        private string fecha;
+        private string hora;
 
-        public string NombrePaciente;
+        public string Paciente
+        {
+            get { return paciente; }
+            set { paciente = value; }
+        }
 
-        Paciente paciente = new Paciente();
+        public string Medico
+        {
+            get { return medico; }
+            set { medico = value; }
+        }
 
+        public string Fecha
+        {
+            get { return fecha; }
+            set { fecha = value; }
+        }
+
+        public string Hora
+        {
+            get { return hora; }
+            set { hora = value; }
+        }
     }
 }
