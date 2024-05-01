@@ -205,10 +205,10 @@
             // btnAgregarDoctor
             // 
             this.btnAgregarDoctor.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAgregarDoctor.FlatAppearance.BorderSize = 2;
+            this.btnAgregarDoctor.FlatAppearance.BorderSize = 0;
             this.btnAgregarDoctor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregarDoctor.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAgregarDoctor.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
+            this.btnAgregarDoctor.IconChar = FontAwesome.Sharp.IconChar.UserNurse;
             this.btnAgregarDoctor.IconColor = System.Drawing.Color.White;
             this.btnAgregarDoctor.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregarDoctor.Location = new System.Drawing.Point(0, 276);
@@ -221,10 +221,10 @@
             // btnGuardarCitas
             // 
             this.btnGuardarCitas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGuardarCitas.FlatAppearance.BorderSize = 2;
+            this.btnGuardarCitas.FlatAppearance.BorderSize = 0;
             this.btnGuardarCitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarCitas.ForeColor = System.Drawing.Color.Transparent;
-            this.btnGuardarCitas.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
+            this.btnGuardarCitas.IconChar = FontAwesome.Sharp.IconChar.CalendarPlus;
             this.btnGuardarCitas.IconColor = System.Drawing.Color.White;
             this.btnGuardarCitas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardarCitas.Location = new System.Drawing.Point(0, 184);
@@ -237,10 +237,10 @@
             // btnVerDatosPaciente
             // 
             this.btnVerDatosPaciente.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnVerDatosPaciente.FlatAppearance.BorderSize = 2;
+            this.btnVerDatosPaciente.FlatAppearance.BorderSize = 0;
             this.btnVerDatosPaciente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerDatosPaciente.ForeColor = System.Drawing.Color.Transparent;
-            this.btnVerDatosPaciente.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
+            this.btnVerDatosPaciente.IconChar = FontAwesome.Sharp.IconChar.PersonCircleQuestion;
             this.btnVerDatosPaciente.IconColor = System.Drawing.Color.White;
             this.btnVerDatosPaciente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnVerDatosPaciente.Location = new System.Drawing.Point(0, 92);
@@ -253,10 +253,10 @@
             // btnRegistrarPacientes
             // 
             this.btnRegistrarPacientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRegistrarPacientes.FlatAppearance.BorderSize = 2;
+            this.btnRegistrarPacientes.FlatAppearance.BorderSize = 0;
             this.btnRegistrarPacientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarPacientes.ForeColor = System.Drawing.Color.Transparent;
-            this.btnRegistrarPacientes.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
+            this.btnRegistrarPacientes.IconChar = FontAwesome.Sharp.IconChar.PersonCirclePlus;
             this.btnRegistrarPacientes.IconColor = System.Drawing.Color.White;
             this.btnRegistrarPacientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRegistrarPacientes.Location = new System.Drawing.Point(0, 0);

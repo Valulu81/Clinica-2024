@@ -17,7 +17,6 @@ namespace PrototipoPED.Clases
         private string sexo;
         private string dui;
         private string nit;
-        private string edad;
         private string fecha_nacimiento;
 
         public string Edad

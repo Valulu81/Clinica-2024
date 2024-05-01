@@ -93,7 +93,7 @@ namespace PrototipoPED.Forms_de_Pantallazos
                 miPaciente=miConexion.DatosPaciente(cmbPaciente.Text);
                 txtDireccion.Text = miPaciente.Direccion;
                 txtEdad.Text = miPaciente.Edad;
-                txtfecha.Text = miPaciente.Fecha_Nacimiento;
+                txtfecha.Text = miPaciente.Fecha_Nacimiento.ToString() ;
                 txtNit.Text= miPaciente.NIT;
                 txtSexo.Text = miPaciente.Sexo;
                 txtTelefono.Text= miPaciente.Telefono;

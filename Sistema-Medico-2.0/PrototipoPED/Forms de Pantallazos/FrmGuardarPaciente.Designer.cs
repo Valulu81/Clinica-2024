@@ -35,7 +35,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtDui = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.rbtnFemenino = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,6 +51,12 @@
             this.txtNombre1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtAño = new System.Windows.Forms.MaskedTextBox();
+            this.cmbDia = new System.Windows.Forms.ComboBox();
+            this.cmbMes = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnGuardar
@@ -97,11 +102,6 @@
             resources.ApplyResources(this.label6, "label6");
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.label6.Name = "label6";
-            // 
-            // dtpFechaNacimiento
-            // 
-            resources.ApplyResources(this.dtpFechaNacimiento, "dtpFechaNacimiento");
-            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             // 
             // label5
             // 
@@ -216,11 +216,57 @@
             this.txtTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.txtTelefono.Name = "txtTelefono";
             // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
+            this.label8.Name = "label8";
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
+            this.label9.Name = "label9";
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
+            this.label10.Name = "label10";
+            // 
+            // txtAño
+            // 
+            resources.ApplyResources(this.txtAño, "txtAño");
+            this.txtAño.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
+            this.txtAño.Name = "txtAño";
+            // 
+            // cmbDia
+            // 
+            resources.ApplyResources(this.cmbDia, "cmbDia");
+            this.cmbDia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
+            this.cmbDia.FormattingEnabled = true;
+            this.cmbDia.Name = "cmbDia";
+            this.cmbDia.UseWaitCursor = true;
+            // 
+            // cmbMes
+            // 
+            resources.ApplyResources(this.cmbMes, "cmbMes");
+            this.cmbMes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
+            this.cmbMes.FormattingEnabled = true;
+            this.cmbMes.Name = "cmbMes";
+            this.cmbMes.UseWaitCursor = true;
+            // 
             // FrmGuardarPaciente
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(230)))), ((int)(((byte)(247)))));
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtAño);
+            this.Controls.Add(this.cmbDia);
+            this.Controls.Add(this.cmbMes);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnBorrar);
@@ -228,7 +274,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtDui);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dtpFechaNacimiento);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.rbtnFemenino);
             this.Controls.Add(this.label4);
@@ -259,7 +304,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.MaskedTextBox txtDui;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.RadioButton rbtnFemenino;
         private System.Windows.Forms.Label label4;
@@ -276,5 +320,11 @@
         private System.Windows.Forms.TextBox txtNombre1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox txtTelefono;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.MaskedTextBox txtAño;
+        private System.Windows.Forms.ComboBox cmbDia;
+        private System.Windows.Forms.ComboBox cmbMes;
     }
 }

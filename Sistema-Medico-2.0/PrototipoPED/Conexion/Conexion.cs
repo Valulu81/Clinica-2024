@@ -38,7 +38,7 @@ namespace PrototipoPED.ConexionBD
                     cmd.Parameters.AddWithValue("@dir", paciente.Direccion);
                     cmd.Parameters.AddWithValue("@tel", paciente.Telefono);
                     cmd.Parameters.AddWithValue("@sex", paciente.Sexo);
-                    cmd.Parameters.AddWithValue("@fecha", paciente.Fecha_Nacimiento);
+                    cmd.Parameters.AddWithValue("@fecha",paciente.Fecha_Nacimiento);
                     cmd.Parameters.AddWithValue("@dui", paciente.DUI);
                     cmd.Parameters.AddWithValue("@nit", paciente.NIT);
 
@@ -194,7 +194,7 @@ namespace PrototipoPED.ConexionBD
                         datos.Direccion = lector["direccion"].ToString();
                         datos.Telefono = lector["telefono"].ToString();
                         datos.Sexo = lector["sexo"].ToString();
-                        datos.Fecha_Nacimiento = lector["fechanacimiento"].ToString();
+                        datos.Fecha_Nacimiento = lector["fechanacimiento"].ToString(); ;
                         datos.DUI = lector["dui"].ToString();
                         datos.NIT = lector["nit"].ToString();
                         datos.Edad = lector["edad"].ToString();
