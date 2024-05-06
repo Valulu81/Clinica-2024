@@ -87,6 +87,8 @@ namespace PrototipoPED
 
         }
 
+        //Este es el que no funciona
+
         public void fechas(string codPaciente, string codMedico)
         {
             con.Open();
