@@ -52,19 +52,17 @@ namespace PrototipoPED
 
             // Construir la consulta SQL para obtener el código de la última cita del paciente
             string query = @"USE Clinica
-                        SELECT TOP 1 p.primerNombre, p.primerApellido, cm.codCita
+                        SELECT TOP 1 p.primerNombre, p.segundoNombre, p.primerApellido, p.segundoApellido, cm.codCita
                         FROM administracion.pacientes p
                         JOIN administracion.citasMedicas cm ON p.codPaciente = cm.codPaciente
-                        WHERE p.primerNombre = @PrimerNombre
-                        AND p.primerApellido = @PrimerApellido
+                        WHERE CONCAT(p.primerNombre, ' ', COALESCE(p.segundoNombre, ''), ' ', p.primerApellido, ' ', COALESCE(p.segundoApellido, '')) = @NombreCompleto
                         ORDER BY cm.fechaHora DESC";
 
             // Ejecutar la consulta SQL
             using (SqlConnection conn = new SqlConnection(ConecStr))
             {
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@PrimerNombre", nombres[0]);
-                cmd.Parameters.AddWithValue("@PrimerApellido", nombres[1]);
+                cmd.Parameters.AddWithValue("@NombreCompleto", nombreCompleto);
 
                 try
                 {
