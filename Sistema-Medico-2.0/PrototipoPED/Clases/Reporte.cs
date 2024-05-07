@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PrototipoPED.Clases
 {
-    internal class Reporte
+    public class Reporte
     {
         private string cod_Cita;
         private decimal peso;

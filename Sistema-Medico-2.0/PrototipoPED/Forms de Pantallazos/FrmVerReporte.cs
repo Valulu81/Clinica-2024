@@ -1,4 +1,5 @@
-﻿using PrototipoPED.ConexionBD;
+﻿using PrototipoPED.Clases;
+using PrototipoPED.ConexionBD;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,18 +18,17 @@ namespace PrototipoPED
         public FrmVerReporte()
         {
             InitializeComponent();
+            cmbDoctor.Enabled = false;
+            cmbFecha.Enabled = false;
             try
             {
-                datosP();
+                //datosP();
                 Conexion miconexion = new Conexion();
-                //miconexion.VerDatosPCombo(cmbPaciente);
+                miconexion.VerDatosPCombo(cmbPaciente);
                 //miconexion.VerDatosDCombo(cmbDoctor);
-                //cmbHorario.Items.AddRange(horarios);
             }
             catch { }
         }
-        String[] horarios = { "07:00:00", "07:30:00", "08:00:00", "08:30:00", "09:00:00", "09:30:00", "10:00:00", "10:30:00", "11:00:00", "11:30:00",
-        "13:00:00","13:30:00","14:00:00","14:30:00","15:00:00","15:30:00","16:00:00","16:30:00","17:00:00","17:30:00","18:00:00"};
 
         private void FrmVerReporte_Load(object sender, EventArgs e)
         {
@@ -40,97 +40,146 @@ namespace PrototipoPED
 
         }
 
-        SqlConnection con = new SqlConnection("data source=localhost; initial catalog=Clinica;" +
-        " persist security info=True; Integrated Security=SSPI; ");
-        public void datosP()
-            //Muestra los nombres del paciente
-        {
-            con.Open();
+        //SqlConnection con = new SqlConnection("data source=localhost; initial catalog=Clinica;" +
+        //" persist security info=True; Integrated Security=SSPI; ");
+
+        //public void datosP()
+        ////Muestra los nombres del paciente
+        //{
+        //    con.Open();
 
 
-            SqlCommand cmd = new SqlCommand("select CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as NombreCompleto, codPaciente  from administracion.pacientes", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            con.Close();
+        //    SqlCommand cmd = new SqlCommand("select CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as NombreCompleto, codPaciente  from administracion.pacientes", con);
+        //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //    DataTable dt = new DataTable();
+        //    da.Fill(dt);
+        //    con.Close();
 
-            DataRow fila = dt.NewRow();
-            fila["NombreCompleto"] = "Selecciona un paciente";
-            dt.Rows.InsertAt(fila, 0);
+        //    DataRow fila = dt.NewRow();
+        //    fila["NombreCompleto"] = "Selecciona un paciente";
+        //    dt.Rows.InsertAt(fila, 0);
 
-            cmbPaciente.ValueMember = "codPaciente";
-            cmbPaciente.DisplayMember = "NombreCompleto";
-            cmbPaciente.DataSource = dt;
+        //    cmbPaciente.ValueMember = "codPaciente";
+        //    cmbPaciente.DisplayMember = "NombreCompleto";
+        //    cmbPaciente.DataSource = dt;
 
 
-        }
-
+        //}
         public void datosM(string codPaciente)
         {
-            //Filtra los datos de los médicos relacionados a ese paciente
-            con.Open();
+            ////Filtra los datos de los médicos relacionados a ese paciente
+            //con.Open();
 
-            SqlCommand cmd = new SqlCommand("SELECT m.codMedico, concat(m.primerNombre,' ', m.primerApellido) as Nombre\r\nFROM personal.medicos AS m\r\nJOIN administracion.citasMedicas AS c\r\nON m.codMedico = c.codMedico where codPaciente=@codPaciente", con);
-            cmd.Parameters.AddWithValue("codPaciente", codPaciente);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            con.Close();
+            //SqlCommand cmd = new SqlCommand("SELECT  m.codMedico, concat(m.primerNombre,' ', m.primerApellido) as Nombre\r\nFROM personal.medicos AS m\r\nJOIN administracion.citasMedicas AS c\r\nON m.codMedico = c.codMedico where codPaciente=@codPaciente", con);
+            //cmd.Parameters.AddWithValue("codPaciente", codPaciente);
+            //SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //DataTable dt = new DataTable();
+            //da.Fill(dt);
+            //con.Close();
 
-            DataRow dr = dt.NewRow();
-            dr["Nombre"] = "Selecciona un médico";
-            dt.Rows.InsertAt(dr, 0);
+            //DataRow dr = dt.NewRow();
+            //dr["Nombre"] = "Selecciona un médico";
+            //dt.Rows.InsertAt(dr, 0);
 
-            cmbDoctor.ValueMember = "codMedico";
-            cmbDoctor.DisplayMember = "Nombre";
-            cmbDoctor.DataSource = dt;
+            //cmbDoctor.ValueMember = "codMedico";
+            //cmbDoctor.DisplayMember = "Nombre";
+            //cmbDoctor.DataSource = dt;
 
         }
-
-        //Este es el que no funciona
-
         public void fechas(string codPaciente, string codMedico)
         {
-            con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT c.codCita AS Codigo_Cita, c.fechaHora AS Fecha_Cita\r\nFROM administracion.citasMedicas AS c\r\nwhere codPaciente=@codPaciente and codMedico=@codMedico", con);
-            cmd.Parameters.AddWithValue("codPaciente", codPaciente);
-            cmd.Parameters.AddWithValue("codMedico", codMedico);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            con.Close();
+            //con.Open();
+            //SqlCommand cmd = new SqlCommand("SELECT m.codMedico, FechaHora, concat(m.primerNombre,' ', m.primerApellido) as Nombre FROM personal.medicos m " +
+            //  "JOIN administracion.citasMedicas  c "+
+            //  "ON m.codMedico = c.codMedico "+
+            //  "where c.codPaciente = @codPaciente", con);
+            //cmd.Parameters.AddWithValue("@codPaciente", codPaciente);
+            //cmd.Parameters.AddWithValue("@codMedico", codMedico);
+            //SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //DataTable dt = new DataTable();
+            //da.Fill(dt);
+            //con.Close();
 
       
 
 
-            cmbFecha.ValueMember ="codCita";
-            cmbFecha.DisplayMember = "Fecha_Cita";
-            cmbFecha.DataSource = dt;
+            //cmbFecha.ValueMember ="codCita";
+            //cmbFecha.DisplayMember = "FechaHora";
+            //cmbFecha.DataSource = dt;
 
 
         }
-
         //Eventos de cada combobox
-
         private void cmbPaciente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbPaciente.SelectedValue.ToString() != null)
+            cmbDoctor.SelectedIndex = -1;
+            cmbDoctor.Enabled = true;
+            cmbFecha .SelectedIndex = -1;
+            cmbFecha .Enabled =false;
+            Conexion miConexion = new Conexion();
+
+            try
             {
-                string codPaciente = cmbPaciente.SelectedValue.ToString();
-                datosM(codPaciente);
+                miConexion.VerDatosDDCombo(cmbDoctor, cmbPaciente.Text);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
 
+            }
+            //if (cmbPaciente.SelectedValue.ToString() != null)
+            //{
+            //    string codPaciente = cmbPaciente.SelectedValue.ToString();
+            //    datosM(codPaciente);
+            //}
         }
-
         private void cmbDoctor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbDoctor.SelectedValue.ToString() != null)
+            cmbFecha.SelectedIndex = -1;
+            cmbFecha.Enabled = true;
+            Conexion miConexion = new Conexion();
+
+            try
             {
-                string codPaciente = cmbDoctor.SelectedValue.ToString();
-                string codMedico = cmbDoctor.SelectedValue.ToString();
-                fechas(codPaciente, codMedico);
+                miConexion.VerDatosFCombo(cmbFecha, cmbDoctor.Text, cmbPaciente.Text);
+                //miConexion.VerDatosDDCombo(cmbDoctor, cmbPaciente.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
             }
 
+            //if (cmbDoctor.SelectedValue.ToString() != null)
+            //{
+            //    string codPaciente = cmbDoctor.SelectedValue.ToString();
+            //    string codMedico = cmbDoctor.SelectedValue.ToString();
+            //    fechas(codPaciente, codMedico);
+            //}
+
+        }
+        private void cmbFecha_Click(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //    Conexion miconexion = new Conexion();
+            //    miconexion.VerDatosFCombo(cmbFecha, cmbDoctor.Text, cmbPaciente.Text);
+                
+            //}
+            //catch { }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Conexion miConexion = new Conexion();
+            Reporte miReporte = new Reporte();
+            miReporte = miConexion.VerReporte(cmbPaciente.Text, cmbDoctor.Text, cmbFecha.Text);
+            txtDiagnostico.Text = miReporte.Diagnostico;
+            txtEstatura.Text = (miReporte.Talla).ToString();
+            txtMotivo.Text= miReporte.Motivo;
+            txtPeso.Text = (miReporte.Peso).ToString();
+            txtPresion.Text = miReporte.Presion_Arterial;
+            txtTemperatura.Text = (miReporte.Temperatura).ToString();
         }
     }
 }

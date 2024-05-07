@@ -117,6 +117,7 @@
             this.cmbPaciente.Name = "cmbPaciente";
             this.cmbPaciente.Size = new System.Drawing.Size(296, 28);
             this.cmbPaciente.TabIndex = 48;
+            this.cmbPaciente.SelectedIndexChanged += new System.EventHandler(this.cmbPaciente_SelectedIndexChanged);
             // 
             // label2
             // 

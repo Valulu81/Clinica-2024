@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Shapes;
 
 namespace PrototipoPED.ConexionBD
@@ -161,7 +162,157 @@ namespace PrototipoPED.ConexionBD
 
             }
         }
+        public void VerDatosFCombo(System.Windows.Forms.ComboBox caja, string medico, string paciente)
+        {
+            try
+            {
+                string[] parte_pac = paciente.Split(' ');
+                string[] parte_doc = medico.Split(' ');
+                string query = "declare @codPaciente varchar(8) " +
+                                "declare @codMedico varchar(8) " +
+                                "select @codPaciente= codpaciente from administracion.pacientes" +
+                                " where  primernombre= '" + parte_pac[0] +
+                                "' and segundonombre='" + parte_pac[1] +
+                                "' and primerapellido='" + parte_pac[2] +
+                                "' and segundoapellido='" + parte_pac[3] + "' " +
+                                " select @codMedico =codmedico from personal.medicos" +
+                                " where  primernombre= '" + parte_doc[0] +
+                                "' and primerapellido='" + parte_doc[1] +
 
+                                "' SELECT m.codMedico, FechaHora, concat(m.primerNombre,' ', " +
+                                "m.primerApellido) as Nombre FROM personal.medicos m " +
+                                "JOIN administracion.citasMedicas  c " +
+                                "ON m.codMedico = c.codMedico " +
+                                "join administracion.pacientes p " +
+                                "on p.codPaciente = c.codPaciente " +
+                                "where c.codPaciente = @codPaciente and m.codMedico=@codMedico";
+
+                using (SqlConnection conn = new SqlConnection(ConecStr))
+                {
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    conn.Open();
+                    SqlDataReader lector;
+                    lector = cmd.ExecuteReader();
+                    caja.Items.Clear();
+                    while (lector.Read())
+                    {
+                        DateTime fecha = lector.GetDateTime(1);
+                        caja.Items.Add(fecha.ToString());
+                    }
+                    conn.Close();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Hay un error en la bd: " + ex.Message);
+            }
+        }
+        public void VerDatosDDCombo(System.Windows.Forms.ComboBox caja, string paciente)
+        {
+            try
+            {
+                string[] parte_pac = paciente.Split(' ');
+                string query = "declare @codPaciente varchar(8) " +                                
+                                "select  @codPaciente= codpaciente from administracion.pacientes" +
+                                " where  primernombre= '" + parte_pac[0] +
+                                "' and segundonombre='" + parte_pac[1] +
+                                "' and primerapellido='" + parte_pac[2] +
+                                "' and segundoapellido='" + parte_pac[3] + "' " +
+
+
+                                " SELECT distinct concat(m.primerNombre,' ', m.primerApellido) as Nombre FROM personal.medicos m " +
+                                "JOIN administracion.citasMedicas  c " +
+                                "ON m.codMedico = c.codMedico " +                               
+                                "where c.codPaciente = @codPaciente";
+
+                using (SqlConnection conn = new SqlConnection(ConecStr))
+                {
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    conn.Open();
+                    SqlDataReader lector;
+                    lector = cmd.ExecuteReader();
+                    caja.Items.Clear();
+                    while (lector.Read())
+                    {
+                        caja.Items.Add(lector.GetString(0));
+                    }
+                    conn.Close();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Hay un error en la bd: " + ex.Message);
+            }
+        }
+
+        public Reporte VerReporte(string paciente, string medico, string fecha)
+        {
+            string[] parte_pac = paciente.Split(' ');
+            string[] parte_doc = medico.Split(' ');
+            string query = "declare @codPaciente varchar(8) " +
+                            "declare @codMedico varchar(8) " +
+                            "declare @fecha varchar(23) " +
+                            "select @codPaciente= codpaciente from administracion.pacientes" +
+                            " where  primernombre= '" + parte_pac[0] +
+                            "' and segundonombre='" + parte_pac[1] +
+                            "' and primerapellido='" + parte_pac[2] +
+                            "' and segundoapellido='" + parte_pac[3] + "' " +
+                            " select @codMedico =codmedico from personal.medicos" +
+                            " where  primernombre= '" + parte_doc[0] +
+                            "' and primerapellido='" + parte_doc[1] +
+                            " select @fecha = '"+ fecha+"' "+
+
+                            "' select peso, estatura, presionArterial, temperatura, motivo, diagnostico from medico.signosvitales s" +
+                            "JOIN medico.reporte r " +
+                            "ON r.codReporte=s.codReporte " +
+                            "join administracion.pacientes p " +
+                            "on p.codPaciente = c.codPaciente " +
+                            "join administracion.citasMedicas c"+
+                            "on c.codcita=r.codcita"+
+                            "where c.codPaciente = @codPaciente and m.codMedico=@codMedico and c.fechaHora=@fecha";
+
+            using (SqlConnection conn = new SqlConnection(ConecStr))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                try
+                {
+                    conn.Open();
+                    SqlDataReader lector;
+                    lector = cmd.ExecuteReader();
+                    Reporte datos = new Reporte();
+
+                    if (lector.Read())//si hay datos
+                    {                        
+                        datos.Peso = Convert.ToDecimal( lector["peso"]);
+                        datos.Talla = Convert.ToDecimal(lector["estatura"]);
+                        datos.Presion_Arterial = lector["motivo"].ToString();
+                        datos.Temperatura = Convert.ToDecimal(lector["temperatura"]);
+                        datos.Motivo = lector["motivo"].ToString();
+                        datos.Diagnostico = lector["diagnostico"].ToString();
+                        
+                        conn.Close();
+                        return datos;
+
+                    }
+                    else
+                    {
+                        return null;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception("Hay un error en la bd: " + ex.Message);
+                }
+
+
+            }
+
+
+        }
         public Paciente DatosPaciente(string nombre_comp)
         {
             string[] partes = nombre_comp.Split(' ');//desgloso el nombre
@@ -278,28 +429,27 @@ namespace PrototipoPED.ConexionBD
 
             }
         }
-
         //Mi obra de artee
-        public void AgregarCita(string Ndoctor, string Npaciente, string FechaHora)
+        public void AgregarCita(string NPaciente, string NDoctor, string FechaHora)
         {
-            string[] doc = Ndoctor.Split(' ');//desgloso el nombre
-            string[] pac = Npaciente.Split(' ');//desgloso el nombre
+            string[] pac = NPaciente.Split(' ');//desgloso el nombre
+            string[] doc = NDoctor.Split(' ');//desgloso el nombre
             string query = "declare @codPaciente varchar(8) " +
                 "declare @codMedico varchar(8) " +
                 "declare @especialidad varchar(8) " +
                 "select @codPaciente = codpaciente from administracion.pacientes" +
-                " where  primernombre= '" + doc[0] +
-                "' and segundonombre='" + doc[1] +
-                "' and primerapellido='" + doc[2] +
-                "' and segundoapellido='" + doc[3]+"' "+
+                " where  primernombre= '" + pac[0] +
+                "' and segundonombre='" + pac[1] +
+                "' and primerapellido='" + pac[2] +
+                "' and segundoapellido='" + pac[3]+"' "+
 
                 "select @codMedico= codMedico from personal.medicos" +
-                " where  primernombre= '" + pac[0] +
-                "' and primerapellido= '" + pac[1] +"'" +
+                " where  primernombre= '" + doc[0] +
+                "' and primerapellido= '" + doc[1] +"'" +
 
                 "select @especialidad= especialidad from personal.medicos" +
-                " where  primernombre= '" + pac[0] +
-                "' and primerapellido= '" + pac[1] + "'" +
+                " where  primernombre= '" + doc[0] +
+                "' and primerapellido= '" + doc[1] + "'" +
 
                 "exec administracion.IngresarCita " +
                 " @codPaciente,@codMedico,@fechaHora,@especialidad";

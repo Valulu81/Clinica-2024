@@ -97,5 +97,10 @@ namespace PrototipoPED
         {
 
         }
+
+        private void cmbPaciente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
