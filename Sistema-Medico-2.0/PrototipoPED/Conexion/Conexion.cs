@@ -266,7 +266,7 @@ namespace PrototipoPED.ConexionBD
                             "' and primerapellido='" + parte_doc[1] +
                             " select @fecha = '"+ fecha+"' "+
 
-                            "' select peso, estatura, presionArterial, temperatura, motivo, diagnostico from medico.signosvitales s" +
+                            "' select peso, talla, presionArterial, temperatura, motivo, diagnostico from medico.signosvitales s" +
                             "JOIN medico.reporte r " +
                             "ON r.codReporte=s.codReporte " +
                             "join administracion.pacientes p " +
@@ -288,7 +288,7 @@ namespace PrototipoPED.ConexionBD
                     if (lector.Read())//si hay datos
                     {                        
                         datos.Peso = Convert.ToDecimal( lector["peso"]);
-                        datos.Talla = Convert.ToDecimal(lector["estatura"]);
+                        datos.Talla = Convert.ToDecimal(lector["talla"]);
                         datos.Presion_Arterial = lector["motivo"].ToString();
                         datos.Temperatura = Convert.ToDecimal(lector["temperatura"]);
                         datos.Motivo = lector["motivo"].ToString();
