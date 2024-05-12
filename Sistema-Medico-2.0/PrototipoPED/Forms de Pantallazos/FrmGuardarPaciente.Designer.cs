@@ -45,7 +45,6 @@
             this.cmbZona = new System.Windows.Forms.ComboBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtApellido2 = new System.Windows.Forms.TextBox();
             this.txtApellido1 = new System.Windows.Forms.TextBox();
             this.txtNombre2 = new System.Windows.Forms.TextBox();
             this.txtNombre1 = new System.Windows.Forms.TextBox();
@@ -57,6 +56,7 @@
             this.txtAño = new System.Windows.Forms.MaskedTextBox();
             this.cmbDia = new System.Windows.Forms.ComboBox();
             this.cmbMes = new System.Windows.Forms.ComboBox();
+            this.txtApellido2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnGuardar
@@ -115,6 +115,7 @@
             this.rbtnFemenino.Name = "rbtnFemenino";
             this.rbtnFemenino.TabStop = true;
             this.rbtnFemenino.UseVisualStyleBackColor = true;
+            this.rbtnFemenino.CheckedChanged += new System.EventHandler(this.rbtnFemenino_CheckedChanged);
             // 
             // label4
             // 
@@ -128,6 +129,7 @@
             this.rbtnMasculino.Name = "rbtnMasculino";
             this.rbtnMasculino.TabStop = true;
             this.rbtnMasculino.UseVisualStyleBackColor = true;
+            this.rbtnMasculino.CheckedChanged += new System.EventHandler(this.rbtnMasculino_CheckedChanged);
             // 
             // label3
             // 
@@ -165,20 +167,13 @@
             resources.ApplyResources(this.txtDireccion, "txtDireccion");
             this.txtDireccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
             // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.label2.Name = "label2";
-            // 
-            // txtApellido2
-            // 
-            this.txtApellido2.BackColor = System.Drawing.Color.White;
-            this.txtApellido2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.txtApellido2, "txtApellido2");
-            this.txtApellido2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
-            this.txtApellido2.Name = "txtApellido2";
             // 
             // txtApellido1
             // 
@@ -187,6 +182,8 @@
             resources.ApplyResources(this.txtApellido1, "txtApellido1");
             this.txtApellido1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.txtApellido1.Name = "txtApellido1";
+            this.txtApellido1.TextChanged += new System.EventHandler(this.txtApellido1_TextChanged);
+            this.txtApellido1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido1_KeyPress);
             // 
             // txtNombre2
             // 
@@ -195,6 +192,8 @@
             resources.ApplyResources(this.txtNombre2, "txtNombre2");
             this.txtNombre2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.txtNombre2.Name = "txtNombre2";
+            this.txtNombre2.TextChanged += new System.EventHandler(this.txtNombre2_TextChanged);
+            this.txtNombre2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre2_KeyPress);
             // 
             // txtNombre1
             // 
@@ -203,6 +202,8 @@
             resources.ApplyResources(this.txtNombre1, "txtNombre1");
             this.txtNombre1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.txtNombre1.Name = "txtNombre1";
+            this.txtNombre1.TextChanged += new System.EventHandler(this.txtNombre1_TextChanged);
+            this.txtNombre1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre1_KeyPress);
             // 
             // label1
             // 
@@ -215,6 +216,7 @@
             resources.ApplyResources(this.txtTelefono, "txtTelefono");
             this.txtTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
             // 
             // label8
             // 
@@ -239,6 +241,8 @@
             resources.ApplyResources(this.txtAño, "txtAño");
             this.txtAño.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.txtAño.Name = "txtAño";
+            this.txtAño.TextChanged += new System.EventHandler(this.txtAño_TextChanged);
+            this.txtAño.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAño_KeyPress);
             // 
             // cmbDia
             // 
@@ -255,12 +259,24 @@
             this.cmbMes.FormattingEnabled = true;
             this.cmbMes.Name = "cmbMes";
             this.cmbMes.UseWaitCursor = true;
+            this.cmbMes.SelectedIndexChanged += new System.EventHandler(this.cmbMes_SelectedIndexChanged);
+            // 
+            // txtApellido2
+            // 
+            this.txtApellido2.BackColor = System.Drawing.Color.White;
+            this.txtApellido2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txtApellido2, "txtApellido2");
+            this.txtApellido2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
+            this.txtApellido2.Name = "txtApellido2";
+            this.txtApellido2.TextChanged += new System.EventHandler(this.txtApellido2_TextChanged_1);
+            this.txtApellido2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido2_KeyPress);
             // 
             // FrmGuardarPaciente
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(230)))), ((int)(((byte)(247)))));
+            this.Controls.Add(this.txtApellido2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
@@ -284,13 +300,13 @@
             this.Controls.Add(this.cmbZona);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtApellido2);
             this.Controls.Add(this.txtApellido1);
             this.Controls.Add(this.txtNombre2);
             this.Controls.Add(this.txtNombre1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmGuardarPaciente";
+            this.Load += new System.EventHandler(this.FrmGuardarPaciente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,7 +330,6 @@
         private System.Windows.Forms.ComboBox cmbZona;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtApellido2;
         private System.Windows.Forms.TextBox txtApellido1;
         private System.Windows.Forms.TextBox txtNombre2;
         private System.Windows.Forms.TextBox txtNombre1;
@@ -326,5 +341,6 @@
         private System.Windows.Forms.MaskedTextBox txtAño;
         private System.Windows.Forms.ComboBox cmbDia;
         private System.Windows.Forms.ComboBox cmbMes;
+        private System.Windows.Forms.TextBox txtApellido2;
     }
 }

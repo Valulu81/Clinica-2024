@@ -239,6 +239,7 @@ namespace PrototipoPED.Forms_de_Pantallazos
 
         private void mtxtTelefono_TextChanged(object sender, EventArgs e)
         {
+            
             if (!string.IsNullOrEmpty(txNombre.Text) && !string.IsNullOrEmpty(txtApellido.Text) && mtxtTelefono.MaskCompleted)
             {
                 cmbEspecialidad.Enabled = true;
@@ -247,8 +248,10 @@ namespace PrototipoPED.Forms_de_Pantallazos
             {
                 cmbEspecialidad.Enabled = false;
             }
+
+            
         }
 
-
+        
     }
 }

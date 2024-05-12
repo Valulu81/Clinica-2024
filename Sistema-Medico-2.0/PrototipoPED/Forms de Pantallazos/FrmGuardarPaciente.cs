@@ -245,7 +245,273 @@ namespace PrototipoPED
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
+            //Para que al borrar, se limpien
+            cmbZona.SelectedIndex = -1;
+            cmbDepartamento.SelectedIndex = -1;
+            cmbMunicipio.SelectedIndex = -1;
+
             Limpiar(); 
         }
+
+        private void txtNombre1_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtNombre1.Text))
+            {
+                // Convierte la primera letra a mayúsculas y el resto a minúsculas
+                txtNombre1.Text = char.ToUpper(txtNombre1.Text[0]) + txtNombre1.Text.Substring(1).ToLower();
+
+                // Mueve el cursor al final del texto
+                txtNombre1.SelectionStart = txtNombre1.Text.Length;
+            }
+            CheckInputs();
+        }
+
+        private void txtNombre2_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtNombre2.Text))
+            {
+                // Convierte la primera letra a mayúsculas y el resto a minúsculas
+                txtNombre2.Text = char.ToUpper(txtNombre2.Text[0]) + txtNombre2.Text.Substring(1).ToLower();
+
+                // Mueve el cursor al final del texto
+                txtNombre2.SelectionStart = txtNombre2.Text.Length;
+            }
+
+        }
+
+        private void txtApellido1_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtApellido1.Text))
+            {
+                // Convierte la primera letra a mayúsculas y el resto a minúsculas
+                txtApellido1.Text = char.ToUpper(txtApellido1.Text[0]) + txtApellido1.Text.Substring(1).ToLower();
+
+                // Mueve el cursor al final del texto
+                txtApellido1.SelectionStart = txtApellido1.Text.Length;
+            }
+
+            CheckInputs();
+        }
+
+        
+
+        private void txtApellido2_TextChanged_1(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtApellido2.Text))
+            {
+                // Convierte la primera letra a mayúsculas y el resto a minúsculas
+                txtApellido2.Text = char.ToUpper(txtApellido2.Text[0]) + txtApellido2.Text.Substring(1).ToLower();
+
+                // Mueve el cursor al final del texto
+                txtApellido2.SelectionStart = txtApellido2.Text.Length;
+            }
+        }
+
+        private void txtNombre1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+            if (char.IsWhiteSpace(e.KeyChar))
+            {
+                // Cancela la entrada del carácter
+                e.Handled = true;
+            }
+        }
+
+        private void txtNombre2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+            if (char.IsWhiteSpace(e.KeyChar))
+            {
+                // Cancela la entrada del carácter
+                e.Handled = true;
+            }
+        }
+
+        private void txtApellido1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+            if (char.IsWhiteSpace(e.KeyChar))
+            {
+                // Cancela la entrada del carácter
+                e.Handled = true;
+            }
+        }
+
+        private void txtApellido2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
+            if (char.IsWhiteSpace(e.KeyChar))
+            {
+                // Cancela la entrada del carácter
+                e.Handled = true;
+            }
+        }
+
+        private void FrmGuardarPaciente_Load(object sender, EventArgs e)
+        {   //Orden del tab Index
+            txtNombre1.TabIndex = 0;
+            txtNombre2.TabIndex = 1;
+            txtApellido1.TabIndex = 2;
+            txtApellido2.TabIndex = 3;
+            cmbZona.TabIndex = 4;
+            cmbDepartamento.TabIndex = 5;
+            cmbMunicipio.TabIndex = 6;
+            txtDireccion.TabIndex = 7;
+            txtTelefono.TabIndex = 8;
+            rbtnMasculino.TabIndex = 9;
+            rbtnFemenino.TabIndex   = 10;
+            cmbDia.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbDepartamento.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbZona.DropDownStyle = ComboBoxStyle.DropDownList;
+            txtTelefono.Enabled = false;
+            cmbZona.Enabled = false;
+
+            rbtnFemenino.Enabled = false;
+            rbtnMasculino.Enabled = false;
+            txtAño.Enabled = false;
+            cmbMes.Enabled = false;
+            cmbDia.Enabled = false;
+           
+            
+
+        }
+
+        private void CheckInputs()
+        {
+            if (!string.IsNullOrEmpty(txtNombre1.Text) &&  !string.IsNullOrEmpty(txtApellido1.Text))
+            {
+                // Habilita el ComboBox
+                cmbZona.Enabled = true;
+            }
+            else
+            {
+                // Deshabilita el ComboBox
+                cmbZona.Enabled = false;
+            }
+
+            
+        }
+
+        private void txtDireccion_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtDireccion.Text))
+            {
+                // Convierte la primera letra a mayúsculas y el resto a minúsculas
+                txtDireccion.Text = char.ToUpper(txtDireccion.Text[0]) + txtDireccion.Text.Substring(1).ToLower();
+
+                // Mueve el cursor al final del texto
+                txtDireccion.SelectionStart = txtDireccion.Text.Length;
+            }
+            CheckInputs2();
+        }
+
+        private void CheckInputs2()
+        {
+            if (!string.IsNullOrEmpty(txtDireccion.Text))
+            {
+                // Habilita el ComboBox
+                txtTelefono.Enabled = true;
+            }
+            else
+            {
+                // Deshabilita el ComboBox
+                txtTelefono.Enabled = false;
+            }
+        }
+
+        private void txtTelefono_TextChanged(object sender, EventArgs e)
+        {
+            CheckInputs2();
+            // Verifica si el TextBox está lleno
+            if (!string.IsNullOrEmpty(txtTelefono.Text))
+            {
+                // Habilita el RadioButton
+                rbtnFemenino.Enabled = true;
+                rbtnMasculino.Enabled = true;
+            }
+            else
+            {
+                // Deshabilita el RadioButton
+                rbtnMasculino.Enabled = false;
+                rbtnFemenino.Enabled=false;
+            }
+        }
+
+        private void txtAño_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsWhiteSpace(e.KeyChar))
+            {
+                // Cancela la entrada del carácter
+                e.Handled = true;
+            }
+        }
+
+        private void rbtnMasculino_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnMasculino.Checked)
+            {
+                txtAño.Enabled = true;
+            }
+            else
+            {
+                // Si no está seleccionado, deshabilita el textbox
+                txtAño.Enabled = false;
+            }
+
+        }
+
+        private void rbtnFemenino_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbtnFemenino.Checked)
+            {
+                txtAño.Enabled = true;
+            }
+            else
+            {
+                // Si no está seleccionado, deshabilita el textbox
+                txtAño.Enabled = false;
+            }
+        }
+
+        private void txtAño_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtAño.Text))
+            {
+                cmbMes.Enabled = true;
+            }
+            else
+            {
+                // Si el TextBox está vacío, deshabilita el ComboBox
+                cmbDia.Enabled = false;
+            }
+        }
+
+        private void cmbMes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbMes.SelectedIndex != -1)
+            {
+                cmbDia.Enabled = true;
+            }
+            else
+            {
+                // Si ComboBox1 no tiene ningún elemento seleccionado, deshabilita el ComboBox2
+                cmbDia.Enabled = false;
+            }
+        }
+
+        //Para que no acepte espacios en blanco
+
     }
 }

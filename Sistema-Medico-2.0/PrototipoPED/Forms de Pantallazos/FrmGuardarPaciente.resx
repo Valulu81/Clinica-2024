@@ -129,10 +129,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnGuardar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>723, 300</value>
+    <value>964, 369</value>
+  </data>
+  <data name="btnGuardar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnGuardar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 37</value>
+    <value>116, 46</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnGuardar.TabIndex" type="System.Int32, mscorlib">
@@ -151,7 +154,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnGuardar.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="btnBorrar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -163,10 +166,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnBorrar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>617, 300</value>
+    <value>823, 369</value>
+  </data>
+  <data name="btnBorrar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="btnBorrar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 37</value>
+    <value>116, 46</value>
   </data>
   <data name="btnBorrar.TabIndex" type="System.Int32, mscorlib">
     <value>106</value>
@@ -184,19 +190,22 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnBorrar.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="txtNit.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="txtNit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>499, 209</value>
+    <value>665, 257</value>
+  </data>
+  <data name="txtNit.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="txtNit.Mask" xml:space="preserve">
     <value>0000-000000-000-0</value>
   </data>
   <data name="txtNit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 26</value>
+    <value>224, 30</value>
   </data>
   <data name="txtNit.TabIndex" type="System.Int32, mscorlib">
     <value>103</value>
@@ -211,7 +220,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtNit.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -220,10 +229,13 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>495, 188</value>
+    <value>660, 231</value>
+  </data>
+  <data name="label7.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
+    <value>47, 25</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>102</value>
@@ -244,19 +256,22 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="txtDui.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="txtDui.Location" type="System.Drawing.Point, System.Drawing">
-    <value>499, 161</value>
+    <value>665, 198</value>
+  </data>
+  <data name="txtDui.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="txtDui.Mask" xml:space="preserve">
     <value>00000000-0</value>
   </data>
   <data name="txtDui.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 26</value>
+    <value>155, 30</value>
   </data>
   <data name="txtDui.TabIndex" type="System.Int32, mscorlib">
     <value>101</value>
@@ -271,7 +286,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtDui.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -280,10 +295,13 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>495, 135</value>
+    <value>660, 166</value>
+  </data>
+  <data name="label6.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 20</value>
+    <value>48, 25</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>100</value>
@@ -304,7 +322,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -313,10 +331,13 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>495, 34</value>
+    <value>660, 42</value>
+  </data>
+  <data name="label5.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 20</value>
+    <value>212, 25</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>98</value>
@@ -337,7 +358,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="rbtnFemenino.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -346,10 +367,13 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="rbtnFemenino.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 314</value>
+    <value>212, 386</value>
+  </data>
+  <data name="rbtnFemenino.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="rbtnFemenino.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 20</value>
+    <value>111, 24</value>
   </data>
   <data name="rbtnFemenino.TabIndex" type="System.Int32, mscorlib">
     <value>97</value>
@@ -367,7 +391,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rbtnFemenino.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -376,10 +400,13 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 289</value>
+    <value>37, 356</value>
+  </data>
+  <data name="label4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 20</value>
+    <value>62, 25</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>96</value>
@@ -400,7 +427,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="rbtnMasculino.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -409,10 +436,13 @@
     <value>Microsoft Sans Serif, 9.75pt, style=Bold</value>
   </data>
   <data name="rbtnMasculino.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 314</value>
+    <value>43, 386</value>
+  </data>
+  <data name="rbtnMasculino.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="rbtnMasculino.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 20</value>
+    <value>115, 24</value>
   </data>
   <data name="rbtnMasculino.TabIndex" type="System.Int32, mscorlib">
     <value>95</value>
@@ -430,7 +460,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;rbtnMasculino.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -439,10 +469,13 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 219</value>
+    <value>37, 270</value>
+  </data>
+  <data name="label3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 20</value>
+    <value>97, 25</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>93</value>
@@ -463,7 +496,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="cmbMunicipio.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -472,10 +505,13 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="cmbMunicipio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>285, 127</value>
+    <value>380, 156</value>
+  </data>
+  <data name="cmbMunicipio.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="cmbMunicipio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 28</value>
+    <value>159, 33</value>
   </data>
   <data name="cmbMunicipio.TabIndex" type="System.Int32, mscorlib">
     <value>92</value>
@@ -490,7 +526,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cmbMunicipio.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="cmbDepartamento.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -499,10 +535,13 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="cmbDepartamento.Location" type="System.Drawing.Point, System.Drawing">
-    <value>159, 127</value>
+    <value>212, 156</value>
+  </data>
+  <data name="cmbDepartamento.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="cmbDepartamento.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 28</value>
+    <value>159, 33</value>
   </data>
   <data name="cmbDepartamento.TabIndex" type="System.Int32, mscorlib">
     <value>91</value>
@@ -517,16 +556,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cmbDepartamento.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="cmbZona.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="cmbZona.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 127</value>
+    <value>43, 156</value>
+  </data>
+  <data name="cmbZona.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="cmbZona.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 28</value>
+    <value>159, 33</value>
   </data>
   <data name="cmbZona.TabIndex" type="System.Int32, mscorlib">
     <value>90</value>
@@ -541,7 +583,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cmbZona.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="txtDireccion.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -550,13 +592,16 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="txtDireccion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 165</value>
+    <value>43, 203</value>
+  </data>
+  <data name="txtDireccion.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="txtDireccion.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="txtDireccion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>373, 51</value>
+    <value>497, 63</value>
   </data>
   <data name="txtDireccion.TabIndex" type="System.Int32, mscorlib">
     <value>89</value>
@@ -571,7 +616,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtDireccion.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -580,10 +625,13 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 102</value>
+    <value>37, 126</value>
+  </data>
+  <data name="label2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 20</value>
+    <value>102, 25</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>88</value>
@@ -604,49 +652,22 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>22</value>
-  </data>
-  <data name="txtApellido2.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
-  </data>
-  <data name="txtApellido2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>371, 64</value>
-  </data>
-  <data name="txtApellido2.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="txtApellido2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 28</value>
-  </data>
-  <data name="txtApellido2.TabIndex" type="System.Int32, mscorlib">
-    <value>87</value>
-  </data>
-  <data name="txtApellido2.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;txtApellido2.Name" xml:space="preserve">
-    <value>txtApellido2</value>
-  </data>
-  <data name="&gt;&gt;txtApellido2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txtApellido2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;txtApellido2.ZOrder" xml:space="preserve">
     <value>23</value>
   </data>
   <data name="txtApellido1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="txtApellido1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>258, 64</value>
+    <value>344, 79</value>
+  </data>
+  <data name="txtApellido1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="txtApellido1.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="txtApellido1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 28</value>
+    <value>143, 34</value>
   </data>
   <data name="txtApellido1.TabIndex" type="System.Int32, mscorlib">
     <value>86</value>
@@ -670,13 +691,16 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="txtNombre2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>145, 64</value>
+    <value>193, 79</value>
+  </data>
+  <data name="txtNombre2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="txtNombre2.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="txtNombre2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 28</value>
+    <value>143, 34</value>
   </data>
   <data name="txtNombre2.TabIndex" type="System.Int32, mscorlib">
     <value>85</value>
@@ -700,13 +724,16 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="txtNombre1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 64</value>
+    <value>43, 79</value>
+  </data>
+  <data name="txtNombre1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="txtNombre1.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="txtNombre1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 28</value>
+    <value>143, 34</value>
   </data>
   <data name="txtNombre1.TabIndex" type="System.Int32, mscorlib">
     <value>84</value>
@@ -733,10 +760,13 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 34</value>
+    <value>37, 42</value>
+  </data>
+  <data name="label1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 20</value>
+    <value>180, 25</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>83</value>
@@ -763,13 +793,16 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="txtTelefono.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 242</value>
+    <value>43, 298</value>
+  </data>
+  <data name="txtTelefono.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="txtTelefono.Mask" xml:space="preserve">
     <value>0000-0000</value>
   </data>
   <data name="txtTelefono.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 26</value>
+    <value>155, 30</value>
   </data>
   <data name="txtTelefono.TabIndex" type="System.Int32, mscorlib">
     <value>108</value>
@@ -784,7 +817,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtTelefono.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -793,10 +826,13 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>709, 64</value>
+    <value>945, 79</value>
+  </data>
+  <data name="label8.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 20</value>
+    <value>44, 25</value>
   </data>
   <data name="label8.TabIndex" type="System.Int32, mscorlib">
     <value>114</value>
@@ -817,7 +853,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -826,10 +862,13 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>582, 64</value>
+    <value>776, 79</value>
+  </data>
+  <data name="label9.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 20</value>
+    <value>53, 25</value>
   </data>
   <data name="label9.TabIndex" type="System.Int32, mscorlib">
     <value>113</value>
@@ -850,7 +889,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -859,10 +898,13 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="label10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>495, 64</value>
+    <value>660, 79</value>
+  </data>
+  <data name="label10.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 20</value>
+    <value>51, 25</value>
   </data>
   <data name="label10.TabIndex" type="System.Int32, mscorlib">
     <value>112</value>
@@ -883,19 +925,22 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="txtAño.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="txtAño.Location" type="System.Drawing.Point, System.Drawing">
-    <value>499, 89</value>
+    <value>665, 110</value>
+  </data>
+  <data name="txtAño.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="txtAño.Mask" xml:space="preserve">
     <value>0000</value>
   </data>
   <data name="txtAño.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 26</value>
+    <value>107, 30</value>
   </data>
   <data name="txtAño.TabIndex" type="System.Int32, mscorlib">
     <value>111</value>
@@ -913,16 +958,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtAño.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="cmbDia.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="cmbDia.Location" type="System.Drawing.Point, System.Drawing">
-    <value>713, 89</value>
+    <value>951, 110</value>
+  </data>
+  <data name="cmbDia.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="cmbDia.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 28</value>
+    <value>103, 33</value>
   </data>
   <data name="cmbDia.TabIndex" type="System.Int32, mscorlib">
     <value>110</value>
@@ -937,16 +985,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cmbDia.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="cmbMes.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="cmbMes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>586, 89</value>
+    <value>781, 110</value>
+  </data>
+  <data name="cmbMes.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="cmbMes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 28</value>
+    <value>160, 33</value>
   </data>
   <data name="cmbMes.TabIndex" type="System.Int32, mscorlib">
     <value>109</value>
@@ -961,16 +1012,52 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cmbMes.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
+  </data>
+  <data name="txtApellido2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  </data>
+  <data name="txtApellido2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>495, 79</value>
+  </data>
+  <data name="txtApellido2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="txtApellido2.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtApellido2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 34</value>
+  </data>
+  <data name="txtApellido2.TabIndex" type="System.Int32, mscorlib">
+    <value>115</value>
+  </data>
+  <data name="txtApellido2.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txtApellido2.Name" xml:space="preserve">
+    <value>txtApellido2</value>
+  </data>
+  <data name="&gt;&gt;txtApellido2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtApellido2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtApellido2.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>8, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>838, 371</value>
+    <value>1117, 457</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>FmrIngresoDatosPaciente</value>
