@@ -17,29 +17,12 @@ namespace PrototipoPED
         public S()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             Conexion conexion = new Conexion();
             conexion.VerDatosPCombo(cmbPaciente);
         }
 
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FrmCrearReporte_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private string ConecStr = "data source=localhost; initial catalog=Clinica;" +
        " persist security info=True; Integrated Security=SSPI; ";

@@ -15,12 +15,10 @@ namespace PrototipoPED.Forms_de_Pantallazos
         public FrmCrearGrafica()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
+  
 
         private void btnreporte_Click(object sender, EventArgs e)
         {

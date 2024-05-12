@@ -15,11 +15,14 @@ namespace PrototipoPED
         public FrmAuxiliar()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void tmrHora_Tick(object sender, EventArgs e)
         {
             lblHora.Text = DateTime.Now.ToShortTimeString(); 
         }
+
+        
     }
 }

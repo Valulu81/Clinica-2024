@@ -340,7 +340,7 @@
             this.Name = "FrmVerReporte";
             this.Text = "FrmVerReporte";
             this.UseWaitCursor = true;
-            this.Load += new System.EventHandler(this.FrmVerReporte_Load);
+          
             this.ResumeLayout(false);
             this.PerformLayout();
 

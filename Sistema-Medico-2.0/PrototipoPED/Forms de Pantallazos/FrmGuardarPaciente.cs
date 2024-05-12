@@ -152,6 +152,7 @@ namespace PrototipoPED
         public FrmGuardarPaciente()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             LlenarCmbZona();
             cmbMes.Items.AddRange(meses);
             cmbDia.Items.AddRange(dias);

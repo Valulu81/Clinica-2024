@@ -1,5 +1,6 @@
 ﻿using PrototipoPED.Clases;
 using PrototipoPED.ConexionBD;
+using PrototipoPED.Forms_de_mensaje;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,8 @@ namespace PrototipoPED.Forms_de_Pantallazos
         {
             InitializeComponent();
             llenarcmb();
+            //Hace que se muestre en el centro de la pantalla este formulario
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         private void llenarcmb()
         {
@@ -49,16 +52,17 @@ namespace PrototipoPED.Forms_de_Pantallazos
         {
             txNombre.Clear();
             txtApellido.Clear();
-            txtTelefono.Clear();
-            cmbEspecialidad.SelectedIndex = 0;
-        }
-        private void FrmAgregarDoctor_Load(object sender, EventArgs e)
-        {
-
+            mtxtTelefono.Clear();
+            //Limpia el combobox
+            cmbEspecialidad.SelectedIndex = -1;
+            
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
+            cmbEspecialidad.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            cmbEspecialidad.ResetText();
             Limpiar();
         }
 
@@ -68,6 +72,12 @@ namespace PrototipoPED.Forms_de_Pantallazos
             {
                 e.Handled = true;
             }
+            if (char.IsWhiteSpace(e.KeyChar))
+            {
+                // Cancela la entrada del carácter
+                e.Handled = true;
+            }
+
         }
 
         private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
@@ -76,7 +86,15 @@ namespace PrototipoPED.Forms_de_Pantallazos
             {
                 e.Handled = true;
             }
+            if (char.IsWhiteSpace(e.KeyChar))
+            {
+                // Cancela la entrada del carácter
+                e.Handled = true;
+            }
+
+
         }
+
         private bool ValidarTel(string telefono)
         {
             Regex regex = new Regex(@"^\d{4}-\d{4}$");
@@ -85,24 +103,25 @@ namespace PrototipoPED.Forms_de_Pantallazos
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            string numero = txtTelefono.Text.Trim();
+            string numero = mtxtTelefono.Text.Trim();
             //Validaciones
-            if (txNombre.Text == "" || txtApellido.Text == "")
+            if (txNombre.Text == "" || txtApellido.Text == "" || mtxtTelefono.Text=="")
             {
-                MessageBox.Show("Debe ingresar el primer nombre y el primer apellido");
+                MessageBox.Show("Complete todos los campos antes de guardar");
                 return;
             }
-            if (txtTelefono.Text == "")
+            if (mtxtTelefono.Text == "")
             {
-                MessageBox.Show("Es obligatorio ingresar un número de telefono");
-                txtTelefono.Focus();
+                MessageBox.Show("Es obligatorio ingresar un número de teléfono");
+                mtxtTelefono.Focus();
                 return;
             }
             if (!ValidarTel(numero))
             {
-                MessageBox.Show("El número telefónico debe tener el formato: 7345-7865", "Error",
+                MessageBox.Show("El número telefónico debe tener el formato: 1122-3344", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtTelefono.Focus();
+                mtxtTelefono.Focus();
+                mtxtTelefono.Clear();
                 return;
             }
             if (cmbEspecialidad.SelectedItem == null)
@@ -117,9 +136,9 @@ namespace PrototipoPED.Forms_de_Pantallazos
             miMedico.Primer_Nombre = txNombre.Text;
             miMedico.Primer_Apellido = txtApellido.Text;
             miMedico.Especialidad = cmbEspecialidad.Text;
-            miMedico.Telefono = txtTelefono.Text;
+            miMedico.Telefono = mtxtTelefono.Text;
 
-            // Agregar medico a la base
+            // Agregar médico a la base
             Conexion miConexion = new Conexion();
             try
             {
@@ -138,5 +157,98 @@ namespace PrototipoPED.Forms_de_Pantallazos
             }
             Limpiar();
         }
+
+        //Valida que el cmbEspecialidad solo esté activo cuando los demás campos estén completos
+        private void txNombre_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txNombre.Text) && !string.IsNullOrEmpty(txtApellido.Text) && mtxtTelefono.MaskCompleted)
+            {
+                cmbEspecialidad.Enabled = true;
+            }
+            else
+            {
+                cmbEspecialidad.Enabled = false;
+            }
+
+            if (!string.IsNullOrEmpty(txNombre.Text))
+            {
+                // Convierte la primera letra a mayúsculas y el resto a minúsculas
+                txNombre.Text = char.ToUpper(txNombre.Text[0]) + txNombre.Text.Substring(1).ToLower();
+
+                // Mueve el cursor al final del texto
+                txNombre.SelectionStart = txNombre.Text.Length;
+            }
+         
+
+        }
+        //Tab index para cada textbox
+
+        private void txtApellido_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txNombre.Text) && !string.IsNullOrEmpty(txtApellido.Text) && mtxtTelefono.MaskCompleted)
+            {
+                cmbEspecialidad.Enabled = true;
+            }
+            else
+            {
+                cmbEspecialidad.Enabled = false;
+            }
+
+            if (!string.IsNullOrEmpty(txtApellido.Text))
+            {
+                // Convierte la primera letra a mayúsculas y el resto a minúsculas
+                txtApellido.Text = char.ToUpper(txtApellido.Text[0]) + txtApellido.Text.Substring(1).ToLower();
+
+                // Mueve el cursor al final del texto
+                txtApellido.SelectionStart = txtApellido.Text.Length;
+            }
+
+        }
+
+        
+
+        private void FrmAgregarDoctor_Load(object sender, EventArgs e)
+        {
+
+            cmbEspecialidad.ResetText();
+            //No se puede escribir sobre el combobox y obliga a seleccionar unicamente las opciones
+            cmbEspecialidad.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbEspecialidad.Enabled = false;
+            txNombre.TabIndex = 0;
+            txtApellido.TabIndex = 1;
+            mtxtTelefono.TabIndex = 2;
+            cmbEspecialidad.TabIndex = 3;
+            btnGuardar.TabIndex = 4;
+
+           
+
+        }
+
+        //Hace que cuando se de enter, se guarde automáticamente
+        private void cmbEspecialidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                // Cancela el sonido de la tecla Enter
+                e.Handled = true;
+
+                // Llama al evento Click del botón
+                btnGuardar.PerformClick();
+            }
+        }
+
+        private void mtxtTelefono_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txNombre.Text) && !string.IsNullOrEmpty(txtApellido.Text) && mtxtTelefono.MaskCompleted)
+            {
+                cmbEspecialidad.Enabled = true;
+            }
+            else
+            {
+                cmbEspecialidad.Enabled = false;
+            }
+        }
+
+
     }
 }

@@ -80,7 +80,7 @@
             this.label1.TabIndex = 53;
             this.label1.Text = "Nombre del Doctor";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+
             // 
             // label3
             // 
@@ -117,7 +117,7 @@
             this.cmbPaciente.Name = "cmbPaciente";
             this.cmbPaciente.Size = new System.Drawing.Size(296, 28);
             this.cmbPaciente.TabIndex = 48;
-            this.cmbPaciente.SelectedIndexChanged += new System.EventHandler(this.cmbPaciente_SelectedIndexChanged);
+
             // 
             // label2
             // 
@@ -159,7 +159,7 @@
             this.btnborrar.TabIndex = 45;
             this.btnborrar.Text = "Borrar";
             this.btnborrar.UseVisualStyleBackColor = false;
-            this.btnborrar.Click += new System.EventHandler(this.btnborrar_Click);
+       
             // 
             // cmbHorario
             // 
@@ -182,7 +182,7 @@
             this.cmbMes.Size = new System.Drawing.Size(121, 28);
             this.cmbMes.TabIndex = 59;
             this.cmbMes.UseWaitCursor = true;
-            this.cmbMes.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+
             // 
             // cmbDia
             // 
@@ -268,7 +268,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmGuardarCitas";
             this.Text = "FrmGuardarCitas";
-            this.Load += new System.EventHandler(this.FrmGuardarCitas_Load);
+
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

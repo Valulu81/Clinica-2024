@@ -16,6 +16,7 @@ namespace PrototipoPED
         public FrmLogin()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)

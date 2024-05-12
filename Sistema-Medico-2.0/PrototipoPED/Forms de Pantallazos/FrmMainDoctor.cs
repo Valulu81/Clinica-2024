@@ -20,6 +20,7 @@ namespace PrototipoPED
         {
             InitializeComponent();
             AbrirFormulario(new FrmAuxiliar());
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void btnUsuario_Click(object sender, EventArgs e)

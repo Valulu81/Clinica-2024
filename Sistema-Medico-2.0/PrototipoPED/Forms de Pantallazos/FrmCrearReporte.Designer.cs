@@ -82,7 +82,7 @@
             this.txtPeso.Size = new System.Drawing.Size(107, 28);
             this.txtPeso.TabIndex = 47;
             this.txtPeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPeso.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            
             // 
             // label3
             // 
@@ -145,7 +145,7 @@
             this.txtEstatura.Size = new System.Drawing.Size(107, 28);
             this.txtEstatura.TabIndex = 49;
             this.txtEstatura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtEstatura.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+   
             // 
             // txtMotivo
             // 
@@ -172,7 +172,7 @@
             this.txtDiagnostico.Size = new System.Drawing.Size(241, 176);
             this.txtDiagnostico.TabIndex = 55;
             this.txtDiagnostico.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtDiagnostico.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+       
             // 
             // txtPresion
             // 
@@ -277,7 +277,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "S";
             this.Text = "FrmCrearReporte";
-            this.Load += new System.EventHandler(this.FrmCrearReporte_Load);
+    
             this.ResumeLayout(false);
             this.PerformLayout();
 

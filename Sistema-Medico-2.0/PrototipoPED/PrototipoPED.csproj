@@ -59,6 +59,12 @@
     <Compile Include="Clases\Reporte.cs" />
     <Compile Include="Clases\SignosVitales.cs" />
     <Compile Include="Conexion\Conexion.cs" />
+    <Compile Include="Forms de mensaje\MensajeAgregarMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms de mensaje\MensajeAgregarMedico.Designer.cs">
+      <DependentUpon>MensajeAgregarMedico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms de Pantallazos\FrmAgregarDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms de mensaje\MensajeAgregarMedico.resx">
+      <DependentUpon>MensajeAgregarMedico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms de Pantallazos\FrmAgregarDoctor.resx">
       <DependentUpon>FrmAgregarDoctor.cs</DependentUpon>
     </EmbeddedResource>

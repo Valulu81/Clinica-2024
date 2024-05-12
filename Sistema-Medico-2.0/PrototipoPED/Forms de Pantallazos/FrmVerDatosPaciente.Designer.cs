@@ -150,7 +150,7 @@
             this.label4.TabIndex = 71;
             this.label4.Text = "Sexo";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+
             // 
             // txtTelefono
             // 
@@ -200,7 +200,7 @@
             this.label1.TabIndex = 58;
             this.label1.Text = "Nombre completo";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+
             // 
             // txtDireccion
             // 
@@ -253,7 +253,7 @@
             this.txtSexo.Name = "txtSexo";
             this.txtSexo.Size = new System.Drawing.Size(107, 28);
             this.txtSexo.TabIndex = 89;
-            this.txtSexo.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
+
             // 
             // cmbPaciente
             // 
@@ -265,8 +265,7 @@
             this.cmbPaciente.Name = "cmbPaciente";
             this.cmbPaciente.Size = new System.Drawing.Size(373, 28);
             this.cmbPaciente.TabIndex = 90;
-            this.cmbPaciente.SelectedIndexChanged += new System.EventHandler(this.cmbPaciente_SelectedIndexChanged);
-            this.cmbPaciente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbPaciente_KeyPress);
+   
             // 
             // txtfecha
             // 
@@ -308,7 +307,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmVerDatosPaciente";
             this.Text = "FrmVerDatosPaciente";
-            this.Load += new System.EventHandler(this.FrmVerDatosPaciente_Load);
+      
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -23,6 +23,7 @@ namespace PrototipoPED
         public FrmGuardarCitas()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             try
             {
                 Conexion miconexion = new Conexion();
@@ -56,21 +57,6 @@ namespace PrototipoPED
             dgvCitas.DataSource = conn.TraerCitas();
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FrmGuardarCitas_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             string fechaHora;
@@ -88,19 +74,5 @@ namespace PrototipoPED
             LlenarCmbCitas();
         }
 
-        private void btnborrar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbPaciente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

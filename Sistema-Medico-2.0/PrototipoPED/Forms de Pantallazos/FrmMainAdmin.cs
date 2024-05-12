@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PrototipoPED.Forms_de_mensaje;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace PrototipoPED.Forms_de_Pantallazos
         public FrmMainAdmin()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             AbrirFormulario(new FrmAuxiliar());
 
         }
@@ -68,6 +70,7 @@ namespace PrototipoPED.Forms_de_Pantallazos
         private void iconButton4_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new FrmAgregarDoctor());
+
         }
 
         private void btnBarraLateral_Click(object sender, EventArgs e)

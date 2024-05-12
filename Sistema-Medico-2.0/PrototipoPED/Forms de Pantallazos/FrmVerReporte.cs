@@ -18,6 +18,7 @@ namespace PrototipoPED
         public FrmVerReporte()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
             cmbDoctor.Enabled = false;
             cmbFecha.Enabled = false;
             try
@@ -30,15 +31,6 @@ namespace PrototipoPED
             catch { }
         }
 
-        private void FrmVerReporte_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         //SqlConnection con = new SqlConnection("data source=localhost; initial catalog=Clinica;" +
         //" persist security info=True; Integrated Security=SSPI; ");
