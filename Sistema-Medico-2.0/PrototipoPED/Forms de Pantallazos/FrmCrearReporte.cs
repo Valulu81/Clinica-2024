@@ -51,65 +51,6 @@ namespace PrototipoPED
             }
 
 
-            /*
-            // Obtener el nombre seleccionado de la combobox
-            string nombreCompleto = cmbPaciente.SelectedItem.ToString();
-            string[] nombres = nombreCompleto.Split(' ');
-
-            // Construir la consulta SQL para obtener el código de la última cita del paciente
-            string query = @"USE Clinica
-            SELECT TOP 1 p.primerNombre, p.segundoNombre, p.primerApellido, p.segundoApellido, cm.codCita
-            FROM administracion.pacientes p
-            JOIN administracion.citasMedicas cm ON p.codPaciente = cm.codPaciente
-            WHERE CONCAT(p.primerNombre, ' ', COALESCE(p.segundoNombre, ''), ' ', p.primerApellido, ' ', COALESCE(p.segundoApellido, '')) = @NombreCompleto
-            ORDER BY cm.fechaHora DESC";
-            */
-            /*
-            // Ejecutar la consulta SQL
-            using (SqlConnection conn = new SqlConnection(ConecStr))
-            {
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@NombreCompleto", nombreCompleto);
-
-                try
-                {
-                    conn.Open();
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    if (reader.Read())
-                    {
-                        string codCita = reader.GetString(reader.GetOrdinal("codCita"));
-
-                        // Llamar al procedimiento almacenado con los datos ingresados y el código de cita obtenido
-                        using (SqlConnection conn2 = new SqlConnection(ConecStr))
-                        {
-                            SqlCommand cmd2 = new SqlCommand("medico.CrearReporte2p", conn2);
-                            cmd2.CommandType = CommandType.StoredProcedure;
-                            cmd2.Parameters.AddWithValue("@codcita", codCita);
-                            cmd2.Parameters.AddWithValue("@mot", txtMotivo.Text);
-                            cmd2.Parameters.AddWithValue("@diag", txtDiagnostico.Text);
-                            cmd2.Parameters.AddWithValue("@peso", decimal.Parse(txtPeso.Text));
-                            cmd2.Parameters.AddWithValue("@tal", decimal.Parse(txtEstatura.Text));
-                            cmd2.Parameters.AddWithValue("@temp", decimal.Parse(txtTemperatura.Text));
-                            cmd2.Parameters.AddWithValue("@presi", txtPresion.Text);
-
-                            conn2.Open();
-                            cmd2.ExecuteNonQuery();
-                            conn2.Close();
-
-                            // Mostrar un mensaje indicando que el reporte se ha ingresado correctamente
-                            MessageBox.Show("El reporte se ha ingresado correctamente.", "Reporte ingresado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se encontraron citas para el paciente seleccionado.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al obtener la cita del paciente: " + ex.Message);
-                }
-            }*/
         }
 
         private void cmbPaciente_SelectedIndexChanged(object sender, EventArgs e)
