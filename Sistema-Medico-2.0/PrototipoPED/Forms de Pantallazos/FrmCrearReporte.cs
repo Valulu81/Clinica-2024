@@ -1,4 +1,5 @@
-﻿using PrototipoPED.ConexionBD;
+﻿using PrototipoPED.Clases;
+using PrototipoPED.ConexionBD;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,13 +23,35 @@ namespace PrototipoPED
             conexion.VerDatosPCombo(cmbPaciente);
         }
 
-        
+
 
         private string ConecStr = "data source=localhost; initial catalog=Clinica;" +
        " persist security info=True; Integrated Security=SSPI; ";
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Conexion conexion = new Conexion();
+                Reporte mireporte = new Reporte();
+                mireporte.Cod_Cita = conexion.DevolverCodCita(cmbPaciente.Text,cmbCita.Text);
+                mireporte.Presion_Arterial = txtPresion.Text;
+                mireporte.Temperatura = Convert.ToDecimal(txtTemperatura.Text);
+                mireporte.Diagnostico = txtDiagnostico.Text;
+                mireporte.Motivo = txtMotivo.Text;
+                mireporte.Peso = Convert.ToDecimal(txtPeso.Text);
+                mireporte.Talla = Convert.ToDecimal(txtEstatura.Text);
+
+                conexion.AgregarReporte(mireporte);
+
+            }
+            catch(Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            /*
             // Obtener el nombre seleccionado de la combobox
             string nombreCompleto = cmbPaciente.SelectedItem.ToString();
             string[] nombres = nombreCompleto.Split(' ');
@@ -40,7 +63,8 @@ namespace PrototipoPED
             JOIN administracion.citasMedicas cm ON p.codPaciente = cm.codPaciente
             WHERE CONCAT(p.primerNombre, ' ', COALESCE(p.segundoNombre, ''), ' ', p.primerApellido, ' ', COALESCE(p.segundoApellido, '')) = @NombreCompleto
             ORDER BY cm.fechaHora DESC";
-
+            */
+            /*
             // Ejecutar la consulta SQL
             using (SqlConnection conn = new SqlConnection(ConecStr))
             {
@@ -85,6 +109,23 @@ namespace PrototipoPED
                 {
                     MessageBox.Show("Error al obtener la cita del paciente: " + ex.Message);
                 }
+            }*/
+        }
+
+        private void cmbPaciente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbCita.SelectedIndex = -1;
+            cmbCita.Enabled = true;
+            Conexion miConexion = new Conexion();
+
+            try
+            {
+                miConexion.VerDatosFFCombo(cmbCita, cmbPaciente.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
             }
         }
     }

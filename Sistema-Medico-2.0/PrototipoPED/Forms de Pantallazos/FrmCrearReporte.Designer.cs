@@ -44,6 +44,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
+            this.cmbCita = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cmbPaciente
@@ -57,6 +59,7 @@
             this.cmbPaciente.Name = "cmbPaciente";
             this.cmbPaciente.Size = new System.Drawing.Size(235, 28);
             this.cmbPaciente.TabIndex = 38;
+            this.cmbPaciente.SelectedIndexChanged += new System.EventHandler(this.cmbPaciente_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -82,7 +85,6 @@
             this.txtPeso.Size = new System.Drawing.Size(107, 28);
             this.txtPeso.TabIndex = 47;
             this.txtPeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            
             // 
             // label3
             // 
@@ -145,7 +147,6 @@
             this.txtEstatura.Size = new System.Drawing.Size(107, 28);
             this.txtEstatura.TabIndex = 49;
             this.txtEstatura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-   
             // 
             // txtMotivo
             // 
@@ -172,7 +173,6 @@
             this.txtDiagnostico.Size = new System.Drawing.Size(241, 176);
             this.txtDiagnostico.TabIndex = 55;
             this.txtDiagnostico.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-       
             // 
             // txtPresion
             // 
@@ -252,12 +252,38 @@
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
             // 
+            // cmbCita
+            // 
+            this.cmbCita.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbCita.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCita.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
+            this.cmbCita.FormattingEnabled = true;
+            this.cmbCita.Location = new System.Drawing.Point(278, 52);
+            this.cmbCita.Name = "cmbCita";
+            this.cmbCita.Size = new System.Drawing.Size(198, 28);
+            this.cmbCita.TabIndex = 63;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
+            this.label5.Location = new System.Drawing.Point(278, 23);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 20);
+            this.label5.TabIndex = 62;
+            this.label5.Text = "Cita:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // S
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(230)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(838, 371);
+            this.Controls.Add(this.cmbCita);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.label8);
@@ -277,7 +303,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "S";
             this.Text = "FrmCrearReporte";
-    
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -301,5 +326,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.ComboBox cmbCita;
+        private System.Windows.Forms.Label label5;
     }
 }

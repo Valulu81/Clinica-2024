@@ -49,6 +49,32 @@ namespace PrototipoPED.ConexionBD
                 catch (Exception ex) { throw new Exception("Error en la bd: " + ex.Message); }
             }
         }
+
+        public void AgregarReporte(Reporte reporte)
+        {
+            string query = "exec medico.CrearReporte2p " +
+            "@codCita, @mot, @diag, @peso, @tal, @temp, @presi";
+
+            using (SqlConnection cnn = new SqlConnection(ConecStr))
+            {
+                try
+                {
+                    cnn.Open();
+                    SqlCommand cmd = new SqlCommand(query, cnn);
+                    cmd.Parameters.AddWithValue("@codCita", reporte.Cod_Cita);
+                    cmd.Parameters.AddWithValue("@mot", reporte.Motivo);
+                    cmd.Parameters.AddWithValue("@diag", reporte.Diagnostico);
+                    cmd.Parameters.AddWithValue("@peso", reporte.Peso);
+                    cmd.Parameters.AddWithValue("@tal", reporte.Talla);
+                    cmd.Parameters.AddWithValue("@temp", reporte.Temperatura);
+                    cmd.Parameters.AddWithValue("@presi", reporte.Presion_Arterial);
+
+                    cmd.ExecuteNonQuery();
+                    cnn.Close();
+                }
+                catch (Exception ex) { throw new Exception("Error en la bd: " + ex.Message); }
+            }
+        }
         public void AgregarMedico(Medico medico)
         {
             string query = "exec personal.InscribirMedico " +
@@ -209,6 +235,46 @@ namespace PrototipoPED.ConexionBD
                 throw new Exception("Hay un error en la bd: " + ex.Message);
             }
         }
+
+        //nuevo
+        public void VerDatosFFCombo(System.Windows.Forms.ComboBox caja, string paciente)
+        {
+            try
+            {
+                string[] parte_pac = paciente.Split(' ');
+                string query = "declare @codPaciente varchar(8) " +
+                                "select @codPaciente= codpaciente from administracion.pacientes" +
+                                " where  primernombre= '" + parte_pac[0] +
+                                "' and segundonombre='" + parte_pac[1] +
+                                "' and primerapellido='" + parte_pac[2] +
+                                "' and segundoapellido='" + parte_pac[3] + "'" +
+
+                                " SELECT FechaHora FROM administracion.citasMedicas as c  " +
+                                "where c.codPaciente = @codPaciente ";
+
+                using (SqlConnection conn = new SqlConnection(ConecStr))
+                {
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    conn.Open();
+                    SqlDataReader lector;
+                    lector = cmd.ExecuteReader();
+                    caja.Items.Clear();
+                    while (lector.Read())
+                    {
+                        DateTime fecha = lector.GetDateTime(0);
+                        caja.Items.Add(fecha.ToString());
+                    }
+                    conn.Close();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Hay un error en la bd: " + ex.Message);
+            }
+        }
+
         public void VerDatosDDCombo(System.Windows.Forms.ComboBox caja, string paciente)
         {
             try
@@ -516,6 +582,44 @@ namespace PrototipoPED.ConexionBD
                 }
             }
             return citas;
+        }
+
+        public string DevolverCodCita(string paciente, string fecha)
+        {
+            string CodCita = "";
+            try
+            {
+                string[] parte_pac = paciente.Split(' ');
+                string query = "declare @codPaciente varchar(8) " +
+                                "select @codPaciente= codpaciente from administracion.pacientes" +
+                                " where  primernombre= '" + parte_pac[0] +
+                                "' and segundonombre='" + parte_pac[1] +
+                                "' and primerapellido='" + parte_pac[2] +
+                                "' and segundoapellido='" + parte_pac[3] + "'" +
+
+                                " SELECT top 1 codCita FROM administracion.citasMedicas as c  " +
+                                "where c.codPaciente = @codPaciente ";
+
+                using (SqlConnection conn = new SqlConnection(ConecStr))
+                {
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    conn.Open();
+                    SqlDataReader lector;
+                    lector = cmd.ExecuteReader();
+                    while (lector.Read())
+                    {
+                        CodCita = lector.GetString(0);
+                    }
+                    conn.Close();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Hay un error en la bd: " + ex.Message);
+            }
+            return CodCita;
         }
     }
 }
