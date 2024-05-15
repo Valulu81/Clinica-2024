@@ -19,6 +19,7 @@ namespace PrototipoPED
         string[] meses = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Julio", "Junio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
         string[] dias = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" };
 
+        
 
         public FrmGuardarCitas()
         {
@@ -48,6 +49,7 @@ namespace PrototipoPED
             cmbHorario.SelectedIndex = -1;
             cmbMes.SelectedIndex = -1;
             cmbDia.SelectedIndex = -1;
+            cmbPaciente.SelectedIndex = -1;
             txtAño.Clear();
         }
 
@@ -73,6 +75,25 @@ namespace PrototipoPED
                 MessageBox.Show("Por favor, complete los campos.");
                 btnGuardar.Enabled = true;
             }
+            if(txtAño.Text!="")
+            {
+                int valor;
+                bool esNumero = Int32.TryParse(txtAño.Text, out valor);
+
+                // Verifica si el valor es un número y si está entre 1940 y 2029
+                if (esNumero && valor >= 19 && valor <= 2029)
+                {
+                    // Si el valor es válido, no hagas nada
+                }
+                else
+                {
+                    // Si el valor no es válido, muestra un mensaje de error y borra el TextBox
+                    MessageBox.Show("Ingrese un año válido, 2024 y 2025");
+                    txtAño.Clear();
+
+                }
+            }
+
 
             else
             {
@@ -96,6 +117,7 @@ namespace PrototipoPED
                     MessageBox.Show(ex.Message); ;
                 }
             LlenarCmbCitas();
+            Limpiar();
             }
         }
 
@@ -107,6 +129,13 @@ namespace PrototipoPED
             txtAño.Enabled = false;
             cmbDia.Enabled = false;
             cmbPaciente.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            cmbPaciente.TabIndex = 0;
+            cmbDoctor.TabIndex = 1;
+            txtAño.TabIndex = 2;
+            cmbMes.TabIndex = 3;
+            cmbDia.TabIndex = 4;
+            cmbHorario.TabIndex = 5;
         }
 
         private void btnborrar_Click(object sender, EventArgs e)
@@ -132,6 +161,7 @@ namespace PrototipoPED
         private void txtAño_TextChanged(object sender, EventArgs e)
         {
             cmbMes.Enabled=true;
+            
         }
 
         private void cmbMes_SelectedIndexChanged(object sender, EventArgs e)
@@ -143,5 +173,11 @@ namespace PrototipoPED
         {
             cmbHorario.Enabled=true;
         }
+
+        private void txtAño_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }
+

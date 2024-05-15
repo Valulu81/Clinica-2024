@@ -136,6 +136,7 @@
             this.cmbEspecialidad.Name = "cmbEspecialidad";
             this.cmbEspecialidad.Size = new System.Drawing.Size(199, 33);
             this.cmbEspecialidad.TabIndex = 83;
+
             this.cmbEspecialidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbEspecialidad_KeyPress);
             // 
             // txtApellido
@@ -174,7 +175,6 @@
             this.mtxtTelefono.Name = "mtxtTelefono";
             this.mtxtTelefono.Size = new System.Drawing.Size(199, 22);
             this.mtxtTelefono.TabIndex = 86;
-            
             this.mtxtTelefono.TextChanged += new System.EventHandler(this.mtxtTelefono_TextChanged);
             // 
             // FrmAgregarDoctor

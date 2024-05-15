@@ -63,8 +63,6 @@ namespace PrototipoPED.Forms_de_Pantallazos
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             cmbEspecialidad.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            cmbEspecialidad.ResetText();
             Limpiar();
         }
 
@@ -158,19 +156,15 @@ namespace PrototipoPED.Forms_de_Pantallazos
                 MessageBox.Show(ex.Message);
             }
             Limpiar();
+            cmbEspecialidad.Enabled = false;
+            txtApellido.Enabled = false;
+            mtxtTelefono.Enabled = false;
+            btnGuardar.Enabled = false;
         }
 
-        //Valida que el cmbEspecialidad solo esté activo cuando los demás campos estén completos
+        
         private void txNombre_TextChanged(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txNombre.Text) && !string.IsNullOrEmpty(txtApellido.Text) && mtxtTelefono.MaskCompleted)
-            {
-                cmbEspecialidad.Enabled = true;
-            }
-            else
-            {
-                cmbEspecialidad.Enabled = false;
-            }
+        { 
 
             if (!string.IsNullOrEmpty(txNombre.Text))
             {
@@ -180,21 +174,14 @@ namespace PrototipoPED.Forms_de_Pantallazos
                 // Mueve el cursor al final del texto
                 txNombre.SelectionStart = txNombre.Text.Length;
             }
+            txtApellido.Enabled = true;
          
 
         }
-        //Tab index para cada textbox
+ 
 
         private void txtApellido_TextChanged(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(txNombre.Text) && !string.IsNullOrEmpty(txtApellido.Text) && mtxtTelefono.MaskCompleted)
-            {
-                cmbEspecialidad.Enabled = true;
-            }
-            else
-            {
-                cmbEspecialidad.Enabled = false;
-            }
+        { 
 
             if (!string.IsNullOrEmpty(txtApellido.Text))
             {
@@ -204,6 +191,7 @@ namespace PrototipoPED.Forms_de_Pantallazos
                 // Mueve el cursor al final del texto
                 txtApellido.SelectionStart = txtApellido.Text.Length;
             }
+            mtxtTelefono.Enabled = true;
 
         }
 
@@ -211,11 +199,17 @@ namespace PrototipoPED.Forms_de_Pantallazos
 
         private void FrmAgregarDoctor_Load(object sender, EventArgs e)
         {
-
-            cmbEspecialidad.ResetText();
+            txNombre.Focus();
+           
             //No se puede escribir sobre el combobox y obliga a seleccionar unicamente las opciones
             cmbEspecialidad.DropDownStyle = ComboBoxStyle.DropDownList;
+
             cmbEspecialidad.Enabled = false;
+            txtApellido.Enabled = false;
+            mtxtTelefono.Enabled = false;
+          
+
+            //Tab index orden
             txNombre.TabIndex = 0;
             txtApellido.TabIndex = 1;
             mtxtTelefono.TabIndex = 2;
@@ -223,7 +217,6 @@ namespace PrototipoPED.Forms_de_Pantallazos
             btnGuardar.TabIndex = 4;
 
            
-
         }
 
         //Hace que cuando se de enter, se guarde automáticamente
@@ -250,6 +243,7 @@ namespace PrototipoPED.Forms_de_Pantallazos
             {
                 cmbEspecialidad.Enabled = false;
             }
+            cmbEspecialidad.Enabled = true;
 
             
         }

@@ -173,30 +173,26 @@ namespace PrototipoPED
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             //Las validaciones
-            if (txtNombre1.Text == "" || txtApellido1.Text == "")
-            {   
-                btnGuardar.Enabled = false;
-                MessageBox.Show("Debe ingresar al menos un nombre y un apellido");
-                txtNombre1.Focus();
-                btnGuardar.Enabled = true;
-
-                if (txtDui.Text == "")
-                {
-                    MessageBox.Show("Es obligatorio ingresar un dui");
-                    txtDui.Focus();
-                }
-                if(rbtnFemenino.Checked==false || rbtnMasculino.Checked==false)
-                {
-                    btnGuardar.Enabled = false;
-                    MessageBox.Show("Seleccione el sexo del paciente");
-                    rbtnFemenino.Focus();
-                    rbtnMasculino.Focus();
-                    btnGuardar.Enabled = true;
-                }
-
+            if (txtNombre1.Text == "" || txtApellido1.Text == ""||txtDireccion.Text==""|| txtTelefono.Text==""|| txtAño.Text == "" || cmbDia.SelectedIndex==-1 || cmbMes.SelectedIndex==-1 || txtTelefono.Text == "")
+            {
+                //btnGuardar.Enabled = false;
+                MessageBox.Show("Debe completar todos los campos para guardar el perfil de Paciente");
+                return;
             }
+
+            if (rbtnFemenino.Checked == false && rbtnMasculino.Checked == false )
+            {
+                rbtnFemenino.Focus();
+                MessageBox.Show("Debe completar el sexo del paciente");
+                rbtnMasculino.Focus();
+                return;
+              
+            }
+
+
             else
-            { 
+            {
+               
                 try
                 {
                 
@@ -237,7 +233,7 @@ namespace PrototipoPED
                     {
                     MessageBox.Show(ex.Message);
                     }
-
+                    MessageBox.Show("Paciente registrado con éxito" + txtNombre1+" "+ txtApellido1);
                     Limpiar();
                 }
                 catch 
@@ -376,6 +372,7 @@ namespace PrototipoPED
 
         private void FrmGuardarPaciente_Load(object sender, EventArgs e)
         {   //Orden del tab Index
+            
             txtNombre1.TabIndex = 0;
             txtNombre2.TabIndex = 1;
             txtApellido1.TabIndex = 2;
@@ -387,9 +384,11 @@ namespace PrototipoPED
             txtTelefono.TabIndex = 8;
             rbtnMasculino.TabIndex = 9;
             rbtnFemenino.TabIndex   = 10;
+            //Hace que no se pueda escribir sobre los combobox
             cmbDia.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbDepartamento.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbZona.DropDownStyle = ComboBoxStyle.DropDownList;
+            //Al inicializar el form deben de estar deshabilitados
             txtTelefono.Enabled = false;
             cmbZona.Enabled = false;
 
@@ -398,8 +397,10 @@ namespace PrototipoPED
             txtAño.Enabled = false;
             cmbMes.Enabled = false;
             cmbDia.Enabled = false;
-           
-            
+
+            txtNombre1.Focus();
+
+
 
         }
 
@@ -536,6 +537,7 @@ namespace PrototipoPED
                     // Si el valor está fuera del rango, borra el texto del MaskedTextBox
                     txtAño.Text = "";
                 }
+                MessageBox.Show("Ingrese un valor válido");
             }
             else
             {
@@ -547,6 +549,7 @@ namespace PrototipoPED
             txtAño.Focus();
         }
 
+       
         //Para que no acepte espacios en blanco
 
     }

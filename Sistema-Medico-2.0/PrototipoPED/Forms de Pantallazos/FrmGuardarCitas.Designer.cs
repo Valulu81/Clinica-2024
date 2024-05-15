@@ -220,6 +220,7 @@
             this.txtAño.Size = new System.Drawing.Size(107, 30);
             this.txtAño.TabIndex = 102;
             this.txtAño.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtAño.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtAño_MaskInputRejected);
             this.txtAño.TextChanged += new System.EventHandler(this.txtAño_TextChanged);
             // 
             // label4
