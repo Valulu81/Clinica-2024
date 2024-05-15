@@ -28,6 +28,11 @@ create table administracion.pacientes
 	nit char(17)unique
 )
 
+create table medico.Enfermedades
+(
+	Enfermedad varchar(50) not null unique
+)
+
 create table personal.medicos
 (
 	codMedico char(7) not null,
@@ -437,5 +442,9 @@ begin
     values (upper(@cod), @peso, @tal, @temp, @presi)
 end
 
-
-
+insert into Medico.Enfermedades values
+('Cáncer'),
+('Covid-19'),
+('Sida'),
+('Gripe'),
+('Tos')
