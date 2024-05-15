@@ -19,8 +19,7 @@ namespace PrototipoPED
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            cmbDoctor.Enabled = false;
-            cmbFecha.Enabled = false;
+            
             try
             {
                 //datosP();
@@ -98,6 +97,9 @@ namespace PrototipoPED
 
         private void FrmVerReporte_Load(object sender, EventArgs e)
         {
+            cmbPaciente.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbDoctor.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbFecha.DropDownStyle = ComboBoxStyle.DropDownList;
             txtDiagnostico.Enabled = false;
             txtEstatura.Enabled = false;
             txtTemperatura.Enabled = false;
@@ -105,12 +107,15 @@ namespace PrototipoPED
             txtPeso.Enabled = false;
             txtPresion.Enabled = false;
             txtMotivo.Enabled = false;
+            cmbDoctor.Enabled = false;
+            cmbFecha.Enabled = false;
         }
         private void Limpiar()
         {
-            
+
             Conexion conexion = new Conexion();
-           
+            conexion.VerDatosPCombo(cmbPaciente);
+            conexion.VerDatosDCombo(cmbDoctor);
             txtDiagnostico.Clear();
             txtPeso.Clear();
             txtMotivo.Clear();
@@ -120,6 +125,8 @@ namespace PrototipoPED
             cmbPaciente.SelectedIndex = -1;
             cmbDoctor.SelectedIndex = -1;
             cmbFecha.SelectedIndex = -1;
+
+           
            
         }
         private void btnBorrar_Click(object sender, EventArgs e)
