@@ -172,64 +172,79 @@ namespace PrototipoPED
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int edad;
-                //Las validaciones
-                if (txtNombre1.Text == "" || txtApellido1.Text == "")
-                {
-                    MessageBox.Show("Debe ingresar al menos un nombre y un apellido");
-                }
+            //Las validaciones
+            if (txtNombre1.Text == "" || txtApellido1.Text == "")
+            {   
+                btnGuardar.Enabled = false;
+                MessageBox.Show("Debe ingresar al menos un nombre y un apellido");
+                txtNombre1.Focus();
+                btnGuardar.Enabled = true;
+
                 if (txtDui.Text == "")
                 {
                     MessageBox.Show("Es obligatorio ingresar un dui");
                     txtDui.Focus();
                 }
+                if(rbtnFemenino.Checked==false || rbtnMasculino.Checked==false)
+                {
+                    btnGuardar.Enabled = false;
+                    MessageBox.Show("Seleccione el sexo del paciente");
+                    rbtnFemenino.Focus();
+                    rbtnMasculino.Focus();
+                    btnGuardar.Enabled = true;
+                }
+
+            }
+            else
+            { 
+                try
+                {
+                
+                int edad;
+               
 
                 Paciente miPaciente = new Paciente();
 
-                miPaciente.Primer_Nombre = txtNombre1.Text;
-                miPaciente.Segundo_Nombre = txtNombre2.Text;
-                miPaciente.Primer_Apellido = txtApellido1.Text;
-                miPaciente.Segundo_Apellido = txtApellido2.Text;
-                miPaciente.Direccion = cmbZona.Text + ", " + cmbDepartamento.Text + ", " + cmbMunicipio.Text + ", " + txtDireccion.Text;
-                miPaciente.Telefono = txtTelefono.Text;
+                     miPaciente.Primer_Nombre = txtNombre1.Text;
+                     miPaciente.Segundo_Nombre = txtNombre2.Text;
+                     miPaciente.Primer_Apellido = txtApellido1.Text;
+                     miPaciente.Segundo_Apellido = txtApellido2.Text;
+                     miPaciente.Direccion = cmbZona.Text + ", " + cmbDepartamento.Text + ", " + cmbMunicipio.Text + ", " + txtDireccion.Text;
+                     miPaciente.Telefono = txtTelefono.Text;
 
                 string sexo;
 
-                if (rbtnMasculino.Checked)
-                {
+                    if (rbtnMasculino.Checked)
+                    {
                     sexo = "M";
                     miPaciente.Sexo = sexo;
-                }
-                else if (rbtnFemenino.Checked)
-                {
+                    }
+                    else if (rbtnFemenino.Checked)
+                    {
                     sexo = "F";
                     miPaciente.Sexo = sexo;
-                }
-                else
-                {
-                    MessageBox.Show("Debe elegir un sexo");
-                }
-
-                miPaciente.DUI = txtDui.Text;
-                miPaciente.NIT = txtNit.Text;
-                miPaciente.Fecha_Nacimiento = txtAño.Text + "-" + (cmbMes.SelectedIndex + 1).ToString() + "-" + cmbDia.Text;
+                    }
+                    miPaciente.DUI = txtDui.Text;
+                    miPaciente.NIT = txtNit.Text;
+                    miPaciente.Fecha_Nacimiento = txtAño.Text + "-" + (cmbMes.SelectedIndex + 1).ToString() + "-" + cmbDia.Text;
 
                 Conexion miConexion = new Conexion();
-                try
-                {
+                    try
+                    {
                     miConexion.AgregarPaciente(miPaciente);
-                }
-                catch (Exception ex)
-                {
+                    }
+                    catch (Exception ex)
+                    {
                     MessageBox.Show(ex.Message);
-                }
+                    }
 
-                Limpiar();
+                    Limpiar();
+                }
+                catch 
+                {
+                }
             }
-            catch { }
-        }
+        }//fin btnGuardar
 
         private void cmbZona_SelectedIndexChanged(object sender, EventArgs e)
         {
