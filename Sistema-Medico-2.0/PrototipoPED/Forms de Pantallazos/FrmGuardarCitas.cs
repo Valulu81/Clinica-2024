@@ -61,7 +61,7 @@ namespace PrototipoPED
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (cmbPaciente.SelectedIndex == -1)
+             if (cmbPaciente.SelectedIndex == -1)
             {
                 btnGuardar.Enabled = false;
                 MessageBox.Show("Por favor, seleccione un paciente.");
@@ -75,29 +75,10 @@ namespace PrototipoPED
                 MessageBox.Show("Por favor, complete los campos.");
                 btnGuardar.Enabled = true;
             }
-            if(txtAño.Text!="")
-            {
-                int valor;
-                bool esNumero = Int32.TryParse(txtAño.Text, out valor);
-
-                // Verifica si el valor es un número y si está entre 1940 y 2029
-                if (esNumero && valor >= 19 && valor <= 2029)
-                {
-                    // Si el valor es válido, no hagas nada
-                }
-                else
-                {
-                    // Si el valor no es válido, muestra un mensaje de error y borra el TextBox
-                    MessageBox.Show("Ingrese un año válido, 2024 y 2025");
-                    txtAño.Clear();
-
-                }
-            }
-
 
             else
             {
-                btnGuardar.Enabled = true;
+                //btnGuardar.Enabled = true;
 
                 string fechaHora;
                 fechaHora = txtAño.Text + "-" + (cmbMes.SelectedIndex + 1).ToString() + "-" + cmbDia.Text + " " + cmbHorario.Text + ".000";
@@ -119,6 +100,8 @@ namespace PrototipoPED
             LlenarCmbCitas();
             Limpiar();
             }
+
+
         }
 
         private void FrmGuardarCitas_Load(object sender, EventArgs e)
@@ -174,10 +157,7 @@ namespace PrototipoPED
             cmbHorario.Enabled=true;
         }
 
-        private void txtAño_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
+        
     }
 }
 

@@ -36,11 +36,11 @@ namespace PrototipoPED
         {
             if (txtPeso.Text != "")
             {
-                int valor;
-                bool esNumero = Int32.TryParse(txtPeso.Text, out valor);
+                float valor;
+                bool esNumero = float.TryParse(txtPeso.Text, out valor);
 
-                // Verifica si el valor es un número y si está entre 1940 y 2029
-                if (esNumero && valor >= 19 && valor <= 2029)
+               
+                if (esNumero && valor >= 1 && valor <= 200)
                 {
                     // Si el valor es válido, no hagas nada
                 }
@@ -52,6 +52,42 @@ namespace PrototipoPED
 
                 }
             }
+
+            if (txtEstatura.Text != "")
+            {
+                float valor;
+                bool esNumero = float.TryParse(txtEstatura.Text, out valor);
+
+                if (esNumero && valor >= 0.30 && valor <= 2.00)
+                {
+                    // Si el valor es válido, no hagas nada
+                }
+                else
+                {
+                    // Si el valor no es válido, muestra un mensaje de error y borra el TextBox
+                    MessageBox.Show("Ingrese valor de altura válido en metros");
+                    txtEstatura.Clear();
+
+                }
+            }
+            if (txtTemperatura.Text != "")
+            {
+                float valor;
+                bool esNumero = float.TryParse(txtTemperatura.Text, out valor);
+
+                if (esNumero && valor >= 30 && valor <= 45)
+                {
+                    // Si el valor es válido, no hagas nada
+                }
+                else
+                {
+                    // Si el valor no es válido, muestra un mensaje de error y borra el TextBox
+                    MessageBox.Show("Ingrese valor de temperatura válido");
+                    txtTemperatura.Clear();
+
+                }
+            }
+
             if (cmbEnfermedades.Text == "")
             {
                 MessageBox.Show("Debe escribir o elegir una enfermedad.");
@@ -157,11 +193,14 @@ namespace PrototipoPED
             {
                 txtDiagnostico.Enabled = false;
             }
-            txtDiagnostico.Enabled = true;
+           
         }
+
+
 
         private void FrmCrearReporte_Load(object sender, EventArgs e)
         {
+            cmbPaciente.Focus();
             cmbPaciente.DropDownStyle = ComboBoxStyle.DropDownList; 
             cmbCita.DropDownStyle = ComboBoxStyle.DropDownList;
 
@@ -182,7 +221,7 @@ namespace PrototipoPED
             txtEstatura.Enabled = false;
             txtTemperatura.Enabled = false;
             txtEstatura.Enabled=false;
-            //txtPeso.Enabled = false;
+            txtPeso.Enabled = false;
             txtPresion.Enabled = false;
             txtMotivo.Enabled = false;
         }
@@ -225,12 +264,13 @@ namespace PrototipoPED
 
         private void txtPeso_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsWhiteSpace(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
-                // Cancela la entrada del carácter
                 e.Handled = true;
             }
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+
+            // Solo permite un punto decimal
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
             }
@@ -238,12 +278,13 @@ namespace PrototipoPED
 
         private void txtEstatura_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsWhiteSpace(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
-                // Cancela la entrada del carácter
                 e.Handled = true;
             }
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+
+            // Solo permite un punto decimal
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
             }
@@ -251,25 +292,18 @@ namespace PrototipoPED
 
         private void txtPresion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsWhiteSpace(e.KeyChar))
-            {
-                // Cancela la entrada del carácter
-                e.Handled = true;
-            }
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            
         }
 
         private void txtTemperatura_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsWhiteSpace(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
             {
-                // Cancela la entrada del carácter
                 e.Handled = true;
             }
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+
+            // Solo permite un punto decimal
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
             }
