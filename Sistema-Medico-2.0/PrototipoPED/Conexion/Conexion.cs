@@ -166,6 +166,30 @@ namespace PrototipoPED.ConexionBD
                 
             } 
         }
+
+        public void VerDatosECombo(System.Windows.Forms.ComboBox caja)
+        {
+
+            string query = "select enfermedad from Medico.Enfermedades";
+            using (SqlConnection conn = new SqlConnection(ConecStr))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                try
+                {
+                    conn.Open();
+                    SqlDataReader lector;
+                    lector = cmd.ExecuteReader();
+                    while (lector.Read())
+                    {
+                        caja.Items.Add(lector.GetString(0) + " " + lector.GetString(1) + " " + lector.GetString(2) + " " + lector.GetString(3));
+                    }
+
+                }
+                catch { }
+
+            }
+        }
+
         public void VerDatosDCombo(System.Windows.Forms.ComboBox caja)
         {
 
