@@ -153,15 +153,15 @@ namespace PrototipoPED
             cmbEnfermedades.Items.Clear();
             Conexion conexion = new Conexion();
             conexion.VerDatosECombo(cmbEnfermedades);
+            cmbEnfermedades.Text = "";
             txtDiagnostico.Clear();
             txtPeso.Clear();
             txtMotivo.Clear();
             txtEstatura.Clear();
             txtTemperatura.Clear();
             txtPresion.Clear();
-            cmbPaciente.SelectedIndex = -1;
-            cmbCita.SelectedIndex = 0;
-
+            //cmbPaciente.SelectedIndex = -1;
+            cmbCita.SelectedIndex = -1;
         }
 
 

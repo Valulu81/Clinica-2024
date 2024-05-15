@@ -53,8 +53,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases\ABB.cs" />
     <Compile Include="Clases\CitaMedica.cs" />
+    <Compile Include="Clases\FiltroGráfica.cs" />
     <Compile Include="Clases\Medico.cs" />
+    <Compile Include="Clases\NodoABB.cs" />
     <Compile Include="Clases\Paciente.cs" />
     <Compile Include="Clases\Reporte.cs" />
     <Compile Include="Clases\SignosVitales.cs" />

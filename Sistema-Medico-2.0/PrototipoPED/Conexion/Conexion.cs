@@ -49,7 +49,6 @@ namespace PrototipoPED.ConexionBD
                 catch (Exception ex) { throw new Exception("Error en la bd: " + ex.Message); }
             }
         }
-
         public void AgregarReporte(Reporte reporte)
         {
             string query = "exec medico.CrearReporte2p " +
@@ -286,7 +285,6 @@ namespace PrototipoPED.ConexionBD
                 throw new Exception("Hay un error en la bd: " + ex.Message);
             }
         }
-
         //nuevo
         public void VerDatosFFCombo(System.Windows.Forms.ComboBox caja, string paciente)
         {
@@ -325,10 +323,6 @@ namespace PrototipoPED.ConexionBD
                 throw new Exception("Hay un error en la bd: " + ex.Message);
             }
         }
-
-       
-
-
         public void VerDatosDDCombo(System.Windows.Forms.ComboBox caja, string paciente)
         {
             try
@@ -368,7 +362,6 @@ namespace PrototipoPED.ConexionBD
                 throw new Exception("Hay un error en la bd: " + ex.Message);
             }
         }
-
         public Reporte VerReporte(string paciente, string medico, DateTime fecha)
         {
             string[] parte_pac = paciente.Split(' ');
@@ -408,7 +401,7 @@ namespace PrototipoPED.ConexionBD
                     {                        
                         datos.Peso = Convert.ToDecimal( lector["peso"]);
                         datos.Talla = Convert.ToDecimal(lector["talla"]);
-                        datos.Presion_Arterial = lector["motivo"].ToString();
+                        datos.Presion_Arterial = lector["presionArterial"].ToString();
                         datos.Temperatura = Convert.ToDecimal(lector["temperatura"]);
                         datos.Motivo = lector["motivo"].ToString();
                         datos.Diagnostico = lector["diagnostico"].ToString();
@@ -485,7 +478,6 @@ namespace PrototipoPED.ConexionBD
 
             }
         }
-
         public void AgregarMedico(string pnom, string pape, string tel, string esp, string clave)
         {
             string query = "exec personal.InscribirMedico " +
@@ -637,7 +629,6 @@ namespace PrototipoPED.ConexionBD
         }
 
         //Método para devolver el código de la cita
-
         public string DevolverCodCita(string paciente, DateTime fecha)
         {
             string CodCita = "";
@@ -677,47 +668,53 @@ namespace PrototipoPED.ConexionBD
             return CodCita;
         }
 
-        /*public string DevolverCodCita(string paciente, DateTime fecha)
+
+        public ABB DevolverCantidadesPais(string[] filtro, FiltroGráfica datos)
         {
-            string CodCita = "";
-            try
+            ABB arbolFiltro = new ABB();
+            arbolFiltro.Limpiar();
+
+            //int[] cantidades = new int[filtro.Length];
+            for(int i = 0; i < filtro.Length; i++)
             {
+                string query = "select count(p.codPaciente) from administracion.pacientes p " +
+                               "inner join administracion.citasMedicas c " +
+                               "on p.codPaciente = c.codPaciente " +
+                               "inner join medico.reportes r " +
+                               "on c.codCita = r.codCita " +
+                               "where r.diagnostico like '%" + datos.Enfermedad + "%' " +
+                               "and p.direccion like '%" + filtro[i] + "%' " +
+                               "and p.edad > "+datos.Edad +" " +
+                               "and c.fechaHora between @fecha1 and @fecha2 ";    
 
-                string[] parte_pac = paciente.Split(' ');
-
-                string query = "declare @codPaciente varchar(8) " +
-                                "set @fechaHora = '" + fecha + "' " +
-                                "select @codPaciente= codpaciente from administracion.pacientes" +
-                                " where  primernombre= '" + parte_pac[0] +
-                                "' and segundonombre='" + parte_pac[1] +
-                                "' and primerapellido='" + parte_pac[2] +
-                                "' and segundoapellido='" + parte_pac[3] + "'" +
-
-                                " SELECT top 1 codCita FROM administracion.citasMedicas as c  " +
-                                "where c.codPaciente = @codPaciente and c.fechaHora = @fechaHora";
-
-                using (SqlConnection conn = new SqlConnection(ConecStr))
+                try
                 {
-
-                    SqlCommand cmd = new SqlCommand(query, conn);
-
-                    conn.Open();
-                    SqlDataReader lector;
-                    lector = cmd.ExecuteReader();
-                    while (lector.Read())
+                    using (SqlConnection conn = new SqlConnection(ConecStr))
                     {
-                        CodCita = lector.GetString(0);
-                    }
-                    conn.Close();
 
+                        SqlCommand cmd = new SqlCommand(query, conn);
+                        cmd.Parameters.AddWithValue("@fecha1", datos.Fecha1);
+                        cmd.Parameters.AddWithValue("@fecha2", datos.Fecha2);
+                        conn.Open();
+                        SqlDataReader lector;
+                        lector = cmd.ExecuteReader();
+                        while (lector.Read())
+                        {
+                            arbolFiltro.Insertar(lector.GetInt32(0), filtro[i]);
+                            //cantidades[i] = lector.GetInt32(0);
+                        }
+                        conn.Close();
+
+                    }
                 }
+                catch (Exception ex)
+                {
+                    throw new Exception("Hay un error en la bd: " + ex.Message);
+                }
+
             }
-            catch (Exception ex)
-            {
-                throw new Exception("Hay un error en la bd: " + ex.Message);
-            }
-            return CodCita;
-        }*/
+            return arbolFiltro;
+        }
 
     }
 }

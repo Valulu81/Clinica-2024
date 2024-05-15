@@ -125,10 +125,10 @@
             // btnCrearGrafica
             // 
             this.btnCrearGrafica.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCrearGrafica.FlatAppearance.BorderSize = 2;
+            this.btnCrearGrafica.FlatAppearance.BorderSize = 0;
             this.btnCrearGrafica.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrearGrafica.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCrearGrafica.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
+            this.btnCrearGrafica.IconChar = FontAwesome.Sharp.IconChar.ChartSimple;
             this.btnCrearGrafica.IconColor = System.Drawing.Color.White;
             this.btnCrearGrafica.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCrearGrafica.Location = new System.Drawing.Point(0, 276);
@@ -141,10 +141,10 @@
             // btnGuardarCitas
             // 
             this.btnGuardarCitas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGuardarCitas.FlatAppearance.BorderSize = 2;
+            this.btnGuardarCitas.FlatAppearance.BorderSize = 0;
             this.btnGuardarCitas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarCitas.ForeColor = System.Drawing.Color.Transparent;
-            this.btnGuardarCitas.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
+            this.btnGuardarCitas.IconChar = FontAwesome.Sharp.IconChar.PersonCircleQuestion;
             this.btnGuardarCitas.IconColor = System.Drawing.Color.White;
             this.btnGuardarCitas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardarCitas.Location = new System.Drawing.Point(0, 184);
@@ -157,10 +157,10 @@
             // btnCrearReporte
             // 
             this.btnCrearReporte.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCrearReporte.FlatAppearance.BorderSize = 2;
+            this.btnCrearReporte.FlatAppearance.BorderSize = 0;
             this.btnCrearReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrearReporte.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCrearReporte.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
+            this.btnCrearReporte.IconChar = FontAwesome.Sharp.IconChar.ClipboardQuestion;
             this.btnCrearReporte.IconColor = System.Drawing.Color.White;
             this.btnCrearReporte.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCrearReporte.Location = new System.Drawing.Point(0, 92);
@@ -173,10 +173,10 @@
             // btnRegistrarPacientes
             // 
             this.btnRegistrarPacientes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRegistrarPacientes.FlatAppearance.BorderSize = 2;
+            this.btnRegistrarPacientes.FlatAppearance.BorderSize = 0;
             this.btnRegistrarPacientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrarPacientes.ForeColor = System.Drawing.Color.Transparent;
-            this.btnRegistrarPacientes.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
+            this.btnRegistrarPacientes.IconChar = FontAwesome.Sharp.IconChar.Clipboard;
             this.btnRegistrarPacientes.IconColor = System.Drawing.Color.White;
             this.btnRegistrarPacientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRegistrarPacientes.Location = new System.Drawing.Point(0, 0);

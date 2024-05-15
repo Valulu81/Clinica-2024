@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmbZona = new System.Windows.Forms.ComboBox();
+            this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbRangoEdad = new System.Windows.Forms.TextBox();
+            this.txtEdad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbEnfermedad = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCrear = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
-            this.cmbMes2 = new System.Windows.Forms.ComboBox();
-            this.cmbMes1 = new System.Windows.Forms.ComboBox();
             this.pnlGrafica = new System.Windows.Forms.Panel();
             this.btnreporte = new System.Windows.Forms.Button();
             this.cmbSulfiltro = new System.Windows.Forms.ComboBox();
             this.lblSub = new System.Windows.Forms.Label();
+            this.dtpFecha1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecha2 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
-            // cmbZona
+            // cmbFiltro
             // 
-            this.cmbZona.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbZona.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
-            this.cmbZona.FormattingEnabled = true;
-            this.cmbZona.Location = new System.Drawing.Point(35, 117);
-            this.cmbZona.Name = "cmbZona";
-            this.cmbZona.Size = new System.Drawing.Size(120, 28);
-            this.cmbZona.TabIndex = 65;
-            this.cmbZona.SelectedIndexChanged += new System.EventHandler(this.cmbZona_SelectedIndexChanged);
+            this.cmbFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
+            this.cmbFiltro.FormattingEnabled = true;
+            this.cmbFiltro.Location = new System.Drawing.Point(35, 117);
+            this.cmbFiltro.Name = "cmbFiltro";
+            this.cmbFiltro.Size = new System.Drawing.Size(132, 28);
+            this.cmbFiltro.TabIndex = 65;
+            this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbZona_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -68,25 +68,25 @@
             this.label1.Text = "Filtro de área";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // cmbRangoEdad
+            // txtEdad
             // 
-            this.cmbRangoEdad.BackColor = System.Drawing.Color.White;
-            this.cmbRangoEdad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cmbRangoEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbRangoEdad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
-            this.cmbRangoEdad.Location = new System.Drawing.Point(39, 282);
-            this.cmbRangoEdad.Multiline = true;
-            this.cmbRangoEdad.Name = "cmbRangoEdad";
-            this.cmbRangoEdad.Size = new System.Drawing.Size(107, 28);
-            this.cmbRangoEdad.TabIndex = 63;
-            this.cmbRangoEdad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtEdad.BackColor = System.Drawing.Color.White;
+            this.txtEdad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEdad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
+            this.txtEdad.Location = new System.Drawing.Point(39, 310);
+            this.txtEdad.Multiline = true;
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.Size = new System.Drawing.Size(107, 28);
+            this.txtEdad.TabIndex = 63;
+            this.txtEdad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
-            this.label3.Location = new System.Drawing.Point(35, 249);
+            this.label3.Location = new System.Drawing.Point(35, 277);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(132, 20);
             this.label3.TabIndex = 62;
@@ -112,7 +112,7 @@
             this.cmbEnfermedad.FormattingEnabled = true;
             this.cmbEnfermedad.Location = new System.Drawing.Point(35, 50);
             this.cmbEnfermedad.Name = "cmbEnfermedad";
-            this.cmbEnfermedad.Size = new System.Drawing.Size(120, 28);
+            this.cmbEnfermedad.Size = new System.Drawing.Size(163, 28);
             this.cmbEnfermedad.TabIndex = 59;
             // 
             // label2
@@ -140,6 +140,7 @@
             this.btnCrear.TabIndex = 57;
             this.btnCrear.Text = "Crear";
             this.btnCrear.UseVisualStyleBackColor = false;
+            this.btnCrear.Click += new System.EventHandler(this.btnCrear_Click);
             // 
             // btnBorrar
             // 
@@ -154,26 +155,6 @@
             this.btnBorrar.TabIndex = 56;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
-            // 
-            // cmbMes2
-            // 
-            this.cmbMes2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMes2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
-            this.cmbMes2.FormattingEnabled = true;
-            this.cmbMes2.Location = new System.Drawing.Point(173, 207);
-            this.cmbMes2.Name = "cmbMes2";
-            this.cmbMes2.Size = new System.Drawing.Size(120, 28);
-            this.cmbMes2.TabIndex = 67;
-            // 
-            // cmbMes1
-            // 
-            this.cmbMes1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbMes1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
-            this.cmbMes1.FormattingEnabled = true;
-            this.cmbMes1.Location = new System.Drawing.Point(35, 207);
-            this.cmbMes1.Name = "cmbMes1";
-            this.cmbMes1.Size = new System.Drawing.Size(120, 28);
-            this.cmbMes1.TabIndex = 68;
             // 
             // pnlGrafica
             // 
@@ -203,22 +184,42 @@
             this.cmbSulfiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSulfiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.cmbSulfiltro.FormattingEnabled = true;
-            this.cmbSulfiltro.Location = new System.Drawing.Point(173, 117);
+            this.cmbSulfiltro.Location = new System.Drawing.Point(186, 117);
             this.cmbSulfiltro.Name = "cmbSulfiltro";
             this.cmbSulfiltro.Size = new System.Drawing.Size(120, 28);
             this.cmbSulfiltro.TabIndex = 71;
+            this.cmbSulfiltro.Visible = false;
             // 
             // lblSub
             // 
             this.lblSub.AutoSize = true;
             this.lblSub.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
-            this.lblSub.Location = new System.Drawing.Point(169, 86);
+            this.lblSub.Location = new System.Drawing.Point(182, 86);
             this.lblSub.Name = "lblSub";
             this.lblSub.Size = new System.Drawing.Size(77, 20);
             this.lblSub.TabIndex = 72;
             this.lblSub.Text = "Subfiltro";
             this.lblSub.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblSub.Visible = false;
+            // 
+            // dtpFecha1
+            // 
+            this.dtpFecha1.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
+            this.dtpFecha1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFecha1.Location = new System.Drawing.Point(39, 197);
+            this.dtpFecha1.Name = "dtpFecha1";
+            this.dtpFecha1.Size = new System.Drawing.Size(285, 26);
+            this.dtpFecha1.TabIndex = 73;
+            // 
+            // dtpFecha2
+            // 
+            this.dtpFecha2.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
+            this.dtpFecha2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFecha2.Location = new System.Drawing.Point(39, 229);
+            this.dtpFecha2.Name = "dtpFecha2";
+            this.dtpFecha2.Size = new System.Drawing.Size(285, 26);
+            this.dtpFecha2.TabIndex = 74;
             // 
             // FrmCrearGrafica
             // 
@@ -226,15 +227,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(230)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(838, 371);
+            this.Controls.Add(this.dtpFecha2);
+            this.Controls.Add(this.dtpFecha1);
             this.Controls.Add(this.lblSub);
             this.Controls.Add(this.cmbSulfiltro);
             this.Controls.Add(this.btnreporte);
             this.Controls.Add(this.pnlGrafica);
-            this.Controls.Add(this.cmbMes1);
-            this.Controls.Add(this.cmbMes2);
-            this.Controls.Add(this.cmbZona);
+            this.Controls.Add(this.cmbFiltro);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cmbRangoEdad);
+            this.Controls.Add(this.txtEdad);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbEnfermedad);
@@ -250,20 +251,20 @@
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox cmbZona;
+        private System.Windows.Forms.ComboBox cmbFiltro;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox cmbRangoEdad;
+        private System.Windows.Forms.TextBox txtEdad;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbEnfermedad;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.Button btnBorrar;
-        private System.Windows.Forms.ComboBox cmbMes2;
-        private System.Windows.Forms.ComboBox cmbMes1;
         private System.Windows.Forms.Panel pnlGrafica;
         private System.Windows.Forms.Button btnreporte;
         private System.Windows.Forms.ComboBox cmbSulfiltro;
         private System.Windows.Forms.Label lblSub;
+        private System.Windows.Forms.DateTimePicker dtpFecha1;
+        private System.Windows.Forms.DateTimePicker dtpFecha2;
     }
 }
