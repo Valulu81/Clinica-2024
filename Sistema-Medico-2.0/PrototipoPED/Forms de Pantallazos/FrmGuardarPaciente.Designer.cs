@@ -243,6 +243,7 @@
             this.txtAño.Name = "txtAño";
             this.txtAño.TextChanged += new System.EventHandler(this.txtAño_TextChanged);
             this.txtAño.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAño_KeyPress);
+            this.txtAño.MouseLeave += new System.EventHandler(this.txtAño_MouseLeave);
             // 
             // cmbDia
             // 

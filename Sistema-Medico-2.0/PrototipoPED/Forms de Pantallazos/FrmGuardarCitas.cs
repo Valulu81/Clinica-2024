@@ -59,20 +59,88 @@ namespace PrototipoPED
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            string fechaHora;
-            fechaHora = txtAño.Text + "-" + (cmbMes.SelectedIndex+1).ToString() +"-"+cmbDia.Text+ " "+ cmbHorario.Text+".000";
-            Conexion miConexion = new Conexion();
-            try
+            if (cmbPaciente.SelectedIndex == -1)
             {
-                miConexion.AgregarCita(cmbPaciente.Text, cmbDoctor.Text, fechaHora);
-                Limpiar();
+                btnGuardar.Enabled = false;
+                MessageBox.Show("Por favor, seleccione un paciente.");
+                cmbPaciente.Focus();
+                btnGuardar.Enabled = true;
             }
-            catch(Exception ex)
+
+            if (cmbDoctor.SelectedIndex == -1 || cmbHorario.SelectedIndex == -1 || cmbDia.SelectedIndex == -1 || cmbMes.SelectedIndex == -1 )
             {
-                MessageBox.Show(ex.Message); ;
+                btnGuardar.Enabled = false;
+                MessageBox.Show("Por favor, complete los campos.");
+                btnGuardar.Enabled = true;
             }
+
+            else
+            {
+                btnGuardar.Enabled = true;
+
+                string fechaHora;
+                fechaHora = txtAño.Text + "-" + (cmbMes.SelectedIndex + 1).ToString() + "-" + cmbDia.Text + " " + cmbHorario.Text + ".000";
+                Conexion miConexion = new Conexion();
+                try
+                {
+                    miConexion.AgregarCita(cmbPaciente.Text, cmbDoctor.Text, fechaHora);
+                    Limpiar();
+                    cmbDoctor.Enabled = false;
+                    cmbHorario.Enabled = false;
+                    cmbMes.Enabled = false;
+                    txtAño.Enabled = false;
+                    cmbDia.Enabled = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message); ;
+                }
             LlenarCmbCitas();
+            }
         }
 
+        private void FrmGuardarCitas_Load(object sender, EventArgs e)
+        {
+            cmbDoctor.Enabled = false;
+            cmbHorario.Enabled = false;
+            cmbMes.Enabled = false;
+            txtAño.Enabled = false;
+            cmbDia.Enabled = false;
+        }
+
+        private void btnborrar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
+            cmbDoctor.Enabled = false;
+            cmbHorario.Enabled = false;
+            cmbMes.Enabled = false;
+            txtAño.Enabled = false;
+            cmbDia.Enabled = false;
+        }
+
+        private void cmbPaciente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbDoctor.Enabled = true;
+        }
+
+        private void cmbDoctor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtAño.Enabled=true;
+        }
+
+        private void txtAño_TextChanged(object sender, EventArgs e)
+        {
+            cmbMes.Enabled=true;
+        }
+
+        private void cmbMes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbDia.Enabled=true;
+        }
+
+        private void cmbDia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbHorario.Enabled=true;
+        }
     }
 }

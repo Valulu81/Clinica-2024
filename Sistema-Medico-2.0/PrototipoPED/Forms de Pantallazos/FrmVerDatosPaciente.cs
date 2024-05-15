@@ -37,31 +37,60 @@ namespace PrototipoPED.Forms_de_Pantallazos
             txtSexo.Clear();
             txtTelefono.Clear();
             txtfecha.Clear();
+            cmbPaciente.SelectedIndex = -1;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            Paciente miPaciente = new Paciente();
-            Conexion miConexion = new Conexion();
 
-            try
+            // Si el ComboBox está vacío, deshabilita el botón y muestra un mensaje
+            if (cmbPaciente.SelectedIndex == -1)
             {
-                miPaciente=miConexion.DatosPaciente(cmbPaciente.Text);
-                txtDireccion.Text = miPaciente.Direccion;
-                txtEdad.Text = miPaciente.Edad;
-                txtfecha.Text = miPaciente.Fecha_Nacimiento.ToString() ;
-                txtNit.Text= miPaciente.NIT;
-                txtSexo.Text = miPaciente.Sexo;
-                txtTelefono.Text= miPaciente.Telefono;
-                txtDui.Text = miPaciente.DUI;
+                btnBuscar.Enabled = false;
+                MessageBox.Show("Por favor, seleccione un ítem.");
+                cmbPaciente.Focus();
+                btnBuscar.Enabled = true;
+            }
+            else
+            {
+                // Si el ComboBox no está vacío, habilita el botón
 
+                btnBuscar.Enabled = true;
+
+                Paciente miPaciente = new Paciente();
+                Conexion miConexion = new Conexion();
+                try
+                {
+                    miPaciente = miConexion.DatosPaciente(cmbPaciente.Text);
+                    txtDireccion.Text = miPaciente.Direccion;
+                    txtEdad.Text = miPaciente.Edad;
+                    txtfecha.Text = miPaciente.Fecha_Nacimiento.ToString();
+                    txtNit.Text = miPaciente.NIT;
+                    txtSexo.Text = miPaciente.Sexo;
+                    txtTelefono.Text = miPaciente.Telefono;
+                    txtDui.Text = miPaciente.DUI;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show( ex.Message);
-            }
+
         }
 
-       
+        private void FrmVerDatosPaciente_Load(object sender, EventArgs e)
+        {
+            txtDireccion.Enabled = false;
+            txtTelefono.Enabled = false;
+            txtSexo.Enabled = false;
+            txtfecha.Enabled = false;
+            txtDui.Enabled = false;
+            txtNit.Enabled = false; 
+            txtEdad.Enabled = false;
+        }
+
+        
+
     }
 }

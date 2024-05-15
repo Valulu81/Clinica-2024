@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Annotations.Storage;
 using System.Windows.Forms;
 
 namespace PrototipoPED
@@ -68,6 +69,48 @@ namespace PrototipoPED
                 MessageBox.Show(ex.Message);
 
             }
+        }
+
+        private void S_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public static void temperaturas(KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                // Convierte el caracter a entero
+                int valor = (int)Char.GetNumericValue(e.KeyChar);
+
+                // Verifica si el valor está entre 9 y 20
+                if (valor >= 9 && valor <= 20)
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Ingrese valores válidos para la temperatura");
+            }
+        }
+
+        private void txtPeso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            S.temperaturas(e);
         }
     }
 }

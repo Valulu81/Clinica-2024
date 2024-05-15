@@ -511,6 +511,27 @@ namespace PrototipoPED
             }
         }
 
+        private void txtAño_MouseLeave(object sender, EventArgs e)
+        {
+            int valor;
+            if (int.TryParse(txtAño.Text, out valor))
+            {
+                if (valor < 1940 || valor > 2024)
+                {
+                    // Si el valor está fuera del rango, borra el texto del MaskedTextBox
+                    txtAño.Text = "";
+                }
+            }
+            else
+            {
+                // Si el texto no es un número válido, también borra el texto del MaskedTextBox
+                txtAño.Text = "";
+            }
+
+            // Regresa el foco al MaskedTextBox
+            txtAño.Focus();
+        }
+
         //Para que no acepte espacios en blanco
 
     }
