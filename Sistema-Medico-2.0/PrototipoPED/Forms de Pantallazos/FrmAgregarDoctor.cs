@@ -14,6 +14,8 @@ using System.Windows.Forms;
 
 namespace PrototipoPED.Forms_de_Pantallazos
 {
+    //Form que agrega/genera el perfil del médico a la base
+
     public partial class FrmAgregarDoctor : Form
     {
         public FrmAgregarDoctor()

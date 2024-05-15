@@ -1,6 +1,6 @@
 ﻿namespace PrototipoPED
 {
-    partial class S
+    partial class FrmCrearReporte
     {
         /// <summary>
         /// Required designer variable.
@@ -264,7 +264,7 @@
             this.cmbCita.FormattingEnabled = true;
             this.cmbCita.Location = new System.Drawing.Point(278, 52);
             this.cmbCita.Name = "cmbCita";
-            this.cmbCita.Size = new System.Drawing.Size(198, 28);
+            this.cmbCita.Size = new System.Drawing.Size(219, 28);
             this.cmbCita.TabIndex = 63;
             // 
             // label5
@@ -290,6 +290,7 @@
             this.cmbEnfermedades.Name = "cmbEnfermedades";
             this.cmbEnfermedades.Size = new System.Drawing.Size(161, 28);
             this.cmbEnfermedades.TabIndex = 64;
+            this.cmbEnfermedades.SelectedIndexChanged += new System.EventHandler(this.cmbEnfermedades_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -303,7 +304,7 @@
             this.label9.Text = "Enfermedad:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // S
+            // FrmCrearReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -330,7 +331,7 @@
             this.Controls.Add(this.cmbPaciente);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "S";
+            this.Name = "FrmCrearReporte";
             this.Text = "FrmCrearReporte";
             this.Load += new System.EventHandler(this.S_Load);
             this.ResumeLayout(false);

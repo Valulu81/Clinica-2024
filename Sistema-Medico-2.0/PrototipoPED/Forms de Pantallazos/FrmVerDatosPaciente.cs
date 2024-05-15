@@ -11,6 +11,7 @@ using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//Form con las validaciones listas
 
 namespace PrototipoPED.Forms_de_Pantallazos
 {
@@ -25,7 +26,10 @@ namespace PrototipoPED.Forms_de_Pantallazos
                 Conexion miconexion = new Conexion();
                 miconexion.VerDatosPCombo(cmbPaciente);
             }
-            catch { }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -47,7 +51,7 @@ namespace PrototipoPED.Forms_de_Pantallazos
             if (cmbPaciente.SelectedIndex == -1)
             {
                 btnBuscar.Enabled = false;
-                MessageBox.Show("Por favor, seleccione un ítem.");
+                MessageBox.Show("Por favor, seleccione un paciente.");
                 cmbPaciente.Focus();
                 btnBuscar.Enabled = true;
             }
@@ -78,9 +82,11 @@ namespace PrototipoPED.Forms_de_Pantallazos
             }
 
         }
+        //Inicializa
 
         private void FrmVerDatosPaciente_Load(object sender, EventArgs e)
         {
+            cmbPaciente.DropDownStyle = ComboBoxStyle.DropDownList;
             txtDireccion.Enabled = false;
             txtTelefono.Enabled = false;
             txtSexo.Enabled = false;
@@ -90,7 +96,6 @@ namespace PrototipoPED.Forms_de_Pantallazos
             txtEdad.Enabled = false;
         }
 
-        
 
     }
 }

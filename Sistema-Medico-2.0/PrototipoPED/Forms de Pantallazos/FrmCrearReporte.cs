@@ -14,45 +14,103 @@ using System.Windows.Forms;
 
 namespace PrototipoPED
 {
-    public partial class S : Form
+    public partial class FrmCrearReporte : Form
     {
-        public S()
+        public FrmCrearReporte()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            Conexion conexion = new Conexion();
-            conexion.VerDatosPCombo(cmbPaciente);
-        }
-
-
-
-        private string ConecStr = "data source=localhost; initial catalog=Clinica;" +
-       " persist security info=True; Integrated Security=SSPI; ";
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
             try
             {
                 Conexion conexion = new Conexion();
-                Reporte mireporte = new Reporte();
-                mireporte.Cod_Cita = conexion.DevolverCodCita(cmbPaciente.Text,cmbCita.Text);
-                mireporte.Presion_Arterial = txtPresion.Text;
-                mireporte.Temperatura = Convert.ToDecimal(txtTemperatura.Text);
-                mireporte.Diagnostico = txtDiagnostico.Text;
-                mireporte.Motivo = txtMotivo.Text;
-                mireporte.Peso = Convert.ToDecimal(txtPeso.Text);
-                mireporte.Talla = Convert.ToDecimal(txtEstatura.Text);
-
-                conexion.AgregarReporte(mireporte);
-
+                conexion.VerDatosPCombo(cmbPaciente);
+                conexion.VerDatosECombo(cmbEnfermedades);
             }
-            catch(Exception ex) 
+            catch 
             {
-                MessageBox.Show(ex.Message);
+
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+            if (cmbEnfermedades.Text == "")
+            {
+                MessageBox.Show("Debe escribir o elegir una enfermedad.");
+                return;
             }
 
+            if (cmbEnfermedades.SelectedIndex == -1) //si la seleccion esta fuera de las enfermedades enlistadas:
+            {
+                Conexion conexion = new Conexion();
+                conexion.AgregarEnfermedad(cmbEnfermedades.Text);
+
+            
+                try
+                {
+                    Reporte mireporte = new Reporte();
+                    mireporte.Cod_Cita = conexion.DevolverCodCita(cmbPaciente.Text, Convert.ToDateTime(cmbCita.Text));
+                    mireporte.Presion_Arterial = txtPresion.Text;
+                    mireporte.Temperatura = Convert.ToDecimal(txtTemperatura.Text);
+                    mireporte.Diagnostico = cmbEnfermedades.Text + ", " + txtDiagnostico.Text;
+                    mireporte.Motivo = txtMotivo.Text;
+                    mireporte.Peso = Convert.ToDecimal(txtPeso.Text);
+                    mireporte.Talla = Convert.ToDecimal(txtEstatura.Text);
+
+                    conexion.AgregarReporte(mireporte);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return;
+                }
+
+            }
+
+            else
+            {
+                try
+                {
+                    Conexion conexion = new Conexion();
+                    Reporte mireporte = new Reporte();
+                    mireporte.Cod_Cita = conexion.DevolverCodCita(cmbPaciente.Text, Convert.ToDateTime(cmbCita.Text));
+                    mireporte.Presion_Arterial = txtPresion.Text;
+                    mireporte.Temperatura = Convert.ToDecimal(txtTemperatura.Text);
+                    mireporte.Diagnostico = cmbEnfermedades.Text + ", " + txtDiagnostico.Text;
+                    mireporte.Motivo = txtMotivo.Text;
+                    mireporte.Peso = Convert.ToDecimal(txtPeso.Text);
+                    mireporte.Talla = Convert.ToDecimal(txtEstatura.Text);
+
+                    conexion.AgregarReporte(mireporte);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return;
+                }
+            }
+            Limpiar();
+        }
+
+        private void Limpiar()
+        {
+            cmbEnfermedades.Items.Clear();
+            Conexion conexion = new Conexion();
+            conexion.VerDatosECombo(cmbEnfermedades);
+            txtDiagnostico.Clear();
+            txtPeso.Clear();
+            txtMotivo.Clear();
+            txtEstatura.Clear();
+            txtTemperatura.Clear();
+            txtPresion.Clear();
+            cmbPaciente.SelectedIndex = -1;
+            cmbCita.SelectedIndex = 0;
 
         }
+
 
         private void cmbPaciente_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -76,7 +134,7 @@ namespace PrototipoPED
 
         }
 
-        public static void temperaturas(KeyPressEventArgs e)
+       public static void temperaturas(KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar))
             {
@@ -84,7 +142,7 @@ namespace PrototipoPED
                 int valor = (int)Char.GetNumericValue(e.KeyChar);
 
                 // Verifica si el valor está entre 9 y 20
-                if (valor >= 9 && valor <= 20)
+                if (valor >= 35 && valor <= 42)
                 {
                     e.Handled = false;
                 }
@@ -110,7 +168,20 @@ namespace PrototipoPED
 
         private void txtPeso_KeyPress(object sender, KeyPressEventArgs e)
         {
-            S.temperaturas(e);
+            //FrmCrearReporte.temperaturas(e);
+        }
+
+        
+        private void cmbEnfermedades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cmbEnfermedades.Text != "")
+            {
+                txtDiagnostico.Enabled = true;
+            }
+            else
+            {
+                txtDiagnostico.Enabled = false;
+            }
         }
     }
 }

@@ -106,6 +106,7 @@ namespace PrototipoPED
             cmbMes.Enabled = false;
             txtAño.Enabled = false;
             cmbDia.Enabled = false;
+            cmbPaciente.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         private void btnborrar_Click(object sender, EventArgs e)

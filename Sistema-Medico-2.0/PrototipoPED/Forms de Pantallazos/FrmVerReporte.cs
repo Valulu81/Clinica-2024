@@ -165,7 +165,7 @@ namespace PrototipoPED
         {
             Conexion miConexion = new Conexion();
             Reporte miReporte = new Reporte();
-            miReporte = miConexion.VerReporte(cmbPaciente.Text, cmbDoctor.Text, cmbFecha.Text);
+            miReporte = miConexion.VerReporte(cmbPaciente.Text, cmbDoctor.Text, Convert.ToDateTime(cmbFecha.Text));
             txtDiagnostico.Text = miReporte.Diagnostico;
             txtEstatura.Text = (miReporte.Talla).ToString();
             txtMotivo.Text= miReporte.Motivo;

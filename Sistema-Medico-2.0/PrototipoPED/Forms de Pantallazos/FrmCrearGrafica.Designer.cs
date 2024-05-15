@@ -41,6 +41,8 @@
             this.cmbMes1 = new System.Windows.Forms.ComboBox();
             this.pnlGrafica = new System.Windows.Forms.Panel();
             this.btnreporte = new System.Windows.Forms.Button();
+            this.cmbSulfiltro = new System.Windows.Forms.ComboBox();
+            this.lblSub = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cmbZona
@@ -48,21 +50,22 @@
             this.cmbZona.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbZona.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.cmbZona.FormattingEnabled = true;
-            this.cmbZona.Location = new System.Drawing.Point(35, 135);
+            this.cmbZona.Location = new System.Drawing.Point(35, 117);
             this.cmbZona.Name = "cmbZona";
             this.cmbZona.Size = new System.Drawing.Size(120, 28);
             this.cmbZona.TabIndex = 65;
+            this.cmbZona.SelectedIndexChanged += new System.EventHandler(this.cmbZona_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
-            this.label1.Location = new System.Drawing.Point(35, 104);
+            this.label1.Location = new System.Drawing.Point(35, 86);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 20);
+            this.label1.Size = new System.Drawing.Size(116, 20);
             this.label1.TabIndex = 64;
-            this.label1.Text = "Zona";
+            this.label1.Text = "Filtro de área";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // cmbRangoEdad
@@ -71,7 +74,7 @@
             this.cmbRangoEdad.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.cmbRangoEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRangoEdad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
-            this.cmbRangoEdad.Location = new System.Drawing.Point(35, 280);
+            this.cmbRangoEdad.Location = new System.Drawing.Point(39, 282);
             this.cmbRangoEdad.Multiline = true;
             this.cmbRangoEdad.Name = "cmbRangoEdad";
             this.cmbRangoEdad.Size = new System.Drawing.Size(107, 28);
@@ -107,7 +110,7 @@
             this.cmbEnfermedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEnfermedad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.cmbEnfermedad.FormattingEnabled = true;
-            this.cmbEnfermedad.Location = new System.Drawing.Point(35, 65);
+            this.cmbEnfermedad.Location = new System.Drawing.Point(35, 50);
             this.cmbEnfermedad.Name = "cmbEnfermedad";
             this.cmbEnfermedad.Size = new System.Drawing.Size(120, 28);
             this.cmbEnfermedad.TabIndex = 59;
@@ -117,7 +120,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
-            this.label2.Location = new System.Drawing.Point(35, 34);
+            this.label2.Location = new System.Drawing.Point(35, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 20);
             this.label2.TabIndex = 58;
@@ -195,12 +198,36 @@
             this.btnreporte.UseVisualStyleBackColor = false;
             this.btnreporte.Click += new System.EventHandler(this.btnreporte_Click);
             // 
+            // cmbSulfiltro
+            // 
+            this.cmbSulfiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSulfiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
+            this.cmbSulfiltro.FormattingEnabled = true;
+            this.cmbSulfiltro.Location = new System.Drawing.Point(173, 117);
+            this.cmbSulfiltro.Name = "cmbSulfiltro";
+            this.cmbSulfiltro.Size = new System.Drawing.Size(120, 28);
+            this.cmbSulfiltro.TabIndex = 71;
+            // 
+            // lblSub
+            // 
+            this.lblSub.AutoSize = true;
+            this.lblSub.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
+            this.lblSub.Location = new System.Drawing.Point(169, 86);
+            this.lblSub.Name = "lblSub";
+            this.lblSub.Size = new System.Drawing.Size(77, 20);
+            this.lblSub.TabIndex = 72;
+            this.lblSub.Text = "Subfiltro";
+            this.lblSub.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // FrmCrearGrafica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(230)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(838, 371);
+            this.Controls.Add(this.lblSub);
+            this.Controls.Add(this.cmbSulfiltro);
             this.Controls.Add(this.btnreporte);
             this.Controls.Add(this.pnlGrafica);
             this.Controls.Add(this.cmbMes1);
@@ -236,5 +263,7 @@
         private System.Windows.Forms.ComboBox cmbMes1;
         private System.Windows.Forms.Panel pnlGrafica;
         private System.Windows.Forms.Button btnreporte;
+        private System.Windows.Forms.ComboBox cmbSulfiltro;
+        private System.Windows.Forms.Label lblSub;
     }
 }
