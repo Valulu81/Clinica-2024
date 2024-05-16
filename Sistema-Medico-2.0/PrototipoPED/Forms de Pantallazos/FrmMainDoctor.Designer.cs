@@ -39,7 +39,6 @@
             this.btnRegistrarPacientes = new FontAwesome.Sharp.IconButton();
             this.pnlForm = new System.Windows.Forms.Panel();
             this.pnlUsuario = new System.Windows.Forms.Panel();
-            this.btnAjustes = new FontAwesome.Sharp.IconButton();
             this.btnLogin = new FontAwesome.Sharp.IconButton();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.pnlNav.SuspendLayout();
@@ -201,34 +200,14 @@
             // pnlUsuario
             // 
             this.pnlUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(74)))), ((int)(((byte)(129)))));
-            this.pnlUsuario.Controls.Add(this.btnAjustes);
             this.pnlUsuario.Controls.Add(this.btnLogin);
             this.pnlUsuario.Controls.Add(this.btnSalir);
             this.pnlUsuario.Location = new System.Drawing.Point(710, 5);
             this.pnlUsuario.Name = "pnlUsuario";
-            this.pnlUsuario.Size = new System.Drawing.Size(121, 169);
+            this.pnlUsuario.Size = new System.Drawing.Size(121, 115);
             this.pnlUsuario.TabIndex = 4;
             this.pnlUsuario.Visible = false;
             this.pnlUsuario.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlUsuario_Paint);
-            // 
-            // btnAjustes
-            // 
-            this.btnAjustes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAjustes.FlatAppearance.BorderSize = 0;
-            this.btnAjustes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAjustes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjustes.ForeColor = System.Drawing.Color.White;
-            this.btnAjustes.IconChar = FontAwesome.Sharp.IconChar.UserGear;
-            this.btnAjustes.IconColor = System.Drawing.Color.White;
-            this.btnAjustes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAjustes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAjustes.Location = new System.Drawing.Point(0, 110);
-            this.btnAjustes.Name = "btnAjustes";
-            this.btnAjustes.Size = new System.Drawing.Size(121, 55);
-            this.btnAjustes.TabIndex = 4;
-            this.btnAjustes.Text = "Ajustes";
-            this.btnAjustes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAjustes.UseVisualStyleBackColor = true;
             // 
             // btnLogin
             // 
@@ -299,7 +278,6 @@
         private FontAwesome.Sharp.IconButton btnRegistrarPacientes;
         private System.Windows.Forms.Panel pnlForm;
         private System.Windows.Forms.Panel pnlUsuario;
-        private FontAwesome.Sharp.IconButton btnAjustes;
         private FontAwesome.Sharp.IconButton btnLogin;
         private FontAwesome.Sharp.IconButton btnSalir;
         private FontAwesome.Sharp.IconButton btnCrearGrafica;

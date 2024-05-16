@@ -55,10 +55,9 @@
             this.cmbFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.cmbFiltro.FormattingEnabled = true;
-            this.cmbFiltro.Location = new System.Drawing.Point(47, 144);
-            this.cmbFiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbFiltro.Location = new System.Drawing.Point(35, 117);
             this.cmbFiltro.Name = "cmbFiltro";
-            this.cmbFiltro.Size = new System.Drawing.Size(175, 33);
+            this.cmbFiltro.Size = new System.Drawing.Size(132, 28);
             this.cmbFiltro.TabIndex = 65;
             this.cmbFiltro.SelectedIndexChanged += new System.EventHandler(this.cmbZona_SelectedIndexChanged);
             // 
@@ -67,10 +66,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
-            this.label1.Location = new System.Drawing.Point(47, 106);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(35, 86);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 25);
+            this.label1.Size = new System.Drawing.Size(116, 20);
             this.label1.TabIndex = 64;
             this.label1.Text = "Filtro de área";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -81,11 +79,10 @@
             this.txtEdad.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEdad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
-            this.txtEdad.Location = new System.Drawing.Point(52, 382);
-            this.txtEdad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEdad.Location = new System.Drawing.Point(39, 310);
             this.txtEdad.Multiline = true;
             this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(143, 34);
+            this.txtEdad.Size = new System.Drawing.Size(107, 28);
             this.txtEdad.TabIndex = 63;
             this.txtEdad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -94,10 +91,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
-            this.label3.Location = new System.Drawing.Point(47, 341);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(35, 277);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(158, 25);
+            this.label3.Size = new System.Drawing.Size(132, 20);
             this.label3.TabIndex = 62;
             this.label3.Text = "Rango de edad";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -107,10 +103,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
-            this.label5.Location = new System.Drawing.Point(47, 214);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(35, 174);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(171, 25);
+            this.label5.Size = new System.Drawing.Size(142, 20);
             this.label5.TabIndex = 60;
             this.label5.Text = "Lapso de tiempo";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -120,10 +115,9 @@
             this.cmbEnfermedad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEnfermedad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.cmbEnfermedad.FormattingEnabled = true;
-            this.cmbEnfermedad.Location = new System.Drawing.Point(47, 62);
-            this.cmbEnfermedad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbEnfermedad.Location = new System.Drawing.Point(35, 50);
             this.cmbEnfermedad.Name = "cmbEnfermedad";
-            this.cmbEnfermedad.Size = new System.Drawing.Size(216, 33);
+            this.cmbEnfermedad.Size = new System.Drawing.Size(163, 28);
             this.cmbEnfermedad.TabIndex = 59;
             // 
             // label2
@@ -131,10 +125,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
-            this.label2.Location = new System.Drawing.Point(47, 23);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(35, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 25);
+            this.label2.Size = new System.Drawing.Size(107, 20);
             this.label2.TabIndex = 58;
             this.label2.Text = "Enfermedad";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -146,10 +139,9 @@
             this.btnCrear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCrear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrear.ForeColor = System.Drawing.Color.White;
-            this.btnCrear.Location = new System.Drawing.Point(956, 384);
-            this.btnCrear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCrear.Location = new System.Drawing.Point(717, 312);
             this.btnCrear.Name = "btnCrear";
-            this.btnCrear.Size = new System.Drawing.Size(116, 46);
+            this.btnCrear.Size = new System.Drawing.Size(87, 37);
             this.btnCrear.TabIndex = 57;
             this.btnCrear.Text = "Crear";
             this.btnCrear.UseVisualStyleBackColor = false;
@@ -162,13 +154,13 @@
             this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrar.ForeColor = System.Drawing.Color.White;
-            this.btnBorrar.Location = new System.Drawing.Point(815, 384);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBorrar.Location = new System.Drawing.Point(611, 312);
             this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(116, 46);
+            this.btnBorrar.Size = new System.Drawing.Size(87, 37);
             this.btnBorrar.TabIndex = 56;
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnreporte
             // 
@@ -177,10 +169,9 @@
             this.btnreporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnreporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnreporte.ForeColor = System.Drawing.Color.White;
-            this.btnreporte.Location = new System.Drawing.Point(631, 384);
-            this.btnreporte.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnreporte.Location = new System.Drawing.Point(473, 312);
             this.btnreporte.Name = "btnreporte";
-            this.btnreporte.Size = new System.Drawing.Size(157, 46);
+            this.btnreporte.Size = new System.Drawing.Size(118, 37);
             this.btnreporte.TabIndex = 70;
             this.btnreporte.Text = "Ver Reporte";
             this.btnreporte.UseVisualStyleBackColor = false;
@@ -191,10 +182,9 @@
             this.cmbSulfiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSulfiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.cmbSulfiltro.FormattingEnabled = true;
-            this.cmbSulfiltro.Location = new System.Drawing.Point(248, 144);
-            this.cmbSulfiltro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbSulfiltro.Location = new System.Drawing.Point(186, 117);
             this.cmbSulfiltro.Name = "cmbSulfiltro";
-            this.cmbSulfiltro.Size = new System.Drawing.Size(159, 33);
+            this.cmbSulfiltro.Size = new System.Drawing.Size(120, 28);
             this.cmbSulfiltro.TabIndex = 71;
             this.cmbSulfiltro.Visible = false;
             // 
@@ -203,10 +193,9 @@
             this.lblSub.AutoSize = true;
             this.lblSub.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
-            this.lblSub.Location = new System.Drawing.Point(243, 106);
-            this.lblSub.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSub.Location = new System.Drawing.Point(182, 86);
             this.lblSub.Name = "lblSub";
-            this.lblSub.Size = new System.Drawing.Size(92, 25);
+            this.lblSub.Size = new System.Drawing.Size(77, 20);
             this.lblSub.TabIndex = 72;
             this.lblSub.Text = "Subfiltro";
             this.lblSub.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -216,20 +205,18 @@
             // 
             this.dtpFecha1.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.dtpFecha1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFecha1.Location = new System.Drawing.Point(52, 242);
-            this.dtpFecha1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFecha1.Location = new System.Drawing.Point(39, 197);
             this.dtpFecha1.Name = "dtpFecha1";
-            this.dtpFecha1.Size = new System.Drawing.Size(379, 30);
+            this.dtpFecha1.Size = new System.Drawing.Size(285, 26);
             this.dtpFecha1.TabIndex = 73;
             // 
             // dtpFecha2
             // 
             this.dtpFecha2.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.dtpFecha2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFecha2.Location = new System.Drawing.Point(52, 282);
-            this.dtpFecha2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpFecha2.Location = new System.Drawing.Point(39, 229);
             this.dtpFecha2.Name = "dtpFecha2";
-            this.dtpFecha2.Size = new System.Drawing.Size(379, 30);
+            this.dtpFecha2.Size = new System.Drawing.Size(285, 26);
             this.dtpFecha2.TabIndex = 74;
             // 
             // chart1
@@ -238,24 +225,23 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(451, 12);
-            this.chart1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chart1.Location = new System.Drawing.Point(338, 10);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(651, 353);
+            this.chart1.Size = new System.Drawing.Size(488, 287);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
             this.chart1.Visible = false;
             // 
             // FrmCrearGrafica
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(230)))), ((int)(((byte)(247)))));
-            this.ClientSize = new System.Drawing.Size(1117, 446);
+            this.ClientSize = new System.Drawing.Size(838, 362);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.dtpFecha2);
             this.Controls.Add(this.dtpFecha1);
@@ -273,7 +259,6 @@
             this.Controls.Add(this.btnBorrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmCrearGrafica";
             this.Text = "FrmCrearGrafica";
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();

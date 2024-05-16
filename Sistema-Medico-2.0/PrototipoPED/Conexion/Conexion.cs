@@ -210,7 +210,8 @@ namespace PrototipoPED.ConexionBD
                     cmd.ExecuteNonQuery();
                     cnn.Close();
                 }
-                catch (Exception ex) { throw new Exception("Error en la bd: " + ex.Message); }
+                catch (Exception ex) 
+                { throw new Exception("Error en la bd: " + ex.Message); }
             }
 
         }

@@ -17,9 +17,16 @@ namespace PrototipoPED.Forms_de_Pantallazos
     {
         string[] filtros = { "País", "Zona"};
         string[] zonas = { "Occidente", "Central", "Oriente" };
-        string[] depasOccidente = { "Ahuachapán", "Santa Ana", "Sonsonate" };
-        string[] depasCentral = { "Chalatenango", "Cuscatlán", "Cabañas", "La libertad", "La Paz", "San Vicente", "San Salvador" };
-        string[] depasOriental = { "Morazán", "La Unión", "San Miguel", "Usulután" };
+        string[] depasOccidente = { "Ahuachapán", "Santa_Ana", "Sonsonate" };
+        string[] depasCentral = { "Chalatenango", "Cuscatlán", "Cabañas", "La_libertad", "La_Paz", "San_Vicente", "San_Salvador" };
+        string[] depasOriental = { "Morazán", "La_Unión", "San_Miguel", "Usulután" };
+
+        private void Limpiar()
+        {
+            cmbEnfermedad.SelectedIndex = -1;
+            cmbFiltro.SelectedIndex = -1;
+            txtEdad.Text = "";
+        }
 
         private void LlenarCmbZona()
         {
@@ -110,8 +117,8 @@ namespace PrototipoPED.Forms_de_Pantallazos
 
                 int minValorY = valores.Min();
                 int maxValorY = valores.Max();
-                chart1.ChartAreas[0].AxisY.Minimum = minValorY - 10;
-                chart1.ChartAreas[0].AxisY.Maximum = maxValorY + 10;
+                chart1.ChartAreas[0].AxisY.Minimum = minValorY - 1;
+                chart1.ChartAreas[0].AxisY.Maximum = maxValorY + 2;
 
                 Series serie = chart1.Series.Add("Valores");
                 serie.ChartType = SeriesChartType.Column;
@@ -129,7 +136,11 @@ namespace PrototipoPED.Forms_de_Pantallazos
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                Limpiar();
+                return;
             }
+
+            Limpiar();
         }
 
 
@@ -141,7 +152,36 @@ namespace PrototipoPED.Forms_de_Pantallazos
 
             DateTime fecha1 = Convert.ToDateTime(dtpFecha1.Text);
             DateTime fecha2 = Convert.ToDateTime(dtpFecha2.Text);
+
+            if(cmbEnfermedad.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe ingresar una enfermedad primero");
+                return;
+            }
+
+            if(cmbFiltro.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un filtro primero");
+                return;
+            }
+
+            if(txtEdad.Text == "")
+            {
+                MessageBox.Show("Debe ingresar una edad como parámetro minimo");
+                txtEdad.Focus();
+                return;
+            }
+
+            if(Convert.ToInt32(txtEdad.Text) < 0)
+            {
+                MessageBox.Show("Debe ingresar una edad válida");
+                txtEdad.Clear();
+                txtEdad.Focus();
+                return;
+            }
+
             int edad = Convert.ToInt32(txtEdad.Text);
+
             FiltroGráfica filtroG = new FiltroGráfica(enfermedad, filtro, subfiltro, fecha1, fecha2, edad);
 
             switch (filtro)
@@ -169,6 +209,11 @@ namespace PrototipoPED.Forms_de_Pantallazos
 
                     break;
             }
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 }

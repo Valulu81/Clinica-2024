@@ -78,7 +78,8 @@ namespace PrototipoPED
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    //MessageBox.Show(ex.Message);
+                    Limpiar();
                     return;
                 }
 
@@ -103,7 +104,8 @@ namespace PrototipoPED
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    //MessageBox.Show(ex.Message);
+                    Limpiar();
                     return;
                 }
             }
@@ -147,18 +149,19 @@ namespace PrototipoPED
 
         private void cmbEnfermedades_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbEnfermedades.Text != "")
+            /*if (cmbEnfermedades.Text != "")
             {
                 txtDiagnostico.Enabled = true;
             }
             else
             {
                 txtDiagnostico.Enabled = false;
-            }
+            }*/
 
         }
 
-
+        //MAM0001
+        //1000MAM
 
         private void FrmCrearReporte_Load(object sender, EventArgs e)
         {
@@ -179,7 +182,7 @@ namespace PrototipoPED
             cmbEnfermedades.Enabled = false;
 
             cmbCita.Enabled = false;
-            txtDiagnostico.Enabled = false;
+            //txtDiagnostico.Enabled = false;
             txtEstatura.Enabled = false;
             txtTemperatura.Enabled = false;
             txtEstatura.Enabled = false;

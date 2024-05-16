@@ -106,6 +106,11 @@ namespace PrototipoPED.Forms_de_Pantallazos
 
         }
 
+        private void pnlUsuario_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void btnRegistrarPacientes_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new FrmGuardarPaciente());

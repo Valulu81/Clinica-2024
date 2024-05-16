@@ -33,7 +33,6 @@
             this.btnBarraLateral = new FontAwesome.Sharp.IconButton();
             this.pnlForm = new System.Windows.Forms.Panel();
             this.pnlUsuario = new System.Windows.Forms.Panel();
-            this.btnAjustes = new FontAwesome.Sharp.IconButton();
             this.btnLogin = new FontAwesome.Sharp.IconButton();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.pnlBarraLateral = new System.Windows.Forms.Panel();
@@ -54,9 +53,8 @@
             this.pnlNav.Controls.Add(this.btnBarraLateral);
             this.pnlNav.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlNav.Location = new System.Drawing.Point(0, 0);
-            this.pnlNav.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(1117, 86);
+            this.pnlNav.Size = new System.Drawing.Size(838, 70);
             this.pnlNav.TabIndex = 1;
             // 
             // btnUsuario
@@ -68,10 +66,9 @@
             this.btnUsuario.IconColor = System.Drawing.Color.White;
             this.btnUsuario.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnUsuario.IconSize = 70;
-            this.btnUsuario.Location = new System.Drawing.Point(1012, 0);
-            this.btnUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUsuario.Location = new System.Drawing.Point(759, 0);
             this.btnUsuario.Name = "btnUsuario";
-            this.btnUsuario.Size = new System.Drawing.Size(105, 86);
+            this.btnUsuario.Size = new System.Drawing.Size(79, 70);
             this.btnUsuario.TabIndex = 1;
             this.btnUsuario.UseVisualStyleBackColor = true;
             this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
@@ -87,9 +84,8 @@
             this.btnBarraLateral.IconColor = System.Drawing.Color.White;
             this.btnBarraLateral.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBarraLateral.Location = new System.Drawing.Point(0, 0);
-            this.btnBarraLateral.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBarraLateral.Name = "btnBarraLateral";
-            this.btnBarraLateral.Size = new System.Drawing.Size(113, 86);
+            this.btnBarraLateral.Size = new System.Drawing.Size(85, 70);
             this.btnBarraLateral.TabIndex = 0;
             this.btnBarraLateral.UseVisualStyleBackColor = false;
             this.btnBarraLateral.Click += new System.EventHandler(this.btnBarraLateral_Click);
@@ -100,44 +96,22 @@
             this.pnlForm.Controls.Add(this.pnlUsuario);
             this.pnlForm.Controls.Add(this.pnlBarraLateral);
             this.pnlForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlForm.Location = new System.Drawing.Point(0, 86);
-            this.pnlForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlForm.Location = new System.Drawing.Point(0, 70);
             this.pnlForm.Name = "pnlForm";
-            this.pnlForm.Size = new System.Drawing.Size(1117, 457);
+            this.pnlForm.Size = new System.Drawing.Size(838, 371);
             this.pnlForm.TabIndex = 2;
             // 
             // pnlUsuario
             // 
             this.pnlUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(74)))), ((int)(((byte)(129)))));
-            this.pnlUsuario.Controls.Add(this.btnAjustes);
             this.pnlUsuario.Controls.Add(this.btnLogin);
             this.pnlUsuario.Controls.Add(this.btnSalir);
-            this.pnlUsuario.Location = new System.Drawing.Point(947, 6);
-            this.pnlUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlUsuario.Location = new System.Drawing.Point(710, 5);
             this.pnlUsuario.Name = "pnlUsuario";
-            this.pnlUsuario.Size = new System.Drawing.Size(161, 208);
+            this.pnlUsuario.Size = new System.Drawing.Size(121, 114);
             this.pnlUsuario.TabIndex = 4;
             this.pnlUsuario.Visible = false;
-            // 
-            // btnAjustes
-            // 
-            this.btnAjustes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAjustes.FlatAppearance.BorderSize = 0;
-            this.btnAjustes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAjustes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjustes.ForeColor = System.Drawing.Color.White;
-            this.btnAjustes.IconChar = FontAwesome.Sharp.IconChar.UserGear;
-            this.btnAjustes.IconColor = System.Drawing.Color.White;
-            this.btnAjustes.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAjustes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAjustes.Location = new System.Drawing.Point(0, 136);
-            this.btnAjustes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnAjustes.Name = "btnAjustes";
-            this.btnAjustes.Size = new System.Drawing.Size(161, 68);
-            this.btnAjustes.TabIndex = 4;
-            this.btnAjustes.Text = "Ajustes";
-            this.btnAjustes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAjustes.UseVisualStyleBackColor = true;
+            this.pnlUsuario.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlUsuario_Paint);
             // 
             // btnLogin
             // 
@@ -150,10 +124,9 @@
             this.btnLogin.IconColor = System.Drawing.Color.White;
             this.btnLogin.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogin.Location = new System.Drawing.Point(0, 68);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Location = new System.Drawing.Point(0, 55);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(161, 68);
+            this.btnLogin.Size = new System.Drawing.Size(121, 55);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -172,9 +145,8 @@
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSalir.Location = new System.Drawing.Point(0, 0);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(161, 68);
+            this.btnSalir.Size = new System.Drawing.Size(121, 55);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -191,9 +163,8 @@
             this.pnlBarraLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlBarraLateral.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(164)))), ((int)(((byte)(192)))));
             this.pnlBarraLateral.Location = new System.Drawing.Point(0, 0);
-            this.pnlBarraLateral.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlBarraLateral.Name = "pnlBarraLateral";
-            this.pnlBarraLateral.Size = new System.Drawing.Size(113, 457);
+            this.pnlBarraLateral.Size = new System.Drawing.Size(85, 371);
             this.pnlBarraLateral.TabIndex = 2;
             this.pnlBarraLateral.Visible = false;
             // 
@@ -206,10 +177,9 @@
             this.btnAgregarDoctor.IconChar = FontAwesome.Sharp.IconChar.UserNurse;
             this.btnAgregarDoctor.IconColor = System.Drawing.Color.White;
             this.btnAgregarDoctor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAgregarDoctor.Location = new System.Drawing.Point(0, 339);
-            this.btnAgregarDoctor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregarDoctor.Location = new System.Drawing.Point(0, 276);
             this.btnAgregarDoctor.Name = "btnAgregarDoctor";
-            this.btnAgregarDoctor.Size = new System.Drawing.Size(113, 113);
+            this.btnAgregarDoctor.Size = new System.Drawing.Size(85, 92);
             this.btnAgregarDoctor.TabIndex = 4;
             this.btnAgregarDoctor.UseVisualStyleBackColor = true;
             this.btnAgregarDoctor.Click += new System.EventHandler(this.iconButton4_Click);
@@ -223,10 +193,9 @@
             this.btnGuardarCitas.IconChar = FontAwesome.Sharp.IconChar.CalendarPlus;
             this.btnGuardarCitas.IconColor = System.Drawing.Color.White;
             this.btnGuardarCitas.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGuardarCitas.Location = new System.Drawing.Point(0, 226);
-            this.btnGuardarCitas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardarCitas.Location = new System.Drawing.Point(0, 184);
             this.btnGuardarCitas.Name = "btnGuardarCitas";
-            this.btnGuardarCitas.Size = new System.Drawing.Size(113, 113);
+            this.btnGuardarCitas.Size = new System.Drawing.Size(85, 92);
             this.btnGuardarCitas.TabIndex = 3;
             this.btnGuardarCitas.UseVisualStyleBackColor = true;
             this.btnGuardarCitas.Click += new System.EventHandler(this.btnguardarcitas_Click);
@@ -240,10 +209,9 @@
             this.btnVerDatosPaciente.IconChar = FontAwesome.Sharp.IconChar.PersonCircleQuestion;
             this.btnVerDatosPaciente.IconColor = System.Drawing.Color.White;
             this.btnVerDatosPaciente.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnVerDatosPaciente.Location = new System.Drawing.Point(0, 113);
-            this.btnVerDatosPaciente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVerDatosPaciente.Location = new System.Drawing.Point(0, 92);
             this.btnVerDatosPaciente.Name = "btnVerDatosPaciente";
-            this.btnVerDatosPaciente.Size = new System.Drawing.Size(113, 113);
+            this.btnVerDatosPaciente.Size = new System.Drawing.Size(85, 92);
             this.btnVerDatosPaciente.TabIndex = 2;
             this.btnVerDatosPaciente.UseVisualStyleBackColor = true;
             this.btnVerDatosPaciente.Click += new System.EventHandler(this.btncrearreporte_Click);
@@ -258,22 +226,20 @@
             this.btnRegistrarPacientes.IconColor = System.Drawing.Color.White;
             this.btnRegistrarPacientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRegistrarPacientes.Location = new System.Drawing.Point(0, 0);
-            this.btnRegistrarPacientes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegistrarPacientes.Name = "btnRegistrarPacientes";
-            this.btnRegistrarPacientes.Size = new System.Drawing.Size(113, 113);
+            this.btnRegistrarPacientes.Size = new System.Drawing.Size(85, 92);
             this.btnRegistrarPacientes.TabIndex = 1;
             this.btnRegistrarPacientes.UseVisualStyleBackColor = true;
             this.btnRegistrarPacientes.Click += new System.EventHandler(this.btnRegistrarPacientes_Click);
             // 
             // FrmMainAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1117, 543);
+            this.ClientSize = new System.Drawing.Size(838, 441);
             this.Controls.Add(this.pnlForm);
             this.Controls.Add(this.pnlNav);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmMainAdmin";
             this.Text = "FrmMainAdmin";
             this.pnlNav.ResumeLayout(false);
@@ -291,7 +257,6 @@
         private FontAwesome.Sharp.IconButton btnBarraLateral;
         private System.Windows.Forms.Panel pnlForm;
         private System.Windows.Forms.Panel pnlUsuario;
-        private FontAwesome.Sharp.IconButton btnAjustes;
         private FontAwesome.Sharp.IconButton btnLogin;
         private FontAwesome.Sharp.IconButton btnSalir;
         private System.Windows.Forms.Panel pnlBarraLateral;
