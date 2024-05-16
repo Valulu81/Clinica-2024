@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMainAdmin));
             this.pnlNav = new System.Windows.Forms.Panel();
             this.btnUsuario = new FontAwesome.Sharp.IconButton();
             this.btnBarraLateral = new FontAwesome.Sharp.IconButton();
@@ -240,6 +241,7 @@
             this.Controls.Add(this.pnlForm);
             this.Controls.Add(this.pnlNav);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMainAdmin";
             this.Text = "FrmMainAdmin";
             this.pnlNav.ResumeLayout(false);

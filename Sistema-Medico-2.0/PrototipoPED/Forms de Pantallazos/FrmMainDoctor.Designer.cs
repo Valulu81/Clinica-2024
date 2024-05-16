@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Interfaz));
             this.pnlNav = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnUsuario = new FontAwesome.Sharp.IconButton();
@@ -257,6 +258,7 @@
             this.Controls.Add(this.pnlForm);
             this.Controls.Add(this.pnlNav);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Interfaz";
             this.Text = "Form1";
             this.pnlNav.ResumeLayout(false);

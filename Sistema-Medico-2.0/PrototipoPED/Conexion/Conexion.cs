@@ -20,8 +20,6 @@ namespace PrototipoPED.ConexionBD
         private string ConecStr = "data source=localhost; initial catalog=Clinica;" +
         " persist security info=True; Integrated Security=SSPI; ";
 
-
-
         public void AgregarPaciente(Paciente paciente)
         {
             string query = "exec administracion.InscribirPaciente " +
@@ -123,7 +121,6 @@ namespace PrototipoPED.ConexionBD
 
             return codigoMedico;
         }
-
         public string ObtenerClaveM(string codigoMedico)
         {
             string claveMedico = "";
@@ -170,7 +167,6 @@ namespace PrototipoPED.ConexionBD
 
             }
         }
-
         public void VerDatosECombo(System.Windows.Forms.ComboBox caja)
         {
 
@@ -196,7 +192,6 @@ namespace PrototipoPED.ConexionBD
 
             }
         }
-
         public void AgregarEnfermedad(string enfermedad)
         {
             string query = "insert into Medico.Enfermedades values ('" + enfermedad + "')";
@@ -215,7 +210,6 @@ namespace PrototipoPED.ConexionBD
             }
 
         }
-
         public void VerDatosDCombo(System.Windows.Forms.ComboBox caja)
         {
 
@@ -288,7 +282,6 @@ namespace PrototipoPED.ConexionBD
                 throw new Exception("Hay un error en la bd: " + ex.Message);
             }
         }
-        //nuevo
         public void VerDatosFFCombo(System.Windows.Forms.ComboBox caja, string paciente)
         {
             try
@@ -506,7 +499,6 @@ namespace PrototipoPED.ConexionBD
             }
 
         }
-
         public string[] TraerPaciente(string nom)
         {
             string query = " select CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido) as NombreCompleto " +
@@ -542,7 +534,6 @@ namespace PrototipoPED.ConexionBD
 
             }
         }
-        //Mi obra de artee
         public void AgregarCita(string NPaciente, string NDoctor, string FechaHora)
         {
             string[] pac = NPaciente.Split(' ');//desgloso el nombre
@@ -583,7 +574,8 @@ namespace PrototipoPED.ConexionBD
                 catch (Exception ex) { throw new Exception("Error en la bd: " + ex.Message); }
             }
         }
-        
+
+        //Estructura de datos
         public List<CitaMedica> TraerCitas()
         {
             List<CitaMedica> citas = new List<CitaMedica>();
@@ -630,8 +622,6 @@ namespace PrototipoPED.ConexionBD
             }
             return citas;
         }
-
-        //Método para devolver el código de la cita
         public string DevolverCodCita(string paciente, DateTime fecha)
         {
             string CodCita = "";
@@ -671,7 +661,7 @@ namespace PrototipoPED.ConexionBD
             return CodCita;
         }
 
-
+        //Estructura de datos
         public ABB DevolverCantidadesPais(string[] filtro, FiltroGráfica datos)
         {
             ABB arbolFiltro = new ABB();
@@ -718,7 +708,6 @@ namespace PrototipoPED.ConexionBD
             }
             return arbolFiltro;
         }
-
         public bool IniciarSesion(string username, string password)
         {
             

@@ -29,10 +29,6 @@ namespace PrototipoPED
             }
             catch { }
         }
-
-
-        
-        
         private void cmbPaciente_SelectedIndexChanged(object sender, EventArgs e)
         {
             
@@ -62,7 +58,6 @@ namespace PrototipoPED
             try
             {
                 miConexion.VerDatosFCombo(cmbFecha, cmbDoctor.Text, cmbPaciente.Text);
-                //miConexion.VerDatosDDCombo(cmbDoctor, cmbPaciente.Text);
             }
             catch (Exception ex)
             {
@@ -87,11 +82,13 @@ namespace PrototipoPED
                 Conexion miConexion = new Conexion();
                 Reporte miReporte = new Reporte();
                 miReporte = miConexion.VerReporte(cmbPaciente.Text, cmbDoctor.Text, Convert.ToDateTime(cmbFecha.Text));
+                
                 if (miReporte == null)
                 {
                     MessageBox.Show("No se encontró ningún reporte en esa cita.");
                     return;
                 }
+
                 txtDiagnostico.Text = miReporte.Diagnostico;
                 txtEstatura.Text = (miReporte.Talla).ToString();
                 txtMotivo.Text = miReporte.Motivo;
@@ -102,13 +99,11 @@ namespace PrototipoPED
             }
             
         }
-
         private void FrmVerReporte_Load(object sender, EventArgs e)
         {
             cmbPaciente.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbFecha.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbDoctor.DropDownStyle = ComboBoxStyle.DropDownList;
-            
             txtDiagnostico.Enabled = false;
             txtEstatura.Enabled = false;
             txtTemperatura.Enabled = false;
@@ -121,15 +116,12 @@ namespace PrototipoPED
         }
         private void Limpiar()
         {
-
             txtDiagnostico.Clear();
             txtPeso.Clear();
             txtMotivo.Clear();
             txtEstatura.Clear();
             txtTemperatura.Clear();
             txtPresion.Clear();
-
-
             txtDiagnostico.Enabled = false;
             txtEstatura.Enabled = false;
             txtTemperatura.Enabled = false;
@@ -137,25 +129,16 @@ namespace PrototipoPED
             txtPeso.Enabled = false;
             txtPresion.Enabled = false;
             txtMotivo.Enabled = false;
-
             cmbFecha.Text = "";
             cmbPaciente.Text = "";
             cmbDoctor.Text = "";
-
-            //cmbDoctor.SelectedIndex = -1;
-            //cmbFecha.SelectedIndex = -1;
-            //cmbPaciente.SelectedIndex = -1;
         }
 
-
-
-        
         private void btnBorrar_Click(object sender, EventArgs e)
         {
             Limpiar();
             
         }
-
 
 
     }
