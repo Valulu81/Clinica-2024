@@ -107,7 +107,11 @@ namespace PrototipoPED.Forms_de_Pantallazos
                 // Llena el Chart con los datos
                 chart1.Series.Clear();
                 chart1.ChartAreas[0].AxisX.Interval = 1;
-                chart1.ChartAreas[0].AxisY.Minimum = 0;
+
+                int minValorY = valores.Min();
+                int maxValorY = valores.Max();
+                chart1.ChartAreas[0].AxisY.Minimum = minValorY - 10;
+                chart1.ChartAreas[0].AxisY.Maximum = maxValorY + 10;
 
                 Series serie = chart1.Series.Add("Valores");
                 serie.ChartType = SeriesChartType.Column;
