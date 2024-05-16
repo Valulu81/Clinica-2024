@@ -78,7 +78,6 @@ namespace PrototipoPED
                 }
                 catch (Exception ex)
                 {
-                    //MessageBox.Show(ex.Message);
                     Limpiar();
                     return;
                 }
@@ -104,7 +103,6 @@ namespace PrototipoPED
                 }
                 catch (Exception ex)
                 {
-                    //MessageBox.Show(ex.Message);
                     Limpiar();
                     return;
                 }
@@ -124,7 +122,6 @@ namespace PrototipoPED
             txtEstatura.Clear();
             txtTemperatura.Clear();
             txtPresion.Clear();
-            //cmbPaciente.SelectedIndex = -1;
             cmbCita.SelectedIndex = -1;
         }
 
@@ -149,14 +146,6 @@ namespace PrototipoPED
 
         private void cmbEnfermedades_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*if (cmbEnfermedades.Text != "")
-            {
-                txtDiagnostico.Enabled = true;
-            }
-            else
-            {
-                txtDiagnostico.Enabled = false;
-            }*/
 
         }
 
@@ -178,11 +167,8 @@ namespace PrototipoPED
             txtMotivo.TabIndex = 6;
             cmbEnfermedades.TabIndex = 7;
             txtDiagnostico.TabIndex = 8;
-
             cmbEnfermedades.Enabled = false;
-
             cmbCita.Enabled = false;
-            //txtDiagnostico.Enabled = false;
             txtEstatura.Enabled = false;
             txtTemperatura.Enabled = false;
             txtEstatura.Enabled = false;
@@ -204,7 +190,6 @@ namespace PrototipoPED
         private void txtPeso_TextChanged(object sender, EventArgs e)
         {
             txtEstatura.Enabled = true;
-
         }
 
         private void txtEstatura_TextChanged(object sender, EventArgs e)

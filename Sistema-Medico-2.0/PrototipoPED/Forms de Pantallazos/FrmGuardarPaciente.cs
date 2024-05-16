@@ -18,7 +18,6 @@ namespace PrototipoPED
         string[] meses = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Julio", "Junio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
         string[] dias = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" };
 
-
         private void LlenarCmbZona()
         {
             string zona, departamento;
@@ -56,7 +55,7 @@ namespace PrototipoPED
 
         private void LlenarCmbDistritos(string departamento)
         {
-            string[] distriUno = { "Norte", "Centro", "Sur" }; //Ahuachapán y chalate
+            string[] distriUno = { "Norte", "Centro", "Sur" };
             string[] distriDos = { "Norte", "Centro", "Sur", "Oeste", "Este" };
             string[] distriTres = { "Norte", "Centro", "Sur", "Oeste", "Este", "Costa" };
             string[] distriCuatro = { "Este", "Oeste", "Centro" };
@@ -190,10 +189,8 @@ namespace PrototipoPED
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            //Las validaciones
             if (txtNombre1.Text == "" || txtApellido1.Text == ""||txtDireccion.Text==""||  txtAño.Text == "" || cmbDia.SelectedIndex==-1 || cmbMes.SelectedIndex==-1 || txtTelefono.Text == "")
             {
-                //btnGuardar.Enabled = false;
                 MessageBox.Show("Debe completar todos los campos para guardar el perfil de Paciente");
                 return;
             }
@@ -206,8 +203,6 @@ namespace PrototipoPED
                 return;
               
             }
-            
-
 
             else
             {
@@ -259,7 +254,7 @@ namespace PrototipoPED
                 {
                 }
             }
-        }//fin btnGuardar
+        }
 
         private void cmbZona_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -275,7 +270,6 @@ namespace PrototipoPED
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            //Para que al borrar, se limpien
             cmbZona.SelectedIndex = -1;
             cmbDepartamento.SelectedIndex = -1;
             cmbMunicipio.SelectedIndex = -1;
@@ -308,7 +302,6 @@ namespace PrototipoPED
             }
 
         }
-
         private void txtApellido1_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(txtApellido1.Text))
@@ -322,8 +315,6 @@ namespace PrototipoPED
 
             CheckInputs();
         }
-
-        
 
         private void txtApellido2_TextChanged_1(object sender, EventArgs e)
         {

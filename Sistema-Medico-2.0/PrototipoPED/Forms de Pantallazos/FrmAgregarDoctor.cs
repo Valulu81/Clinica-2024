@@ -27,6 +27,7 @@ namespace PrototipoPED.Forms_de_Pantallazos
         }
         private void llenarcmb()
         {
+            //Estructura de datos
             string[] especialidades = {
                 "Medicina interna",
                 "Pediatría",
