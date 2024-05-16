@@ -158,6 +158,30 @@ namespace PrototipoPED
         }
 
         
+
+        private void txtAño_MouseLeave_1(object sender, EventArgs e)
+        {
+            int valor;
+            if (int.TryParse(txtAño.Text, out valor))
+            {
+                if (valor < 2024 || valor > 2026)
+                {
+                    // Si el valor está fuera del rango, borra el texto del MaskedTextBox
+                    txtAño.Text = "";
+                    MessageBox.Show("Ingrese un valor válido de año para la cita, entre 2024 y 2026 ");
+                }
+
+            }
+            else
+            {
+                // Si el texto no es un número válido, también borra el texto del MaskedTextBox
+                txtAño.Text = "";
+            }
+
+            // Regresa el foco al MaskedTextBox
+            txtAño.Focus();
+
+        }
     }
 }
 

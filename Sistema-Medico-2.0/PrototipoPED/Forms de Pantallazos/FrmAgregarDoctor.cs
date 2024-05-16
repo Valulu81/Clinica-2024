@@ -248,6 +248,15 @@ namespace PrototipoPED.Forms_de_Pantallazos
             
         }
 
-        
+        private void mtxtTelefono_Validating(object sender, CancelEventArgs e)
+        {
+            if (!mtxtTelefono.MaskCompleted)
+            {
+                MessageBox.Show("Por favor, completa todos los espacios requeridos del número de teléfono.");
+                e.Cancel = true;
+            }
+        }
+
+
     }
 }

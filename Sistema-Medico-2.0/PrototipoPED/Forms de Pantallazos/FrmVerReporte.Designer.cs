@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVerReporte));
             this.cmbDoctor = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -56,7 +57,7 @@
             this.cmbDoctor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.cmbDoctor.FormattingEnabled = true;
             this.cmbDoctor.Location = new System.Drawing.Point(425, 63);
-            this.cmbDoctor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbDoctor.Margin = new System.Windows.Forms.Padding(4);
             this.cmbDoctor.Name = "cmbDoctor";
             this.cmbDoctor.Size = new System.Drawing.Size(247, 33);
             this.cmbDoctor.TabIndex = 54;
@@ -97,7 +98,7 @@
             this.cmbPaciente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.cmbPaciente.FormattingEnabled = true;
             this.cmbPaciente.Location = new System.Drawing.Point(47, 63);
-            this.cmbPaciente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbPaciente.Margin = new System.Windows.Forms.Padding(4);
             this.cmbPaciente.Name = "cmbPaciente";
             this.cmbPaciente.Size = new System.Drawing.Size(347, 33);
             this.cmbPaciente.TabIndex = 48;
@@ -124,12 +125,11 @@
             this.cmbFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.cmbFecha.FormattingEnabled = true;
             this.cmbFecha.Location = new System.Drawing.Point(704, 63);
-            this.cmbFecha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbFecha.Margin = new System.Windows.Forms.Padding(4);
             this.cmbFecha.Name = "cmbFecha";
             this.cmbFecha.Size = new System.Drawing.Size(269, 33);
             this.cmbFecha.TabIndex = 57;
             this.cmbFecha.UseWaitCursor = true;
-            
             // 
             // btnBuscar
             // 
@@ -139,7 +139,7 @@
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
             this.btnBuscar.Location = new System.Drawing.Point(973, 394);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(116, 46);
             this.btnBuscar.TabIndex = 75;
@@ -156,7 +156,7 @@
             this.btnBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrar.ForeColor = System.Drawing.Color.White;
             this.btnBorrar.Location = new System.Drawing.Point(832, 394);
-            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBorrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(116, 46);
             this.btnBorrar.TabIndex = 74;
@@ -200,7 +200,7 @@
             this.txtPresion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPresion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.txtPresion.Location = new System.Drawing.Point(45, 320);
-            this.txtPresion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPresion.Margin = new System.Windows.Forms.Padding(4);
             this.txtPresion.Multiline = true;
             this.txtPresion.Name = "txtPresion";
             this.txtPresion.ReadOnly = true;
@@ -230,7 +230,7 @@
             this.txtDiagnostico.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiagnostico.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.txtDiagnostico.Location = new System.Drawing.Point(768, 150);
-            this.txtDiagnostico.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDiagnostico.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiagnostico.Multiline = true;
             this.txtDiagnostico.Name = "txtDiagnostico";
             this.txtDiagnostico.ReadOnly = true;
@@ -246,7 +246,7 @@
             this.txtMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMotivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.txtMotivo.Location = new System.Drawing.Point(413, 150);
-            this.txtMotivo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMotivo.Margin = new System.Windows.Forms.Padding(4);
             this.txtMotivo.Multiline = true;
             this.txtMotivo.Name = "txtMotivo";
             this.txtMotivo.ReadOnly = true;
@@ -262,7 +262,7 @@
             this.txtTemperatura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTemperatura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.txtTemperatura.Location = new System.Drawing.Point(45, 394);
-            this.txtTemperatura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTemperatura.Margin = new System.Windows.Forms.Padding(4);
             this.txtTemperatura.Multiline = true;
             this.txtTemperatura.Name = "txtTemperatura";
             this.txtTemperatura.ReadOnly = true;
@@ -292,7 +292,7 @@
             this.txtEstatura.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEstatura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.txtEstatura.Location = new System.Drawing.Point(45, 231);
-            this.txtEstatura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEstatura.Margin = new System.Windows.Forms.Padding(4);
             this.txtEstatura.Multiline = true;
             this.txtEstatura.Name = "txtEstatura";
             this.txtEstatura.ReadOnly = true;
@@ -322,7 +322,7 @@
             this.txtPeso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPeso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.txtPeso.Location = new System.Drawing.Point(45, 150);
-            this.txtPeso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPeso.Margin = new System.Windows.Forms.Padding(4);
             this.txtPeso.Multiline = true;
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.ReadOnly = true;
@@ -372,7 +372,8 @@
             this.Controls.Add(this.cmbPaciente);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmVerReporte";
             this.Text = "FrmVerReporte";
             this.UseWaitCursor = true;

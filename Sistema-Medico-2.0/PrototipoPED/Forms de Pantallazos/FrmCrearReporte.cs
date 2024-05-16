@@ -26,7 +26,7 @@ namespace PrototipoPED
                 conexion.VerDatosPCombo(cmbPaciente);
                 conexion.VerDatosECombo(cmbEnfermedades);
             }
-            catch 
+            catch
             {
 
             }
@@ -34,60 +34,22 @@ namespace PrototipoPED
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtPeso.Text != "")
+            if(cmbPaciente.SelectedIndex==-1)
             {
-                float valor;
-                bool esNumero = float.TryParse(txtPeso.Text, out valor);
-
-               
-                if (esNumero && valor >= 1 && valor <= 200)
-                {
-                    // Si el valor es válido, no hagas nada
-                }
-                else
-                {
-                    // Si el valor no es válido, muestra un mensaje de error y borra el TextBox
-                    MessageBox.Show("Ingrese valor de peso válido en kilogramos");
-                    txtPeso.Clear();
-
-                }
+                MessageBox.Show("Debe de elegir un paciente");
+                return;
             }
-
-            if (txtEstatura.Text != "")
+            if (cmbCita.SelectedIndex == -1)
             {
-                float valor;
-                bool esNumero = float.TryParse(txtEstatura.Text, out valor);
-
-                if (esNumero && valor >= 0.30 && valor <= 2.00)
-                {
-                    // Si el valor es válido, no hagas nada
-                }
-                else
-                {
-                    // Si el valor no es válido, muestra un mensaje de error y borra el TextBox
-                    MessageBox.Show("Ingrese valor de altura válido en metros");
-                    txtEstatura.Clear();
-
-                }
+                MessageBox.Show("Debe de elegir una cita del paciente");
+                return;
             }
-            if (txtTemperatura.Text != "")
+            if(txtDiagnostico.Text==""|| txtMotivo.Text == "" || txtPeso.Text == "" || txtPresion.Text == "" ||txtTemperatura.Text == "" || txtPeso.Text == "")
             {
-                float valor;
-                bool esNumero = float.TryParse(txtTemperatura.Text, out valor);
+                MessageBox.Show("Complete todos los campos antes de guardar");
+                return;
 
-                if (esNumero && valor >= 30 && valor <= 45)
-                {
-                    // Si el valor es válido, no hagas nada
-                }
-                else
-                {
-                    // Si el valor no es válido, muestra un mensaje de error y borra el TextBox
-                    MessageBox.Show("Ingrese valor de temperatura válido");
-                    txtTemperatura.Clear();
-
-                }
             }
-
             if (cmbEnfermedades.Text == "")
             {
                 MessageBox.Show("Debe escribir o elegir una enfermedad.");
@@ -99,7 +61,7 @@ namespace PrototipoPED
                 Conexion conexion = new Conexion();
                 conexion.AgregarEnfermedad(cmbEnfermedades.Text);
 
-            
+
                 try
                 {
                     Reporte mireporte = new Reporte();
@@ -185,7 +147,7 @@ namespace PrototipoPED
 
         private void cmbEnfermedades_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbEnfermedades.Text != "")
+            if (cmbEnfermedades.Text != "")
             {
                 txtDiagnostico.Enabled = true;
             }
@@ -193,7 +155,7 @@ namespace PrototipoPED
             {
                 txtDiagnostico.Enabled = false;
             }
-           
+
         }
 
 
@@ -201,7 +163,7 @@ namespace PrototipoPED
         private void FrmCrearReporte_Load(object sender, EventArgs e)
         {
             cmbPaciente.Focus();
-            cmbPaciente.DropDownStyle = ComboBoxStyle.DropDownList; 
+            cmbPaciente.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbCita.DropDownStyle = ComboBoxStyle.DropDownList;
 
             cmbPaciente.TabIndex = 0;
@@ -215,12 +177,12 @@ namespace PrototipoPED
             txtDiagnostico.TabIndex = 8;
 
             cmbEnfermedades.Enabled = false;
-           
+
             cmbCita.Enabled = false;
             txtDiagnostico.Enabled = false;
             txtEstatura.Enabled = false;
             txtTemperatura.Enabled = false;
-            txtEstatura.Enabled=false;
+            txtEstatura.Enabled = false;
             txtPeso.Enabled = false;
             txtPresion.Enabled = false;
             txtMotivo.Enabled = false;
@@ -292,7 +254,7 @@ namespace PrototipoPED
 
         private void txtPresion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
         }
 
         private void txtTemperatura_KeyPress(object sender, KeyPressEventArgs e)
@@ -306,6 +268,73 @@ namespace PrototipoPED
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void txtPeso_MouseLeave(object sender, EventArgs e)
+        {
+            if (txtPeso.Text != "")
+            {
+                float valor;
+                bool esNumero = float.TryParse(txtPeso.Text, out valor);
+
+
+                if (esNumero && valor >= 1 && valor <= 200)
+                {
+                    // Si el valor es válido, no hagas nada
+                }
+                else
+                {
+                    // Si el valor no es válido, muestra un mensaje de error y borra el TextBox
+                    MessageBox.Show("Ingrese valor de peso válido en kilogramos");
+                    txtPeso.Clear();
+
+                }
+            }
+
+        }
+
+        private void txtEstatura_MouseLeave(object sender, EventArgs e)
+        {
+            if (txtEstatura.Text != "")
+            {
+                float valor;
+                bool esNumero = float.TryParse(txtEstatura.Text, out valor);
+
+                if (esNumero && valor >= 0.30 && valor <= 2.00)
+                {
+                    // Si el valor es válido, no hagas nada
+                }
+                else
+                {
+                    // Si el valor no es válido, muestra un mensaje de error y borra el TextBox
+                    MessageBox.Show("Ingrese valor de altura válido en metros");
+                    txtEstatura.Clear();
+
+                }
+            }
+
+        }
+
+        private void txtTemperatura_MouseLeave(object sender, EventArgs e)
+        {
+            if (txtTemperatura.Text != "")
+            {
+                float valor;
+                bool esNumero = float.TryParse(txtTemperatura.Text, out valor);
+
+                if (esNumero && valor >= 30 && valor <= 45)
+                {
+                    // Si el valor es válido, no hagas nada
+                }
+                else
+                {
+                    // Si el valor no es válido, muestra un mensaje de error y borra el TextBox
+                    MessageBox.Show("Ingrese valor de temperatura válido");
+                    txtTemperatura.Clear();
+
+                }
+
             }
         }
     }

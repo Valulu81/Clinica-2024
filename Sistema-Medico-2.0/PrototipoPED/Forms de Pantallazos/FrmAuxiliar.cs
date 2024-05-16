@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PrototipoPED
 {
-    public partial class FrmAuxiliar : Form
+    public partial class MedicOS : Form
     {
-        public FrmAuxiliar()
+        public MedicOS()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -23,6 +23,9 @@ namespace PrototipoPED
             lblHora.Text = DateTime.Now.ToShortTimeString(); 
         }
 
-        
+        private void FrmAuxiliar_Load(object sender, EventArgs e)
+        {
+            this.StartPosition = FormStartPosition.CenterScreen;
+        }
     }
 }

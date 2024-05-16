@@ -1,6 +1,6 @@
 ﻿namespace PrototipoPED
 {
-    partial class FrmAuxiliar
+    partial class MedicOS
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MedicOS));
             this.lblHora = new System.Windows.Forms.Label();
             this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,7 +58,7 @@
             this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox3.IconSize = 185;
             this.iconPictureBox3.Location = new System.Drawing.Point(451, 206);
-            this.iconPictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconPictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBox3.Name = "iconPictureBox3";
             this.iconPictureBox3.Size = new System.Drawing.Size(200, 185);
             this.iconPictureBox3.TabIndex = 10;
@@ -80,7 +81,7 @@
             this.tmrHora.Enabled = true;
             this.tmrHora.Tick += new System.EventHandler(this.tmrHora_Tick);
             // 
-            // FrmAuxiliar
+            // MedicOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -88,10 +89,11 @@
             this.Controls.Add(this.lblHora);
             this.Controls.Add(this.iconPictureBox3);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "FrmAuxiliar";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "MedicOS";
             this.Text = "FrmAuxiliar";
-      
+            this.Load += new System.EventHandler(this.FrmAuxiliar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

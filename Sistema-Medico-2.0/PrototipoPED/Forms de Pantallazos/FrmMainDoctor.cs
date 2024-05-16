@@ -19,7 +19,7 @@ namespace PrototipoPED
         public Interfaz()
         {
             InitializeComponent();
-            AbrirFormulario(new FrmAuxiliar());
+            AbrirFormulario(new MedicOS());
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 

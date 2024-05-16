@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgregarDoctor));
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -136,7 +137,6 @@
             this.cmbEspecialidad.Name = "cmbEspecialidad";
             this.cmbEspecialidad.Size = new System.Drawing.Size(199, 33);
             this.cmbEspecialidad.TabIndex = 83;
-
             this.cmbEspecialidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbEspecialidad_KeyPress);
             // 
             // txtApellido
@@ -194,6 +194,7 @@
             this.Controls.Add(this.txNombre);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAgregarDoctor";
             this.Text = "FrmAgregarDoctor";

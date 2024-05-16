@@ -17,7 +17,7 @@ namespace PrototipoPED.Forms_de_Pantallazos
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            AbrirFormulario(new FrmAuxiliar());
+            AbrirFormulario(new MedicOS());
 
         }
         bool btnBLPulsado = true, btnUPulsado = false;

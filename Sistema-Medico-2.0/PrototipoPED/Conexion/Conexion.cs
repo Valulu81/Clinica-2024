@@ -20,6 +20,8 @@ namespace PrototipoPED.ConexionBD
         private string ConecStr = "data source=localhost; initial catalog=Clinica;" +
         " persist security info=True; Integrated Security=SSPI; ";
 
+
+
         public void AgregarPaciente(Paciente paciente)
         {
             string query = "exec administracion.InscribirPaciente " +
@@ -715,6 +717,32 @@ namespace PrototipoPED.ConexionBD
             }
             return arbolFiltro;
         }
+
+        public bool IniciarSesion(string username, string password)
+        {
+            
+            using (SqlConnection connection = new SqlConnection(ConecStr))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM personal.medicos WHERE codMedico = @Username AND clave= @Password", connection))
+                {
+                    command.Parameters.AddWithValue("@Username", username);
+                    command.Parameters.AddWithValue("@Password", password);
+                    int result = (int)command.ExecuteScalar();
+                    if (result > 0)
+                    {
+                        // Inicio de sesión exitoso
+                        return true;
+                    }
+                    else
+                    {
+                        // Inicio de sesión fallido
+                        return false;
+                    }
+                }
+            }
+        }
+
 
     }
 }

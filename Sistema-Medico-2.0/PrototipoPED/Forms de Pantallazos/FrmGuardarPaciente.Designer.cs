@@ -217,6 +217,7 @@
             this.txtTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
+            this.txtTelefono.Validating += new System.ComponentModel.CancelEventHandler(this.txtTelefono_Validating);
             // 
             // label8
             // 
@@ -241,7 +242,6 @@
             resources.ApplyResources(this.txtAño, "txtAño");
             this.txtAño.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.txtAño.Name = "txtAño";
-
             this.txtAño.TextChanged += new System.EventHandler(this.txtAño_TextChanged);
             this.txtAño.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAño_KeyPress);
             this.txtAño.MouseLeave += new System.EventHandler(this.txtAño_MouseLeave);

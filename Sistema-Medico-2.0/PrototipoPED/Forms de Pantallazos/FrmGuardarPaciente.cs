@@ -30,8 +30,8 @@ namespace PrototipoPED
 
         private void LlenarCmbDepartamento(string zona)
         {
-            string[] depasOccidente = { "Ahuachapan", "Santa Ana", "Sonsonate" };
-            string[] depasCentral = { "Chalatenango", "Cuscatlan", "Cabañas", "La libertad", "La paz", "San Vicente", "San Salvador" };
+            string[] depasOccidente = { "Ahuachapán", "Santa Ana", "Sonsonate" };
+            string[] depasCentral = { "Chalatenango", "Cuscatlán", "Cabañas", "La Libertad", "La Paz", "San Vicente", "San Salvador" };
             string[] depasOriental = { "Morazan", "La Unión", "San Miguel", "Usulután" };
 
             switch (zona)
@@ -56,7 +56,7 @@ namespace PrototipoPED
 
         private void LlenarCmbDistritos(string departamento)
         {
-            string[] distriUno = { "Norte", "Centro", "Sur" }; //Ahuachapam y chalate
+            string[] distriUno = { "Norte", "Centro", "Sur" }; //Ahuachapán y chalate
             string[] distriDos = { "Norte", "Centro", "Sur", "Oeste", "Este" };
             string[] distriTres = { "Norte", "Centro", "Sur", "Oeste", "Este", "Costa" };
             string[] distriCuatro = { "Este", "Oeste", "Centro" };
@@ -168,12 +168,30 @@ namespace PrototipoPED
             txtTelefono.Clear();
             txtDui.Clear();
             txtNit.Clear();
+            cmbDepartamento.SelectedIndex = -1;
+            cmbMes.SelectedIndex = -1;
+            cmbDia.SelectedIndex = -1;
+            txtAño.Clear();
+            cmbZona.SelectedIndex = -1;
+            cmbMunicipio.SelectedIndex = -1;
+
+            cmbDepartamento.Enabled = false;
+            cmbMunicipio.Enabled = false;
+            txtDireccion.Enabled = false;
+            txtTelefono.Enabled = false;
+            cmbZona.Enabled = false;
+            txtAño.Enabled = false;
+            rbtnFemenino.Enabled = false;
+            rbtnMasculino.Enabled = false;
+            txtAño.Enabled = false;
+            cmbMes.Enabled = false;
+            cmbDia.Enabled = false;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             //Las validaciones
-            if (txtNombre1.Text == "" || txtApellido1.Text == ""||txtDireccion.Text==""|| txtTelefono.Text==""|| txtAño.Text == "" || cmbDia.SelectedIndex==-1 || cmbMes.SelectedIndex==-1 || txtTelefono.Text == "")
+            if (txtNombre1.Text == "" || txtApellido1.Text == ""||txtDireccion.Text==""||  txtAño.Text == "" || cmbDia.SelectedIndex==-1 || cmbMes.SelectedIndex==-1 || txtTelefono.Text == "")
             {
                 //btnGuardar.Enabled = false;
                 MessageBox.Show("Debe completar todos los campos para guardar el perfil de Paciente");
@@ -183,11 +201,12 @@ namespace PrototipoPED
             if (rbtnFemenino.Checked == false && rbtnMasculino.Checked == false )
             {
                 rbtnFemenino.Focus();
-                MessageBox.Show("Debe completar el sexo del paciente");
+                MessageBox.Show(" ");
                 rbtnMasculino.Focus();
                 return;
               
             }
+            
 
 
             else
@@ -233,7 +252,7 @@ namespace PrototipoPED
                     {
                     MessageBox.Show(ex.Message);
                     }
-                    MessageBox.Show("Paciente registrado con éxito" + txtNombre1+" "+ txtApellido1);
+                    MessageBox.Show("Paciente registrado con éxito: " + txtNombre1.Text+" "+ txtApellido1.Text);
                     Limpiar();
                 }
                 catch 
@@ -388,10 +407,15 @@ namespace PrototipoPED
             cmbDia.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbDepartamento.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbZona.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbMunicipio.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbMes.DropDownStyle = ComboBoxStyle.DropDownList;
             //Al inicializar el form deben de estar deshabilitados
+            cmbDepartamento.Enabled = false;
+            cmbMunicipio.Enabled = false;
+            txtDireccion.Enabled = false;
             txtTelefono.Enabled = false;
             cmbZona.Enabled = false;
-
+            txtAño.Enabled = false;
             rbtnFemenino.Enabled = false;
             rbtnMasculino.Enabled = false;
             txtAño.Enabled = false;
@@ -422,14 +446,6 @@ namespace PrototipoPED
 
         private void txtDireccion_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtDireccion.Text))
-            {
-                // Convierte la primera letra a mayúsculas y el resto a minúsculas
-                txtDireccion.Text = char.ToUpper(txtDireccion.Text[0]) + txtDireccion.Text.Substring(1).ToLower();
-
-                // Mueve el cursor al final del texto
-                txtDireccion.SelectionStart = txtDireccion.Text.Length;
-            }
             CheckInputs2();
         }
 
@@ -536,8 +552,9 @@ namespace PrototipoPED
                 {
                     // Si el valor está fuera del rango, borra el texto del MaskedTextBox
                     txtAño.Text = "";
+                    MessageBox.Show("Ingrese un valor válido de año ");
                 }
-                MessageBox.Show("Ingrese un valor válido");
+                
             }
             else
             {
@@ -549,8 +566,13 @@ namespace PrototipoPED
             txtAño.Focus();
         }
 
-       
-        //Para que no acepte espacios en blanco
-
+        private void txtTelefono_Validating(object sender, CancelEventArgs e)
+        {
+            if (!txtTelefono.MaskCompleted)
+            {
+                MessageBox.Show("Por favor, completa todos los espacios requeridos del número de teléfono.");
+                e.Cancel = true;
+            }
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCrearReporte));
             this.cmbPaciente = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtPeso = new System.Windows.Forms.TextBox();
@@ -92,6 +93,7 @@
             this.txtPeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPeso.TextChanged += new System.EventHandler(this.txtPeso_TextChanged);
             this.txtPeso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPeso_KeyPress);
+            this.txtPeso.MouseLeave += new System.EventHandler(this.txtPeso_MouseLeave);
             // 
             // label3
             // 
@@ -134,6 +136,7 @@
             this.txtTemperatura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTemperatura.TextChanged += new System.EventHandler(this.txtTemperatura_TextChanged);
             this.txtTemperatura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTemperatura_KeyPress);
+            this.txtTemperatura.MouseLeave += new System.EventHandler(this.txtTemperatura_MouseLeave);
             // 
             // label4
             // 
@@ -163,6 +166,7 @@
             this.txtEstatura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtEstatura.TextChanged += new System.EventHandler(this.txtEstatura_TextChanged);
             this.txtEstatura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstatura_KeyPress);
+            this.txtEstatura.MouseLeave += new System.EventHandler(this.txtEstatura_MouseLeave);
             // 
             // txtMotivo
             // 
@@ -361,6 +365,7 @@
             this.Controls.Add(this.cmbPaciente);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmCrearReporte";
             this.Text = "FrmCrearReporte";

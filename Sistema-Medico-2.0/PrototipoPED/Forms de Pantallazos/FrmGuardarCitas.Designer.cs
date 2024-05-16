@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGuardarCitas));
             this.dgvCitas = new System.Windows.Forms.DataGridView();
             this.cmbDoctor = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -220,8 +221,8 @@
             this.txtAño.Size = new System.Drawing.Size(107, 30);
             this.txtAño.TabIndex = 102;
             this.txtAño.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-           
             this.txtAño.TextChanged += new System.EventHandler(this.txtAño_TextChanged);
+            this.txtAño.MouseLeave += new System.EventHandler(this.txtAño_MouseLeave_1);
             // 
             // label4
             // 
@@ -286,6 +287,7 @@
             this.Controls.Add(this.cmbHorario);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(67)))), ((int)(((byte)(112)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmGuardarCitas";
             this.Text = "FrmGuardarCitas";
