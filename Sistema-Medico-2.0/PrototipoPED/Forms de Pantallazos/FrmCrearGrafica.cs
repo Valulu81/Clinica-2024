@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PrototipoPED.Forms_de_Pantallazos
 {
@@ -103,7 +104,23 @@ namespace PrototipoPED.Forms_de_Pantallazos
                 //Aqui puedes usar las cadenas parte_cant y parte_lug para la gráfica, ejecutar abajo
 
 
-                MessageBox.Show(cadena);
+                // Llena el Chart con los datos
+                chart1.Series.Clear();
+                chart1.ChartAreas[0].AxisX.Interval = 1;
+                chart1.ChartAreas[0].AxisY.Minimum = 0;
+
+                Series serie = chart1.Series.Add("Valores");
+                serie.ChartType = SeriesChartType.Column;
+
+                for (int i = 0; i < parte_lug.Length; i++)
+                {
+                    serie.Points.AddXY(parte_lug[i], valores[i]);
+                }
+
+                // Hace visible el Chart
+                chart1.Visible = true;
+
+                //MessageBox.Show(cadena);
             }
             catch (Exception ex)
             {
@@ -117,6 +134,7 @@ namespace PrototipoPED.Forms_de_Pantallazos
             string enfermedad = cmbEnfermedad.Text;
             string filtro = cmbFiltro.Text;
             string subfiltro = cmbSulfiltro.Text;
+
             DateTime fecha1 = Convert.ToDateTime(dtpFecha1.Text);
             DateTime fecha2 = Convert.ToDateTime(dtpFecha2.Text);
             int edad = Convert.ToInt32(txtEdad.Text);

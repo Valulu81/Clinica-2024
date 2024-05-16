@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtEdad = new System.Windows.Forms.TextBox();
@@ -37,12 +40,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnCrear = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
-            this.pnlGrafica = new System.Windows.Forms.Panel();
             this.btnreporte = new System.Windows.Forms.Button();
             this.cmbSulfiltro = new System.Windows.Forms.ComboBox();
             this.lblSub = new System.Windows.Forms.Label();
             this.dtpFecha1 = new System.Windows.Forms.DateTimePicker();
             this.dtpFecha2 = new System.Windows.Forms.DateTimePicker();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbFiltro
@@ -156,14 +160,6 @@
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
             // 
-            // pnlGrafica
-            // 
-            this.pnlGrafica.BackColor = System.Drawing.Color.White;
-            this.pnlGrafica.Location = new System.Drawing.Point(352, 22);
-            this.pnlGrafica.Name = "pnlGrafica";
-            this.pnlGrafica.Size = new System.Drawing.Size(452, 275);
-            this.pnlGrafica.TabIndex = 69;
-            // 
             // btnreporte
             // 
             this.btnreporte.BackColor = System.Drawing.Color.CadetBlue;
@@ -221,18 +217,35 @@
             this.dtpFecha2.Size = new System.Drawing.Size(285, 26);
             this.dtpFecha2.TabIndex = 74;
             // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(338, 10);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(488, 287);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            this.chart1.Visible = false;
+            // 
             // FrmCrearGrafica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(230)))), ((int)(((byte)(247)))));
-            this.ClientSize = new System.Drawing.Size(838, 371);
+            this.ClientSize = new System.Drawing.Size(838, 362);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.dtpFecha2);
             this.Controls.Add(this.dtpFecha1);
             this.Controls.Add(this.lblSub);
             this.Controls.Add(this.cmbSulfiltro);
             this.Controls.Add(this.btnreporte);
-            this.Controls.Add(this.pnlGrafica);
             this.Controls.Add(this.cmbFiltro);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtEdad);
@@ -245,6 +258,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmCrearGrafica";
             this.Text = "FrmCrearGrafica";
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,11 +274,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCrear;
         private System.Windows.Forms.Button btnBorrar;
-        private System.Windows.Forms.Panel pnlGrafica;
         private System.Windows.Forms.Button btnreporte;
         private System.Windows.Forms.ComboBox cmbSulfiltro;
         private System.Windows.Forms.Label lblSub;
         private System.Windows.Forms.DateTimePicker dtpFecha1;
         private System.Windows.Forms.DateTimePicker dtpFecha2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
